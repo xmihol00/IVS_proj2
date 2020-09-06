@@ -1,0 +1,9 @@
+
+Unfortunately, we couldn't stick to tests driven development, most of the tests were 
+written after implementation. Also, we didn't fulfil all the set deadlines in
+time, but fortunately, we set them with a margin for error. As a result, we
+would be able to submit the project in time. However, the postponing of the
+deadline definitely helped us to perfect the final outcome. Next time we will
+definetly write at least the most important tests, before starting any of the
+implementation. The problem with the tests being late meant, that fixing of
+bugs was more demanding and also more time consuming. 

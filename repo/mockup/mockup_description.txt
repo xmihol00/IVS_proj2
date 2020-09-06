@@ -1,0 +1,9 @@
+## Mockup
+New version of the calculator will be in the same minimalistic design but there will be many new functions.
+First of all, menu bar will be added and the main feature of menu bar is the converter
+which will be able to convert time, currency, speed etc. Also, Help button was added, on the click
+of user manual will be opened. In converter you can choose 'source' and destination value, the number
+that is currently in the main label will be converted.
+Secondly, PRO mode will have memory stuck where you can store interim results of your calculation 'M+'
+and then pop them 'M-', also you can clear the whole stuck with 'MC' button.
+And finally, PRO mode will enable you to draw graphs in the separate window.

@@ -1,0 +1,94 @@
+\hypertarget{class_ntan__test}{}\section{Ntan\+\_\+test Class Reference}
+\label{class_ntan__test}\index{Ntan\_test@{Ntan\_test}}
+
+
+class that tests tanx calculation  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Ntan\+\_\+test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ntan__test}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ntan__test_ad7ab02fd407b449bdfbf269275b97d43}{tanx\+\_\+test}} (double val, long double expected\+\_\+result, bool fail\+\_\+expected)
+\begin{DoxyCompactList}\small\item\em function that compares calculation of tanx with expected result given user, uses both sinx and cosx \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests tanx calculation 
+
+Definition at line 227 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ntan__test_ad7ab02fd407b449bdfbf269275b97d43}\label{class_ntan__test_ad7ab02fd407b449bdfbf269275b97d43}} 
+\index{Ntan\_test@{Ntan\_test}!tanx\_test@{tanx\_test}}
+\index{tanx\_test@{tanx\_test}!Ntan\_test@{Ntan\_test}}
+\subsubsection{\texorpdfstring{tanx\_test()}{tanx\_test()}}
+{\footnotesize\ttfamily bool Ntan\+\_\+test\+::tanx\+\_\+test (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{long double}]{expected\+\_\+result,  }\item[{bool}]{fail\+\_\+expected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function that compares calculation of tanx with expected result given user, uses both sinx and cosx 
+
+\begin{DoxyPrecond}{Precondition}
+expected result has to be accurate to 5 decimal digits 
+
+tanx expects value in degrees 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & number from which the tanx is calculated (given in degrees) \\
+\hline
+{\em expected\+\_\+result} & number, that is expected to be correct result of calculation \\
+\hline
+{\em fail\+\_\+expected} & boolean, set to true if fail of calculation is expected (values where function does not exist), else set to to false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success -\/ expected\+\_\+result matches the result of calculator or calculation fails while fail\+\_\+expected is set to true, otherwise false is returned 
+\end{DoxyReturn}
+
+
+Definition at line 189 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{190 \{}
+\DoxyCodeLine{191     \textcolor{keywordflow}{if} (cos(val) == 0)}
+\DoxyCodeLine{192         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{193     }
+\DoxyCodeLine{194     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} tanx\_result;}
+\DoxyCodeLine{195     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{196     \{}
+\DoxyCodeLine{197         tanx\_result = \mbox{\hyperlink{our__math_8h_a1694b7f6c823dd78bc66dceada977220}{tanx}}(val);}
+\DoxyCodeLine{198         \textcolor{keywordflow}{if} (tanx\_result >= expected\_result - \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}} \&\& tanx\_result <= expected\_result + \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}})}
+\DoxyCodeLine{199                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{200         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{201         \{}
+\DoxyCodeLine{202                 fprintf(stderr, \textcolor{stringliteral}{"\%Lf\(\backslash\)n"}, tanx\_result);}
+\DoxyCodeLine{203                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{204         \}}
+\DoxyCodeLine{205     \}}
+\DoxyCodeLine{206     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{207     \{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{209     \}}
+\DoxyCodeLine{210 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

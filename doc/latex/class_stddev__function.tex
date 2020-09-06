@@ -1,0 +1,187 @@
+\hypertarget{class_stddev__function}{}\section{Stddev\+\_\+function Class Reference}
+\label{class_stddev__function}\index{Stddev\_function@{Stddev\_function}}
+
+
+Class containing all the functions necessary for running the stddev program.  
+
+
+
+
+{\ttfamily \#include $<$logic.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+long double $\ast$ \mbox{\hyperlink{class_stddev__function_ae02f118647d6a8a8d213856a0d0dbef4}{get\+\_\+data\+\_\+pointer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the pointer to an array. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{class_stddev__function_a99d48dedf85d9b9a35962114be1b3d48}{calculate\+\_\+stddev}} ()
+\begin{DoxyCompactList}\small\item\em Calculates sample standard deviation from the given data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stddev__function_a7a3859ed9a1076997f3520f94963cb4e}{Stddev\+\_\+function}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stddev__function_a0bc75b3f42e65658dbf77be939cbf5d1}{$\sim$\+Stddev\+\_\+function}} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_stddev__function_adbcb1c4380ea74e87448dd77ebbf046f}{load\+\_\+function}} ()
+\begin{DoxyCompactList}\small\item\em Loads all the data from a file to the data\+\_\+array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing all the functions necessary for running the stddev program. 
+
+Definition at line 300 of file logic.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_stddev__function_a7a3859ed9a1076997f3520f94963cb4e}\label{class_stddev__function_a7a3859ed9a1076997f3520f94963cb4e}} 
+\index{Stddev\_function@{Stddev\_function}!Stddev\_function@{Stddev\_function}}
+\index{Stddev\_function@{Stddev\_function}!Stddev\_function@{Stddev\_function}}
+\subsubsection{\texorpdfstring{Stddev\_function()}{Stddev\_function()}}
+{\footnotesize\ttfamily Stddev\+\_\+function\+::\+Stddev\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Tries to allocate space for 20 long double values, then sets total\+\_\+addition and loaded\+\_\+nums to zero 
+
+Definition at line 1999 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2000 \{}
+\DoxyCodeLine{2001     data\_array = (\textcolor{keywordtype}{long} \textcolor{keywordtype}{double}*)malloc(\mbox{\hyperlink{logic_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\_SIZE}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double}));;}
+\DoxyCodeLine{2002     total\_addition = 0;}
+\DoxyCodeLine{2003     loaded\_nums = 0;}
+\DoxyCodeLine{2004 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stddev__function_a0bc75b3f42e65658dbf77be939cbf5d1}\label{class_stddev__function_a0bc75b3f42e65658dbf77be939cbf5d1}} 
+\index{Stddev\_function@{Stddev\_function}!````~Stddev\_function@{$\sim$Stddev\_function}}
+\index{````~Stddev\_function@{$\sim$Stddev\_function}!Stddev\_function@{Stddev\_function}}
+\subsubsection{\texorpdfstring{$\sim$Stddev\_function()}{~Stddev\_function()}}
+{\footnotesize\ttfamily Stddev\+\_\+function\+::$\sim$\+Stddev\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deconstructor. 
+
+Frees all the allocated memory and set the data\+\_\+array pointer to N\+U\+LL 
+
+Definition at line 2006 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2007 \{}
+\DoxyCodeLine{2008     \textcolor{keyword}{delete}(data\_array);}
+\DoxyCodeLine{2009     data\_array = NULL;}
+\DoxyCodeLine{2010 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stddev__function_a99d48dedf85d9b9a35962114be1b3d48}\label{class_stddev__function_a99d48dedf85d9b9a35962114be1b3d48}} 
+\index{Stddev\_function@{Stddev\_function}!calculate\_stddev@{calculate\_stddev}}
+\index{calculate\_stddev@{calculate\_stddev}!Stddev\_function@{Stddev\_function}}
+\subsubsection{\texorpdfstring{calculate\_stddev()}{calculate\_stddev()}}
+{\footnotesize\ttfamily long double Stddev\+\_\+function\+::calculate\+\_\+stddev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates sample standard deviation from the given data. 
+
+\begin{DoxyReturn}{Returns}
+Sample standard deviation is returned 
+\end{DoxyReturn}
+
+
+Definition at line 2060 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2061 \{}
+\DoxyCodeLine{2062     \textcolor{keywordflow}{return} \mbox{\hyperlink{our__math_8h_a5d18b3f46c834dee86520a5c64a69ae1}{nroot}}(get\_summation()/(loaded\_nums-1),2);   }
+\DoxyCodeLine{2063 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stddev__function_ae02f118647d6a8a8d213856a0d0dbef4}\label{class_stddev__function_ae02f118647d6a8a8d213856a0d0dbef4}} 
+\index{Stddev\_function@{Stddev\_function}!get\_data\_pointer@{get\_data\_pointer}}
+\index{get\_data\_pointer@{get\_data\_pointer}!Stddev\_function@{Stddev\_function}}
+\subsubsection{\texorpdfstring{get\_data\_pointer()}{get\_data\_pointer()}}
+{\footnotesize\ttfamily long double $\ast$ Stddev\+\_\+function\+::get\+\_\+data\+\_\+pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the pointer to an array. 
+
+\begin{DoxyReturn}{Returns}
+N\+U\+LL is returned if nothing was allocated, else pointer to dynamic array is returned 
+\end{DoxyReturn}
+
+
+Definition at line 2064 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2065 \{}
+\DoxyCodeLine{2066     \textcolor{keywordflow}{return} data\_array;}
+\DoxyCodeLine{2067 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stddev__function_adbcb1c4380ea74e87448dd77ebbf046f}\label{class_stddev__function_adbcb1c4380ea74e87448dd77ebbf046f}} 
+\index{Stddev\_function@{Stddev\_function}!load\_function@{load\_function}}
+\index{load\_function@{load\_function}!Stddev\_function@{Stddev\_function}}
+\subsubsection{\texorpdfstring{load\_function()}{load\_function()}}
+{\footnotesize\ttfamily int Stddev\+\_\+function\+::load\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads all the data from a file to the data\+\_\+array. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 is returned if loading fails, 1 is returned when functions ends successfully 
+\end{DoxyReturn}
+
+
+Definition at line 2012 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2013 \{}
+\DoxyCodeLine{2014     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} success\_load = 0;}
+\DoxyCodeLine{2015     \textcolor{keywordtype}{unsigned} block\_count = 1;}
+\DoxyCodeLine{2016     \textcolor{keywordflow}{while}((success\_load = scanf(\textcolor{stringliteral}{"\%Lf"}, \&data\_array[loaded\_nums])) != EOF \&\& success\_load != 0) \textcolor{comment}{//loading data til EOF or error}}
+\DoxyCodeLine{2017     \{}
+\DoxyCodeLine{2018         \textcolor{keywordflow}{if}(loaded\_nums == block\_count*\mbox{\hyperlink{logic_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\_SIZE}}-1)  }
+\DoxyCodeLine{2019         \{}
+\DoxyCodeLine{2020             block\_count++;}
+\DoxyCodeLine{2021             \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} *resize =(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double}*) realloc(data\_array,block\_count*\mbox{\hyperlink{logic_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\_SIZE}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double})); \textcolor{comment}{//increasing the size of allocated memory }}
+\DoxyCodeLine{2022             \textcolor{keywordflow}{if}(resize != NULL)}
+\DoxyCodeLine{2023                 data\_array = resize;}
+\DoxyCodeLine{2024             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2025                 \textcolor{keywordflow}{return} -1; }
+\DoxyCodeLine{2026  }
+\DoxyCodeLine{2027         \}}
+\DoxyCodeLine{2028         total\_addition += data\_array[loaded\_nums];}
+\DoxyCodeLine{2029         loaded\_nums++;}
+\DoxyCodeLine{2030     \}}
+\DoxyCodeLine{2031 }
+\DoxyCodeLine{2032     \textcolor{keywordflow}{if} (loaded\_nums < 2)}
+\DoxyCodeLine{2033     \{}
+\DoxyCodeLine{2034         std::cerr << \textcolor{stringliteral}{"stddev: Enter at least two numbers."} << std::endl;}
+\DoxyCodeLine{2035         \textcolor{keywordflow}{return} -1;}
+\DoxyCodeLine{2036     \}}
+\DoxyCodeLine{2037 }
+\DoxyCodeLine{2038     \textcolor{keywordflow}{if}(!success\_load)}
+\DoxyCodeLine{2039         \textcolor{keywordflow}{return} -1;}
+\DoxyCodeLine{2040     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2041         \textcolor{keywordflow}{return} 1; }
+\DoxyCodeLine{2042 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{logic_8h}{logic.\+h}}\item 
+source/\mbox{\hyperlink{logic_8cpp}{logic.\+cpp}}\end{DoxyCompactItemize}

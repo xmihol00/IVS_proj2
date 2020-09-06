@@ -1,0 +1,103 @@
+\hypertarget{class_input__control}{}\section{Input\+\_\+control Class Reference}
+\label{class_input__control}\index{Input\_control@{Input\_control}}
+
+
+class that tests the equation\+\_\+string\+\_\+control function  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Input\+\_\+control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_input__control}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_input__control_a4961e9c94d7171f539fd1d59026cdf4e}{parse\+\_\+string}} (std\+::string input\+\_\+str, std\+::string expected\+\_\+output\+\_\+str)
+\begin{DoxyCompactList}\small\item\em function used to input charcters one by one to the equation\+\_\+string\+\_\+control function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_logic}{Logic}} \mbox{\hyperlink{class_input__control_a9f091f9aab11c64abcf05b305f0e8874}{test}}
+\item 
+std\+::string \mbox{\hyperlink{class_input__control_a91293c6ca347c29035190ee87abe4faf}{output}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests the equation\+\_\+string\+\_\+control function 
+
+Definition at line 90 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input__control_a4961e9c94d7171f539fd1d59026cdf4e}\label{class_input__control_a4961e9c94d7171f539fd1d59026cdf4e}} 
+\index{Input\_control@{Input\_control}!parse\_string@{parse\_string}}
+\index{parse\_string@{parse\_string}!Input\_control@{Input\_control}}
+\subsubsection{\texorpdfstring{parse\_string()}{parse\_string()}}
+{\footnotesize\ttfamily bool Input\+\_\+control\+::parse\+\_\+string (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+\_\+str,  }\item[{std\+::string}]{expected\+\_\+output\+\_\+str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function used to input charcters one by one to the equation\+\_\+string\+\_\+control function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+str} & string needed to be parsed \\
+\hline
+{\em expected\+\_\+output\+\_\+str} & the expected output of the equation\+\_\+string\+\_\+control \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success (equation\+\_\+string\+\_\+control output matches the expected\+\_\+output\+\_\+str), otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < input\_str.size(); i++)}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_input__control_a9f091f9aab11c64abcf05b305f0e8874}{test}}.\mbox{\hyperlink{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}{equation\_string\_control}}(\mbox{\hyperlink{class_input__control_a91293c6ca347c29035190ee87abe4faf}{output}}, input\_str[i]);}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} (\mbox{\hyperlink{class_input__control_a91293c6ca347c29035190ee87abe4faf}{output}} == expected\_output\_str)?(1):(fprintf(stderr, \textcolor{stringliteral}{"\%s\(\backslash\)n"}, \mbox{\hyperlink{class_input__control_a91293c6ca347c29035190ee87abe4faf}{output}}.c\_str()), 0);}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_input__control_a91293c6ca347c29035190ee87abe4faf}\label{class_input__control_a91293c6ca347c29035190ee87abe4faf}} 
+\index{Input\_control@{Input\_control}!output@{output}}
+\index{output@{output}!Input\_control@{Input\_control}}
+\subsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily std\+::string Input\+\_\+control\+::output\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 94 of file tests.\+h.
+
+\mbox{\Hypertarget{class_input__control_a9f091f9aab11c64abcf05b305f0e8874}\label{class_input__control_a9f091f9aab11c64abcf05b305f0e8874}} 
+\index{Input\_control@{Input\_control}!test@{test}}
+\index{test@{test}!Input\_control@{Input\_control}}
+\subsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_logic}{Logic}} Input\+\_\+control\+::test\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 93 of file tests.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

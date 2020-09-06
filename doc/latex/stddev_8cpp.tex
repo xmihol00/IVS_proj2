@@ -1,0 +1,57 @@
+\hypertarget{stddev_8cpp}{}\section{source/stddev.cpp File Reference}
+\label{stddev_8cpp}\index{source/stddev.cpp@{source/stddev.cpp}}
+
+
+Source file, which serves for calculating sample standard deviation with help of functions from math library.  
+
+
+{\ttfamily \#include \char`\"{}../include/logic.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{stddev_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Source file, which serves for calculating sample standard deviation with help of functions from math library. 
+
+\begin{DoxyAuthor}{Author}
+Foltyn Lukas 
+
+Mihola David 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+©\+Pied Piper 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{stddev_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{stddev_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{stddev.cpp@{stddev.cpp}!main@{main}}
+\index{main@{main}!stddev.cpp@{stddev.cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file stddev.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_stddev__function}{Stddev\_function}} sample\_std\_deviation; \textcolor{comment}{// initialization with constructor}}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if}(sample\_std\_deviation.\mbox{\hyperlink{class_stddev__function_ae02f118647d6a8a8d213856a0d0dbef4}{get\_data\_pointer}}() != NULL) \textcolor{comment}{// testing if allocation in constructor did not fail}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keywordflow}{if}(sample\_std\_deviation.\mbox{\hyperlink{class_stddev__function_adbcb1c4380ea74e87448dd77ebbf046f}{load\_function}}() != -1) \textcolor{comment}{// loading data from user given file and testing for error}}
+\DoxyCodeLine{17             std::cout << sample\_std\_deviation.\mbox{\hyperlink{class_stddev__function_a99d48dedf85d9b9a35962114be1b3d48}{calculate\_stddev}}() << std::endl; }
+\DoxyCodeLine{18         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{19             std::cerr << \textcolor{stringliteral}{"stddev: Loading of data failed."} << std::endl;}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{22         std::cerr << \textcolor{stringliteral}{"stddev: Allocation of initial memory failed."} << std::endl;}
+\DoxyCodeLine{23         }
+\DoxyCodeLine{24     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}

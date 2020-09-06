@@ -1,0 +1,5 @@
+
+xfolty17 85  (stddev, profiling, tests, goniometric function, dokumentation, skutecnost.txt)
+xmihol00 115 (CMakeFiles, Makefile, other mathematical functions, debugging, logic library, graphics library, tests, test of 
+              installation, README.md, screenshots, installer, uninstaller, documentation, dokumectace.pdf, odevzdani.txt)
+xsokol15 100 (mockup, plan, grafic design, grafic library, LICENSE.txt, tests, icons, doxyfile, README.md, documentation)

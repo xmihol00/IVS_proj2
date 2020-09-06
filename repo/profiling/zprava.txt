@@ -1,0 +1,10 @@
+Most of the execuation time takes up the 'int special_function::load_function()' due to loading data with scanf function to an dynamically allocated memory.
+
+1.The solution for this could be loading all the data into memory at once(i.e. fread() function), the only problem is that the file contains an unknown size of data..but
+this could be solved with fstat() function which is able to find out the size of the file that holds the input to stddev..that means we know exactly how much memory is needed.
+Next step would be just parsing the data (string --> integer) that have been loaded.
+
+2.Working with more processes or threads.
+
+3.If the stddev took filename as an argument instead of redirecting the file to stdin, the file could be maped into a memory. Then we would just parse
+the data.

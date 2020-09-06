@@ -1,0 +1,182 @@
+\hypertarget{tests_8h}{}\section{include/tests.h File Reference}
+\label{tests_8h}\index{include/tests.h@{include/tests.h}}
+
+
+Header file containing test classes with declarations of their test functions for \mbox{\hyperlink{logic_8cpp}{logic.\+cpp}} and \mbox{\hyperlink{our__math_8cpp}{our\+\_\+math.\+cpp}}.  
+
+
+{\ttfamily \#include \char`\"{}gtest/gtest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_nroot__test}{Nroot\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em class that tests the Nroot function \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_input__control}{Input\+\_\+control}}
+\begin{DoxyCompactList}\small\item\em class that tests the equation\+\_\+string\+\_\+control function \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_real__time__calc}{Real\+\_\+time\+\_\+calc}}
+\begin{DoxyCompactList}\small\item\em class that tests the calculations of the real time calculator \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_factorial__tests}{Factorial\+\_\+tests}}
+\begin{DoxyCompactList}\small\item\em class that tests the factorial calculation \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_npow__test}{Npow\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em class that tests the N-\/power calculation(N -\/ positive integer) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_xpow__test}{Xpow\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em class that tests the X-\/power calculation(X -\/ long double) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_nsin__test}{Nsin\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em class that tests sinx calculation \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_ncos__test}{Ncos\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em class that tests cosx calculation \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_ntan__test}{Ntan\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em class that tests tanx calculation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{T\+E\+S\+T\+\_\+\+E\+PS}}~1e-\/3
+\begin{DoxyCompactList}\small\item\em deviation for testing calculation from string to long double \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{tests_8h_a6a35cadab65e63ef47359125a25e7d74}{A\+D\+D\+\_\+\+E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+W\+I\+T\+H\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+TS}}(E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+S\+TR,  R\+E\+S\+U\+L\+T\+\_\+\+S\+TR)
+\begin{DoxyCompactList}\small\item\em macro that takes \char`\"{}string\char`\"{} equation which is calculated and compared with its expected \char`\"{}string\char`\"{} result given as second parameter and return true if matched, otherwise false is returned \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{tests_8h_a3192c5f5a5817cc467446e7dd469e2b1}{A\+D\+D\+\_\+\+E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+W\+I\+T\+H\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+TD}}(E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+S\+TR,  R\+E\+S\+U\+L\+T\+\_\+\+LD)
+\begin{DoxyCompactList}\small\item\em macro that takes \char`\"{}string\char`\"{} equation which is calculated and compared with its expected long double result given as second parameter and return true if matched, otherwise false is returned \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{tests_8h_a23482494bcfac1e2d8c51e515520fd80}{N\+U\+MS}}~(std\+::vector$<$double$>$)
+\begin{DoxyCompactList}\small\item\em subsitution for vector of number(data type -\/ double) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{tests_8h_a00ee1af6cc99c68dbafdbd4821e27354}{O\+PS}}~(std\+::vector$<$char$>$)
+\begin{DoxyCompactList}\small\item\em substitution for vector of chars \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{tests_8h_a7ebc9a785e5ab85457c98595aac81589}{Y\+ES}}~true
+\begin{DoxyCompactList}\small\item\em substitution for true in test functions \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{tests_8h_a996bde01ecac342918f0a2c4e7ce7bd5}{NO}}~false
+\begin{DoxyCompactList}\small\item\em substitution for false in test functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file containing test classes with declarations of their test functions for \mbox{\hyperlink{logic_8cpp}{logic.\+cpp}} and \mbox{\hyperlink{our__math_8cpp}{our\+\_\+math.\+cpp}}. 
+
+\begin{DoxyAuthor}{Author}
+Mihola David 
+
+Foltyn Lukas 
+
+Sokolovskii Vladislav 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27.\+02.\+2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+©\+Pied Piper 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tests_8h_a3192c5f5a5817cc467446e7dd469e2b1}\label{tests_8h_a3192c5f5a5817cc467446e7dd469e2b1}} 
+\index{tests.h@{tests.h}!ADD\_EQUATION\_WITH\_RESULT\_STD@{ADD\_EQUATION\_WITH\_RESULT\_STD}}
+\index{ADD\_EQUATION\_WITH\_RESULT\_STD@{ADD\_EQUATION\_WITH\_RESULT\_STD}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{ADD\_EQUATION\_WITH\_RESULT\_STD}{ADD\_EQUATION\_WITH\_RESULT\_STD}}
+{\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+W\+I\+T\+H\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+TD(\begin{DoxyParamCaption}\item[{}]{E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+S\+TR,  }\item[{}]{R\+E\+S\+U\+L\+T\+\_\+\+LD }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_logic}{Logic}} test\_logic;\(\backslash\)}
+\DoxyCodeLine{    long \textcolor{keywordtype}{double} result\_hold;\(\backslash\)}
+\DoxyCodeLine{    test\_logic.\mbox{\hyperlink{class_logic_a93c8b12c4525549e7da3731ae7c53c7c}{calculate}}(((std::string)EQUATION\_STR), result\_hold);\(\backslash\)}
+\DoxyCodeLine{    EXPECT\_TRUE((RESULT\_LD) >= result\_hold - \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}} \&\& (RESULT\_LD) <= result\_hold + \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}});\(\backslash\)}
+
+\end{DoxyCode}
+
+
+macro that takes \char`\"{}string\char`\"{} equation which is calculated and compared with its expected long double result given as second parameter and return true if matched, otherwise false is returned 
+
+
+
+Definition at line 38 of file tests.\+h.
+
+\mbox{\Hypertarget{tests_8h_a6a35cadab65e63ef47359125a25e7d74}\label{tests_8h_a6a35cadab65e63ef47359125a25e7d74}} 
+\index{tests.h@{tests.h}!ADD\_EQUATION\_WITH\_RESULT\_STS@{ADD\_EQUATION\_WITH\_RESULT\_STS}}
+\index{ADD\_EQUATION\_WITH\_RESULT\_STS@{ADD\_EQUATION\_WITH\_RESULT\_STS}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{ADD\_EQUATION\_WITH\_RESULT\_STS}{ADD\_EQUATION\_WITH\_RESULT\_STS}}
+{\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+W\+I\+T\+H\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+TS(\begin{DoxyParamCaption}\item[{}]{E\+Q\+U\+A\+T\+I\+O\+N\+\_\+\+S\+TR,  }\item[{}]{R\+E\+S\+U\+L\+T\+\_\+\+S\+TR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_logic}{Logic}} test\_logic;\(\backslash\)}
+\DoxyCodeLine{    std::string result\_hold;\(\backslash\)}
+\DoxyCodeLine{    test\_logic.\mbox{\hyperlink{class_logic_a93c8b12c4525549e7da3731ae7c53c7c}{calculate}}(((std::string)EQUATION\_STR), result\_hold);\(\backslash\)}
+\DoxyCodeLine{    EXPECT\_EQ(result\_hold, ((std::string)RESULT\_STR));}
+
+\end{DoxyCode}
+
+
+macro that takes \char`\"{}string\char`\"{} equation which is calculated and compared with its expected \char`\"{}string\char`\"{} result given as second parameter and return true if matched, otherwise false is returned 
+
+
+
+Definition at line 26 of file tests.\+h.
+
+\mbox{\Hypertarget{tests_8h_a996bde01ecac342918f0a2c4e7ce7bd5}\label{tests_8h_a996bde01ecac342918f0a2c4e7ce7bd5}} 
+\index{tests.h@{tests.h}!NO@{NO}}
+\index{NO@{NO}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{NO}{NO}}
+{\footnotesize\ttfamily \#define NO~false}
+
+
+
+substitution for false in test functions 
+
+
+
+Definition at line 66 of file tests.\+h.
+
+\mbox{\Hypertarget{tests_8h_a23482494bcfac1e2d8c51e515520fd80}\label{tests_8h_a23482494bcfac1e2d8c51e515520fd80}} 
+\index{tests.h@{tests.h}!NUMS@{NUMS}}
+\index{NUMS@{NUMS}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{NUMS}{NUMS}}
+{\footnotesize\ttfamily \#define N\+U\+MS~(std\+::vector$<$double$>$)}
+
+
+
+subsitution for vector of number(data type -\/ double) 
+
+
+
+Definition at line 48 of file tests.\+h.
+
+\mbox{\Hypertarget{tests_8h_a00ee1af6cc99c68dbafdbd4821e27354}\label{tests_8h_a00ee1af6cc99c68dbafdbd4821e27354}} 
+\index{tests.h@{tests.h}!OPS@{OPS}}
+\index{OPS@{OPS}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{OPS}{OPS}}
+{\footnotesize\ttfamily \#define O\+PS~(std\+::vector$<$char$>$)}
+
+
+
+substitution for vector of chars 
+
+
+
+Definition at line 54 of file tests.\+h.
+
+\mbox{\Hypertarget{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}\label{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}} 
+\index{tests.h@{tests.h}!TEST\_EPS@{TEST\_EPS}}
+\index{TEST\_EPS@{TEST\_EPS}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{TEST\_EPS}{TEST\_EPS}}
+{\footnotesize\ttfamily \#define T\+E\+S\+T\+\_\+\+E\+PS~1e-\/3}
+
+
+
+deviation for testing calculation from string to long double 
+
+
+
+Definition at line 18 of file tests.\+h.
+
+\mbox{\Hypertarget{tests_8h_a7ebc9a785e5ab85457c98595aac81589}\label{tests_8h_a7ebc9a785e5ab85457c98595aac81589}} 
+\index{tests.h@{tests.h}!YES@{YES}}
+\index{YES@{YES}!tests.h@{tests.h}}
+\subsubsection{\texorpdfstring{YES}{YES}}
+{\footnotesize\ttfamily \#define Y\+ES~true}
+
+
+
+substitution for true in test functions 
+
+
+
+Definition at line 60 of file tests.\+h.
+

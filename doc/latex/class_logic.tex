@@ -1,0 +1,1292 @@
+\hypertarget{class_logic}{}\section{Logic Class Reference}
+\label{class_logic}\index{Logic@{Logic}}
+
+
+class containing all declaration needed to calculate complex equations, on which either \mbox{\hyperlink{class_g_u_i}{G\+UI}} can be added or can be run from the terminal  
+
+
+
+
+{\ttfamily \#include $<$logic.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_logic_a65e13b69a0b4ae0c31be94bcfe11898a}{Logic}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}{equation\+\_\+string\+\_\+control}} (std\+::string \&current, char addition)
+\begin{DoxyCompactList}\small\item\em Checks if a character can be added to an ongoing equation, so that the equation would retain mathematical sense, if character cannot be added the equation string remains the same. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}{reset\+\_\+equation\+\_\+string\+\_\+control}} ()
+\begin{DoxyCompactList}\small\item\em Resets the equation string control to the starting state. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{class_logic_aa5558988a60bada489bb0ddfae4466b4}{get\+\_\+result}} ()
+\item 
+void \mbox{\hyperlink{class_logic_a014ef0be6c84ba01f492c8f789409cd3}{result\+\_\+print}} ()
+\begin{DoxyCompactList}\small\item\em Prints the result to stdout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logic_a168e83ee3c44c0fb69a97ad9d26645b1}{erase\+\_\+equation}} ()
+\begin{DoxyCompactList}\small\item\em Erases the currently ongoing equation (including the equation string control), sets everything to the starting state, so that new equation can start. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_logic_a109d65be4a56e17e256d83bcc6912acb}{real\+\_\+time\+\_\+calculation}} (char input\+\_\+char, std\+::string \&output\+\_\+str\+\_\+result, std\+::string \&output\+\_\+str\+\_\+equation)
+\begin{DoxyCompactList}\small\item\em Provides new result after any added character, supported characters\+: \textquotesingle{}0\textquotesingle{}-\/\textquotesingle{}9\textquotesingle{} for digits \textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}, \textquotesingle{}$^\wedge$\textquotesingle{}, \textquotesingle{}?\textquotesingle{}, \textquotesingle{}\textquotesingle{}, \textquotesingle{}!\textquotesingle{}, \textquotesingle{}=\textquotesingle{} for operators (\textquotesingle{}?\textquotesingle{} represents the nrooth of a number) \textquotesingle{}.\textquotesingle{} for decimal point \textquotesingle{}N\textquotesingle{} for negation of a number \textquotesingle{}D\textquotesingle{} for deletion of the last character \textquotesingle{}C\textquotesingle{} for clearing the equation \textquotesingle{}(\textquotesingle{}, \textquotesingle{})\textquotesingle{} for brackets other characters are ignored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_logic_a93c8b12c4525549e7da3731ae7c53c7c}{calculate}} (std\+::string input\+\_\+str, std\+::string \&output\+\_\+str)
+\begin{DoxyCompactList}\small\item\em Parse the input string to numbers and operators and uses. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_logic_acd1683cf5265bacac5e0710ddb123e03}{calculate}} (std\+::string input\+\_\+str, long double \&output\+\_\+result)
+\begin{DoxyCompactList}\small\item\em Parses the input string to numbers and operators and uses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class containing all declaration needed to calculate complex equations, on which either \mbox{\hyperlink{class_g_u_i}{G\+UI}} can be added or can be run from the terminal 
+
+Definition at line 123 of file logic.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_logic_a65e13b69a0b4ae0c31be94bcfe11898a}\label{class_logic_a65e13b69a0b4ae0c31be94bcfe11898a}} 
+\index{Logic@{Logic}!Logic@{Logic}}
+\index{Logic@{Logic}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{Logic()}{Logic()}}
+{\footnotesize\ttfamily Logic\+::\+Logic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 13 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{comment}{//some variables are initilized}}
+\DoxyCodeLine{16     result = 0.0;}
+\DoxyCodeLine{17     currently\_entered\_num = 0.0;}
+\DoxyCodeLine{18     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{19     op\_count\_strcnt = 0;}
+\DoxyCodeLine{20     result\_parts\_op.push\_back(0);}
+\DoxyCodeLine{21     result\_parts.push\_back(0);}
+\DoxyCodeLine{22     decimal\_position = 0;}
+\DoxyCodeLine{23     result\_parts\_state.push\_back(\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a399c982a0c65189d8b619a10443b9a8e}{START\_STATE}});}
+\DoxyCodeLine{24     bracket\_count = 0;}
+\DoxyCodeLine{25     negate = \textcolor{keyword}{false};}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}\label{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}} 
+\index{Logic@{Logic}!equation\_string\_control@{equation\_string\_control}}
+\index{equation\_string\_control@{equation\_string\_control}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{equation\_string\_control()}{equation\_string\_control()}}
+{\footnotesize\ttfamily void Logic\+::equation\+\_\+string\+\_\+control (\begin{DoxyParamCaption}\item[{std\+::string \&}]{current,  }\item[{char}]{addition }\end{DoxyParamCaption})}
+
+
+
+Checks if a character can be added to an ongoing equation, so that the equation would retain mathematical sense, if character cannot be added the equation string remains the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & The string holding the text of an ongoing equation \\
+\hline
+{\em addition} & Currently added character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1400 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1401 \{}
+\DoxyCodeLine{1402     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} active\_int\_op; \textcolor{comment}{//for modulo as it can be used only with integers}}
+\DoxyCodeLine{1403     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} active\_minus;  \textcolor{comment}{//remembers if the current number is negative or not}}
+\DoxyCodeLine{1404 }
+\DoxyCodeLine{1405     \textcolor{keywordflow}{if} (current.size() == 1 \&\& current.back() == \textcolor{charliteral}{'0'} \&\& addition != \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{1406     \{}
+\DoxyCodeLine{1407         current.pop\_back();}
+\DoxyCodeLine{1408     \}}
+\DoxyCodeLine{1409 }
+\DoxyCodeLine{1410     \textcolor{comment}{//when the function is called for the first time or was reseted, it has to find the state of the current equation}}
+\DoxyCodeLine{1411     \textcolor{keywordflow}{if} (!current.size()) \textcolor{comment}{//empty current string}}
+\DoxyCodeLine{1412     \{}
+\DoxyCodeLine{1413         position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1414         active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1415         active\_int\_op = \textcolor{keyword}{false};}
+\DoxyCodeLine{1416     \}}
+\DoxyCodeLine{1417     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(current.back()) \&\& position == \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}{NO\_STATE}}) \textcolor{comment}{//this cleares invalid strings}}
+\DoxyCodeLine{1418     \{}
+\DoxyCodeLine{1419         current.clear();}
+\DoxyCodeLine{1420         position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1421     \}}
+\DoxyCodeLine{1422     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (position == \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}{NO\_STATE}}) \textcolor{comment}{//there is a number in the current string, but the string control was reseted}}
+\DoxyCodeLine{1423     \{}
+\DoxyCodeLine{1424         position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};         \textcolor{comment}{//default sate}}
+\DoxyCodeLine{1425         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = current.size()-1; i >= 0; i--)}
+\DoxyCodeLine{1426         \{}
+\DoxyCodeLine{1427             \textcolor{keywordflow}{if} (current[i] == \textcolor{charliteral}{'.'}) \textcolor{comment}{//when it is floating point number, then the state is changed}}
+\DoxyCodeLine{1428             \{}
+\DoxyCodeLine{1429                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{DECIMAL\_NUM}};}
+\DoxyCodeLine{1430                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1431             \}}
+\DoxyCodeLine{1432         \}}
+\DoxyCodeLine{1433         \textcolor{keywordflow}{if} (current[0] == \textcolor{charliteral}{'-'}) \textcolor{comment}{//if the number is negative}}
+\DoxyCodeLine{1434             active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1435         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1436             active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1437     \}}
+\DoxyCodeLine{1438 }
+\DoxyCodeLine{1439     \textcolor{keywordflow}{switch}(position) \textcolor{comment}{//the state from last call of this function is now used to detemin what has to happen it the currnet call}}
+\DoxyCodeLine{1440     \{}
+\DoxyCodeLine{1441         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}}: \textcolor{comment}{//when digits before decimal point are added (the number is integer)}}
+\DoxyCodeLine{1442             op\_count\_strcnt = 0; \textcolor{comment}{//the number of operators is reseted}}
+\DoxyCodeLine{1443             \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(addition)) \textcolor{comment}{//another digit was added}}
+\DoxyCodeLine{1444                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1445             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'-'} \&\& !current.size() \&\& !active\_minus) \textcolor{comment}{//when the first character added to the equation is minus}}
+\DoxyCodeLine{1446                 active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1447             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((active\_minus \&\& current.size() == 1) || current.size() == 0) \textcolor{comment}{//special operators that can be added to the}}
+\DoxyCodeLine{1448             \{                                                                      \textcolor{comment}{//beginnig of an equation}}
+\DoxyCodeLine{1449                 \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'('})}
+\DoxyCodeLine{1450                 \{}
+\DoxyCodeLine{1451                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}}; \textcolor{comment}{//the state is changed for next call of the function}}
+\DoxyCodeLine{1452                     current.push\_back(\textcolor{charliteral}{'('});}
+\DoxyCodeLine{1453                     bracket\_count++; \textcolor{comment}{//number of not closed brackets is increased}}
+\DoxyCodeLine{1454                 \}}
+\DoxyCodeLine{1455                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{1456                 \{}
+\DoxyCodeLine{1457                     current += \textcolor{stringliteral}{"sin"};}
+\DoxyCodeLine{1458                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}}; \textcolor{comment}{//the state is changed for next call of the function}}
+\DoxyCodeLine{1459                 \}}
+\DoxyCodeLine{1460                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{1461                 \{}
+\DoxyCodeLine{1462                     current += \textcolor{stringliteral}{"tan"};}
+\DoxyCodeLine{1463                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}}; \textcolor{comment}{//the state is changed}}
+\DoxyCodeLine{1464                 \}}
+\DoxyCodeLine{1465                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'c'})}
+\DoxyCodeLine{1466                 \{}
+\DoxyCodeLine{1467                     current += \textcolor{stringliteral}{"cos"};}
+\DoxyCodeLine{1468                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}}; \textcolor{comment}{//the state is changed}}
+\DoxyCodeLine{1469                 \}}
+\DoxyCodeLine{1470                 }
+\DoxyCodeLine{1471                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1472             \}}
+\DoxyCodeLine{1473             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(addition) \&\& current.size()) \textcolor{comment}{//if there is already at least one digit operator can be added}}
+\DoxyCodeLine{1474             \{}
+\DoxyCodeLine{1475                 \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'-'}) \textcolor{comment}{//if the current.size() == 1 and the first character is minus, operator cannot be added}}
+\DoxyCodeLine{1476                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1477 }
+\DoxyCodeLine{1478                 \textcolor{keywordflow}{if} (current.size() \&\& current.back() == \textcolor{charliteral}{'.'}) \textcolor{comment}{//if the last character is a decimal dot, then it is deleted}}
+\DoxyCodeLine{1479                     current.pop\_back();}
+\DoxyCodeLine{1480                 }
+\DoxyCodeLine{1481                 \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'!'} \&\& active\_minus) \textcolor{comment}{//if the current number is negative, then factorial is ignored}}
+\DoxyCodeLine{1482                 \{}
+\DoxyCodeLine{1483                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1484                 \}}
+\DoxyCodeLine{1485                 }
+\DoxyCodeLine{1486                 \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'\%'}) \textcolor{comment}{//if the added operator is \% then the next number can be only an integer}}
+\DoxyCodeLine{1487                     active\_int\_op = \textcolor{keyword}{true};}
+\DoxyCodeLine{1488                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1489                     active\_int\_op = \textcolor{keyword}{false};}
+\DoxyCodeLine{1490 }
+\DoxyCodeLine{1491                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}}; \textcolor{comment}{//the next position is set}}
+\DoxyCodeLine{1492 }
+\DoxyCodeLine{1493                 \textcolor{keywordflow}{if} (addition != \textcolor{charliteral}{'!'}) \textcolor{comment}{//the number of currently added oprators is increased, factorial is not included}}
+\DoxyCodeLine{1494                     op\_count\_strcnt++;}
+\DoxyCodeLine{1495                 }
+\DoxyCodeLine{1496                 active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1497             \}}
+\DoxyCodeLine{1498             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'.'} \&\& !active\_int\_op) \textcolor{comment}{//if the floating point number can be added}}
+\DoxyCodeLine{1499             \{}
+\DoxyCodeLine{1500                 \textcolor{keywordflow}{if} (current.size() == 0) \textcolor{comment}{//if the string is empty, the number cannot start with decimal dot}}
+\DoxyCodeLine{1501                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1502                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{DECIMAL\_NUM}}; \textcolor{comment}{//position is changed}}
+\DoxyCodeLine{1503             \}}
+\DoxyCodeLine{1504             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'D'} \&\& current.size()) \textcolor{comment}{//if the delete button was pressed}}
+\DoxyCodeLine{1505             \{}
+\DoxyCodeLine{1506                 current.pop\_back(); \textcolor{comment}{//one character is deleted}}
+\DoxyCodeLine{1507 }
+\DoxyCodeLine{1508                 \textcolor{keywordflow}{if} (current.size() == 0) \textcolor{comment}{//if the string is empty}}
+\DoxyCodeLine{1509                 \{}
+\DoxyCodeLine{1510                     active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1511                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1512                 \}}
+\DoxyCodeLine{1513 }
+\DoxyCodeLine{1514                 \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'s'} || current.back() == \textcolor{charliteral}{'n'}) \textcolor{comment}{//if the last character of the string after deleting is}}
+\DoxyCodeLine{1515                 \{                                                   \textcolor{comment}{// cos, sin or tan}}
+\DoxyCodeLine{1516                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}}; }
+\DoxyCodeLine{1517                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1518                 \}}
+\DoxyCodeLine{1519 }
+\DoxyCodeLine{1520                 \textcolor{keywordflow}{if} (current.size() > 1 \&\& \mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current.back()))}
+\DoxyCodeLine{1521                 \{}
+\DoxyCodeLine{1522                     \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'-'} \&\& (current[current.size() - 2] == \textcolor{charliteral}{'('} || current[current.size() - 2] == \textcolor{charliteral}{'n'} ||}
+\DoxyCodeLine{1523                         current[current.size() - 2] == \textcolor{charliteral}{'s'})) \textcolor{comment}{//if the deleted character was a digit and the number was negative,}}
+\DoxyCodeLine{1524                     \{                                        \textcolor{comment}{//then it reamains in this position}}
+\DoxyCodeLine{1525                         position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1526                         active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1527                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1528                     \}}
+\DoxyCodeLine{1529                     \textcolor{comment}{//otherwise the position changes}}
+\DoxyCodeLine{1530                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1531                     op\_count\_strcnt = 1; \textcolor{comment}{//by default, there is at least one operator}}
+\DoxyCodeLine{1532                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(current[current.size()-2])) \textcolor{comment}{// but there can be two}}
+\DoxyCodeLine{1533                         op\_count\_strcnt = 2;}
+\DoxyCodeLine{1534                 \}}
+\DoxyCodeLine{1535                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'('}) \textcolor{comment}{//if the number was inside bracket}}
+\DoxyCodeLine{1536                 \{}
+\DoxyCodeLine{1537                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}};}
+\DoxyCodeLine{1538                 \}}
+\DoxyCodeLine{1539                 }
+\DoxyCodeLine{1540                 \textcolor{keywordflow}{return}; \textcolor{comment}{//no characters are added}}
+\DoxyCodeLine{1541 }
+\DoxyCodeLine{1542             \}}
+\DoxyCodeLine{1543             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{')'} \&\& bracket\_count > 0) \textcolor{comment}{//if closed bracket can be added}}
+\DoxyCodeLine{1544             \{}
+\DoxyCodeLine{1545                 bracket\_count--; \textcolor{comment}{// number of open brackets is decreased}}
+\DoxyCodeLine{1546                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\_BRACKET}};}
+\DoxyCodeLine{1547             \}}
+\DoxyCodeLine{1548             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'('} \&\& current.size() == 0) \textcolor{comment}{//if the first character added is a open bracket}}
+\DoxyCodeLine{1549             \{}
+\DoxyCodeLine{1550                 bracket\_count++;}
+\DoxyCodeLine{1551                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}};}
+\DoxyCodeLine{1552             \}}
+\DoxyCodeLine{1553             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'N'}) \textcolor{comment}{//negate button was pressed}}
+\DoxyCodeLine{1554             \{}
+\DoxyCodeLine{1555                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = current.size()-1; i >= 0; i--) \textcolor{comment}{//the string is searched from the end }}
+\DoxyCodeLine{1556                 \{}
+\DoxyCodeLine{1557 }
+\DoxyCodeLine{1558                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current[i])) \textcolor{comment}{//if operator was found, that means that the current number ends}}
+\DoxyCodeLine{1559                     \{}
+\DoxyCodeLine{1560                         \textcolor{comment}{//if the number is not already negative}}
+\DoxyCodeLine{1561                         \textcolor{keywordflow}{if} (i > 0 \&\& (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(current[i-1]) || current[i-1] == \textcolor{charliteral}{')'} || current[i-1] == \textcolor{charliteral}{'!'}))}
+\DoxyCodeLine{1562                         \{}
+\DoxyCodeLine{1563                             active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1564                             current.insert(i+1, 1, \textcolor{charliteral}{'-'}); \textcolor{comment}{//minus is inserted}}
+\DoxyCodeLine{1565                         \}}
+\DoxyCodeLine{1566                         \textcolor{comment}{//if the number is negative}}
+\DoxyCodeLine{1567                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1568                         \{}
+\DoxyCodeLine{1569                             active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1570                             current.erase(i, 1); \textcolor{comment}{//minus is deleted}}
+\DoxyCodeLine{1571                         \}}
+\DoxyCodeLine{1572                         }
+\DoxyCodeLine{1573                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1574                     \}}
+\DoxyCodeLine{1575                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((current[i] == \textcolor{charliteral}{'n'} || current[i] == \textcolor{charliteral}{'s'})) \textcolor{comment}{//ensures the negation after goniometric functions}}
+\DoxyCodeLine{1576                     \{}
+\DoxyCodeLine{1577                         current.insert(i+1, 1, \textcolor{charliteral}{'-'}); }
+\DoxyCodeLine{1578                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1579                     \}}
+\DoxyCodeLine{1580                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current[i] == \textcolor{charliteral}{'('}) \textcolor{comment}{// if the number is in bracket, it can also be negated}}
+\DoxyCodeLine{1581                     \{}
+\DoxyCodeLine{1582                         active\_minus = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1583                         current.insert(i+1, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1584                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1585                     \}}
+\DoxyCodeLine{1586                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i == 0) \textcolor{comment}{//or if the number has no operators in front, then it can also be negated}}
+\DoxyCodeLine{1587                     \{}
+\DoxyCodeLine{1588                         active\_minus = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1589                         current.insert(0, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1590                     \}}
+\DoxyCodeLine{1591                 \}}
+\DoxyCodeLine{1592                 \textcolor{keywordflow}{return}; \textcolor{comment}{//nothing else is added to the string}}
+\DoxyCodeLine{1593             \}}
+\DoxyCodeLine{1594             \textcolor{keywordflow}{else} \textcolor{comment}{//if something else is added}}
+\DoxyCodeLine{1595                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1596 }
+\DoxyCodeLine{1597             current.push\_back(addition); \textcolor{comment}{//the character is added to the string}}
+\DoxyCodeLine{1598             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1599 }
+\DoxyCodeLine{1600         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{DECIMAL\_NUM}}: \textcolor{comment}{//when digits after decimal point are added}}
+\DoxyCodeLine{1601             op\_count\_strcnt = 0;}
+\DoxyCodeLine{1602 }
+\DoxyCodeLine{1603             \textcolor{comment}{//these characters cannot be added after a floating point number}}
+\DoxyCodeLine{1604             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'.'} || addition == \textcolor{charliteral}{'('} || (addition == \textcolor{charliteral}{')'} \&\& current.back() == \textcolor{charliteral}{'.'}))}
+\DoxyCodeLine{1605                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1606 }
+\DoxyCodeLine{1607             \textcolor{comment}{//modulo and factorial cannot be used after floating point number}}
+\DoxyCodeLine{1608             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'+'} || addition == \textcolor{charliteral}{'-'} || addition == \textcolor{charliteral}{'*'} || addition == \textcolor{charliteral}{'/'} || addition == \textcolor{charliteral}{'\string^'} || }
+\DoxyCodeLine{1609                 addition == \textcolor{charliteral}{'?'})}
+\DoxyCodeLine{1610             \{}
+\DoxyCodeLine{1611                 \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'.'}) \textcolor{comment}{//if the last character is '.', then it is stripped}}
+\DoxyCodeLine{1612                     current.pop\_back();}
+\DoxyCodeLine{1613                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1614 }
+\DoxyCodeLine{1615                     op\_count\_strcnt++; \textcolor{comment}{//the operator count is increased}}
+\DoxyCodeLine{1616             \}}
+\DoxyCodeLine{1617             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'D'}) \textcolor{comment}{//deletion is pressed}}
+\DoxyCodeLine{1618             \{}
+\DoxyCodeLine{1619                 \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'.'}) \textcolor{comment}{//the state has to change when the deleted character is '.'}}
+\DoxyCodeLine{1620                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1621                 current.pop\_back();}
+\DoxyCodeLine{1622                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1623             \}}
+\DoxyCodeLine{1624             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'!'} || addition == \textcolor{charliteral}{'\%'}) \textcolor{comment}{//modulo and factorial cannot be used after floating point number}}
+\DoxyCodeLine{1625                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1626             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{')'} \&\& bracket\_count > 0) \textcolor{comment}{//if it is possible to add closed bracket}}
+\DoxyCodeLine{1627             \{}
+\DoxyCodeLine{1628                 bracket\_count--;}
+\DoxyCodeLine{1629                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\_BRACKET}};}
+\DoxyCodeLine{1630             \}}
+\DoxyCodeLine{1631             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'N'})}
+\DoxyCodeLine{1632             \{}
+\DoxyCodeLine{1633                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = current.size()-1; i >=0; i--) \textcolor{comment}{//the string is searched from the end }}
+\DoxyCodeLine{1634                 \{}
+\DoxyCodeLine{1635 }
+\DoxyCodeLine{1636                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current[i])) \textcolor{comment}{//if operator was found, that means that the current number ends}}
+\DoxyCodeLine{1637                     \{}
+\DoxyCodeLine{1638                         \textcolor{comment}{//if the number is not already negative}}
+\DoxyCodeLine{1639                         \textcolor{keywordflow}{if} (i > 0 \&\& (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(current[i-1]) || current[i-1] == \textcolor{charliteral}{')'} || current[i-1] == \textcolor{charliteral}{'!'}))}
+\DoxyCodeLine{1640                         \{}
+\DoxyCodeLine{1641                             active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1642                             current.insert(i+1, 1, \textcolor{charliteral}{'-'}); \textcolor{comment}{//minus is added}}
+\DoxyCodeLine{1643                         \}}
+\DoxyCodeLine{1644                         \textcolor{comment}{//if it is negative}}
+\DoxyCodeLine{1645                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1646                         \{}
+\DoxyCodeLine{1647                             active\_minus = \textcolor{keyword}{false}; }
+\DoxyCodeLine{1648                             current.erase(i, 1); \textcolor{comment}{//minus is removed}}
+\DoxyCodeLine{1649                         \}}
+\DoxyCodeLine{1650                         }
+\DoxyCodeLine{1651                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1652                     \}}
+\DoxyCodeLine{1653                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((current[i] == \textcolor{charliteral}{'n'} || current[i] == \textcolor{charliteral}{'s'})) \textcolor{comment}{//if the number is as an argument of a goniometric function}}
+\DoxyCodeLine{1654                     \{}
+\DoxyCodeLine{1655                         current.insert(i+1, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1656                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1657                     \}}
+\DoxyCodeLine{1658                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current[i] == \textcolor{charliteral}{'('}) \textcolor{comment}{// if the number is in bracket, it can also be negated}}
+\DoxyCodeLine{1659                     \{}
+\DoxyCodeLine{1660                         active\_minus = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1661                         current.insert(i+1, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1662                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1663                     \}}
+\DoxyCodeLine{1664                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i == 0) \textcolor{comment}{//if the equation starts with the negated number}}
+\DoxyCodeLine{1665                     \{}
+\DoxyCodeLine{1666                         active\_minus = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1667                         current.insert(0, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1668                     \}}
+\DoxyCodeLine{1669                 \}}
+\DoxyCodeLine{1670                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1671             \}}
+\DoxyCodeLine{1672             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(addition)) \textcolor{comment}{//if something other than digit and the cases above is added, }}
+\DoxyCodeLine{1673                 \textcolor{keywordflow}{return};                  \textcolor{comment}{//then it is not added to the string}}
+\DoxyCodeLine{1674                 }
+\DoxyCodeLine{1675             current.push\_back(addition); \textcolor{comment}{//character is added to the string}}
+\DoxyCodeLine{1676             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1677 }
+\DoxyCodeLine{1678 }
+\DoxyCodeLine{1679         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}}: \textcolor{comment}{//when multiple opperators are added}}
+\DoxyCodeLine{1680             \textcolor{comment}{//theses characters cannot be added after operator}}
+\DoxyCodeLine{1681             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'.'} || (addition == \textcolor{charliteral}{')'} \&\& current.back() != \textcolor{charliteral}{'!'}) || addition == \textcolor{charliteral}{'N'})}
+\DoxyCodeLine{1682                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1683 }
+\DoxyCodeLine{1684             \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(addition) \&\& current.back() != \textcolor{charliteral}{'!'}) \textcolor{comment}{//when digit is added and the operator is not factorial}}
+\DoxyCodeLine{1685                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}}; \textcolor{comment}{//position is changed}}
+\DoxyCodeLine{1686 }
+\DoxyCodeLine{1687             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(addition)) \textcolor{comment}{//if more operators are added}}
+\DoxyCodeLine{1688             \{}
+\DoxyCodeLine{1689                 \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'!'} \&\& !\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(current.back())) \textcolor{comment}{//factorail can be added only after digit}}
+\DoxyCodeLine{1690                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1691 }
+\DoxyCodeLine{1692                 op\_count\_strcnt++; }
+\DoxyCodeLine{1693 }
+\DoxyCodeLine{1694                 \textcolor{keywordflow}{if} ((addition != \textcolor{charliteral}{'-'} \&\& op\_count\_strcnt == 2)) \textcolor{comment}{//if the newly added operator is not minus, which represents the}}
+\DoxyCodeLine{1695                 \{                                              \textcolor{comment}{//the negation of the next number, than the operators are changed}}
+\DoxyCodeLine{1696                     current.pop\_back(); \textcolor{comment}{//operator is removed}}
+\DoxyCodeLine{1697                     op\_count\_strcnt--;}
+\DoxyCodeLine{1698                     active\_int\_op = \textcolor{keyword}{false};}
+\DoxyCodeLine{1699                 \}}
+\DoxyCodeLine{1700                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op\_count\_strcnt == 2) \textcolor{comment}{//otherwise minus is activated}}
+\DoxyCodeLine{1701                     active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1702 }
+\DoxyCodeLine{1703                 \textcolor{keywordflow}{if} (op\_count\_strcnt == 3) \textcolor{comment}{//if there is already an operator and minus after that operator and another operator}}
+\DoxyCodeLine{1704                 \{                         \textcolor{comment}{//is added, then two has to be deleted first}}
+\DoxyCodeLine{1705                     current.pop\_back(); \textcolor{comment}{//operator is removed}}
+\DoxyCodeLine{1706                     current.pop\_back(); \textcolor{comment}{//operator is removed}}
+\DoxyCodeLine{1707                     op\_count\_strcnt = 1; \textcolor{comment}{//number of operators is reseted to 1}}
+\DoxyCodeLine{1708                     active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1709                     active\_int\_op = \textcolor{keyword}{false};}
+\DoxyCodeLine{1710                 \}}
+\DoxyCodeLine{1711 }
+\DoxyCodeLine{1712                 \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'\%'}) \textcolor{comment}{//if modulo is added, the next number has to be integer}}
+\DoxyCodeLine{1713                     active\_int\_op = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1714             \}}
+\DoxyCodeLine{1715             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'D'}) \textcolor{comment}{//when deleting}}
+\DoxyCodeLine{1716             \{}
+\DoxyCodeLine{1717                 active\_minus = \textcolor{keyword}{false}; \textcolor{comment}{//if there is a minus, which has the function of negation, it will be always deleted first}}
+\DoxyCodeLine{1718                 current.pop\_back(); \textcolor{comment}{//charcter is removed}}
+\DoxyCodeLine{1719 }
+\DoxyCodeLine{1720                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(current.back())) \textcolor{comment}{//if the last character of the string is digit}}
+\DoxyCodeLine{1721                 \{}
+\DoxyCodeLine{1722                     active\_int\_op = \textcolor{keyword}{false};  \textcolor{comment}{//modulo was surely removed}}
+\DoxyCodeLine{1723                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};  \textcolor{comment}{//by default}}
+\DoxyCodeLine{1724                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = current.size()-2; i >= 0; i--)}
+\DoxyCodeLine{1725                     \{}
+\DoxyCodeLine{1726                         \textcolor{keywordflow}{if} (current[i] == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{1727                         \{}
+\DoxyCodeLine{1728                             position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{DECIMAL\_NUM}}; \textcolor{comment}{//if the number was floating point}}
+\DoxyCodeLine{1729                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1730                         \}}
+\DoxyCodeLine{1731                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current[i])) \textcolor{comment}{//if the number wasn't floating point}}
+\DoxyCodeLine{1732                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1733                     \}}
+\DoxyCodeLine{1734                 \}}
+\DoxyCodeLine{1735                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{')'}) }
+\DoxyCodeLine{1736                 \{}
+\DoxyCodeLine{1737                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\_BRACKET}};}
+\DoxyCodeLine{1738                 \}}
+\DoxyCodeLine{1739                     op\_count\_strcnt--; \textcolor{comment}{//number od operators is decreased}}
+\DoxyCodeLine{1740 }
+\DoxyCodeLine{1741                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1742             \}}
+\DoxyCodeLine{1743             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'('} \&\& op\_count\_strcnt > 0) \textcolor{comment}{//open bracket can be added only after operator}}
+\DoxyCodeLine{1744             \{}
+\DoxyCodeLine{1745                 bracket\_count++;}
+\DoxyCodeLine{1746                 op\_count\_strcnt = 0;}
+\DoxyCodeLine{1747                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}};}
+\DoxyCodeLine{1748             \}}
+\DoxyCodeLine{1749             \textcolor{comment}{//goniometric functions}}
+\DoxyCodeLine{1750             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'s'} \&\& current.back() != \textcolor{charliteral}{'!'})}
+\DoxyCodeLine{1751             \{}
+\DoxyCodeLine{1752                 current += \textcolor{stringliteral}{"sin"}; \textcolor{comment}{//3 charcters have to be inserted}}
+\DoxyCodeLine{1753                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1754                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1755             \}}
+\DoxyCodeLine{1756             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'c'} \&\& current.back() != \textcolor{charliteral}{'!'})}
+\DoxyCodeLine{1757             \{}
+\DoxyCodeLine{1758                 current += \textcolor{stringliteral}{"cos"}; \textcolor{comment}{//3 charcters have to be inserted}}
+\DoxyCodeLine{1759                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1760                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1761             \}}
+\DoxyCodeLine{1762             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'t'} \&\& current.back() != \textcolor{charliteral}{'!'})}
+\DoxyCodeLine{1763             \{}
+\DoxyCodeLine{1764                 current += \textcolor{stringliteral}{"tan"}; \textcolor{comment}{//3 charcters have to be inserted}}
+\DoxyCodeLine{1765                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1766                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1767             \}}
+\DoxyCodeLine{1768             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{')'}) \textcolor{comment}{//at this point the current.back() == !, so close bracket can be added }}
+\DoxyCodeLine{1769             \{}
+\DoxyCodeLine{1770                 bracket\_count--;}
+\DoxyCodeLine{1771                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\_BRACKET}};}
+\DoxyCodeLine{1772             \}}
+\DoxyCodeLine{1773             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1774                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1775 }
+\DoxyCodeLine{1776             current.push\_back(addition); \textcolor{comment}{//the charcter is inserted to the stirng}}
+\DoxyCodeLine{1777             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1778         }
+\DoxyCodeLine{1779         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}}:}
+\DoxyCodeLine{1780             \textcolor{comment}{//charcters that cannot be added after open bracket}}
+\DoxyCodeLine{1781             \textcolor{keywordflow}{if} ((addition == \textcolor{charliteral}{')'} || \mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(addition) || addition == \textcolor{charliteral}{'.'} || addition == \textcolor{charliteral}{'N'}) \&\& }
+\DoxyCodeLine{1782                 (addition != \textcolor{charliteral}{'-'} || current.back() == \textcolor{charliteral}{'-'}))}
+\DoxyCodeLine{1783                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1784             }
+\DoxyCodeLine{1785             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(addition)) \textcolor{comment}{//when digit is added}}
+\DoxyCodeLine{1786             \{}
+\DoxyCodeLine{1787                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1788             \} }
+\DoxyCodeLine{1789             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'-'}) \textcolor{comment}{//minus that works as a negation is added}}
+\DoxyCodeLine{1790             \{}
+\DoxyCodeLine{1791                 active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1792             \}}
+\DoxyCodeLine{1793             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'D'}) \textcolor{comment}{//when deleting}}
+\DoxyCodeLine{1794             \{}
+\DoxyCodeLine{1795                 current.pop\_back();}
+\DoxyCodeLine{1796                 bracket\_count--; \textcolor{comment}{//by default the bracket count is decreased}}
+\DoxyCodeLine{1797                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current.back())) \textcolor{comment}{//if the last not deleted character is an operator}}
+\DoxyCodeLine{1798                 \{}
+\DoxyCodeLine{1799                     \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'-'} \&\& \mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current[current.size()-2])) \textcolor{comment}{//either there are two}}
+\DoxyCodeLine{1800                     \{}
+\DoxyCodeLine{1801                         op\_count\_strcnt = 2;}
+\DoxyCodeLine{1802                     \}}
+\DoxyCodeLine{1803                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1804                         op\_count\_strcnt = 1; \textcolor{comment}{//or one}}
+\DoxyCodeLine{1805                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1806                 \}}
+\DoxyCodeLine{1807                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'n'} || current.back() == \textcolor{charliteral}{'s'}) \textcolor{comment}{//if the last not deleted charcter represents goniometric function}}
+\DoxyCodeLine{1808                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1809 }
+\DoxyCodeLine{1810                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1811             \}}
+\DoxyCodeLine{1812             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'('}) \textcolor{comment}{//if the addition is another open bracket}}
+\DoxyCodeLine{1813                 bracket\_count++;}
+\DoxyCodeLine{1814 }
+\DoxyCodeLine{1815             \textcolor{comment}{//when goniometric functions are added directly after open bracket}}
+\DoxyCodeLine{1816             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{1817             \{}
+\DoxyCodeLine{1818                 current += \textcolor{stringliteral}{"sin"};}
+\DoxyCodeLine{1819                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1820                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1821             \}}
+\DoxyCodeLine{1822             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'c'})}
+\DoxyCodeLine{1823             \{}
+\DoxyCodeLine{1824                 current += \textcolor{stringliteral}{"cos"};}
+\DoxyCodeLine{1825                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1826                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1827             \}}
+\DoxyCodeLine{1828             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{1829             \{}
+\DoxyCodeLine{1830                 current += \textcolor{stringliteral}{"tan"};}
+\DoxyCodeLine{1831                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}};}
+\DoxyCodeLine{1832                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1833             \}}
+\DoxyCodeLine{1834             \textcolor{keywordflow}{else} \textcolor{comment}{//if something else}}
+\DoxyCodeLine{1835                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1836 }
+\DoxyCodeLine{1837             current.push\_back(addition); \textcolor{comment}{//open bracket is added to the string}}
+\DoxyCodeLine{1838             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1839 }
+\DoxyCodeLine{1840         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\_BRACKET}}:}
+\DoxyCodeLine{1841             \textcolor{comment}{//these character cannot be added after a close bracket}}
+\DoxyCodeLine{1842             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'('} || addition == \textcolor{charliteral}{'.'} || \mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(addition))}
+\DoxyCodeLine{1843                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1844             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'!'}) \textcolor{comment}{//factorial is added}}
+\DoxyCodeLine{1845             \{}
+\DoxyCodeLine{1846                 op\_count\_strcnt = 0;}
+\DoxyCodeLine{1847                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1848             \}}
+\DoxyCodeLine{1849             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(addition)) \textcolor{comment}{//operator is added}}
+\DoxyCodeLine{1850             \{}
+\DoxyCodeLine{1851                 active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1852                 op\_count\_strcnt = 1;}
+\DoxyCodeLine{1853                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1854             \}}
+\DoxyCodeLine{1855             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'D'}) \textcolor{comment}{//when deleting}}
+\DoxyCodeLine{1856             \{}
+\DoxyCodeLine{1857                 current.pop\_back();}
+\DoxyCodeLine{1858                 bracket\_count++; \textcolor{comment}{//number of open bracekts have to be increased}}
+\DoxyCodeLine{1859                 }
+\DoxyCodeLine{1860                 \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{')'}) \textcolor{comment}{//if there are multiple close brackets}}
+\DoxyCodeLine{1861                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1862 }
+\DoxyCodeLine{1863                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current.back() == \textcolor{charliteral}{'!'}) \textcolor{comment}{//if the last charcter is factorial, other operators cannot occure}}
+\DoxyCodeLine{1864                 \{}
+\DoxyCodeLine{1865                     op\_count\_strcnt = 0;}
+\DoxyCodeLine{1866                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1867                 \}}
+\DoxyCodeLine{1868                 \textcolor{keywordflow}{else} \textcolor{comment}{//when the last operator is a digit}}
+\DoxyCodeLine{1869                 \{}
+\DoxyCodeLine{1870                     active\_int\_op = \textcolor{keyword}{false};}
+\DoxyCodeLine{1871                     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}}; \textcolor{comment}{//by default it is an integer}}
+\DoxyCodeLine{1872                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = current.size()-2; i >= 0; i--)}
+\DoxyCodeLine{1873                     \{}
+\DoxyCodeLine{1874                         \textcolor{keywordflow}{if} (current[i] == \textcolor{charliteral}{'.'}) \textcolor{comment}{//if decimal dot occures, it is a floating point number}}
+\DoxyCodeLine{1875                         \{}
+\DoxyCodeLine{1876                             position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{DECIMAL\_NUM}};}
+\DoxyCodeLine{1877                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1878                         \}}
+\DoxyCodeLine{1879                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current[i]))}
+\DoxyCodeLine{1880                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1881                     \}}
+\DoxyCodeLine{1882                 \}}
+\DoxyCodeLine{1883                 }
+\DoxyCodeLine{1884                 \textcolor{keywordflow}{return}; \textcolor{comment}{//no characters are added}}
+\DoxyCodeLine{1885             \}}
+\DoxyCodeLine{1886             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'N'}) \textcolor{comment}{//negation}}
+\DoxyCodeLine{1887             \{}
+\DoxyCodeLine{1888                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = current.size()-1, j = 0; i >= 0; i--) \textcolor{comment}{//the string is searched from the end}}
+\DoxyCodeLine{1889                 \{}
+\DoxyCodeLine{1890                     \textcolor{keywordflow}{if} (current[i] == \textcolor{charliteral}{')'}) \textcolor{comment}{//close brackets are skipped and the counter is increased}}
+\DoxyCodeLine{1891                         j++;}
+\DoxyCodeLine{1892                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j \&\& current[i] == \textcolor{charliteral}{'('}) \textcolor{comment}{//open brackets are skipped only when closed bracket was skipped before}}
+\DoxyCodeLine{1893                         j--;}
+\DoxyCodeLine{1894                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j == 0 \&\& \mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(current[i])) \textcolor{comment}{//when operator occures}}
+\DoxyCodeLine{1895                     \{}
+\DoxyCodeLine{1896                         \textcolor{comment}{//when the number is positive, negation is added}}
+\DoxyCodeLine{1897                         \textcolor{keywordflow}{if} (i > 0 \&\& (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(current[i-1]) || current[i-1] == \textcolor{charliteral}{')'} || current[i-1] == \textcolor{charliteral}{'!'}))}
+\DoxyCodeLine{1898                         \{}
+\DoxyCodeLine{1899                             active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1900                             current.insert(i+1, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1901                         \}}
+\DoxyCodeLine{1902                         \textcolor{comment}{//when the number is negative, the negation is deleted}}
+\DoxyCodeLine{1903                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1904                         \{}
+\DoxyCodeLine{1905                             active\_minus = \textcolor{keyword}{false};}
+\DoxyCodeLine{1906                             current.erase(i, 1);}
+\DoxyCodeLine{1907                         \}}
+\DoxyCodeLine{1908                         }
+\DoxyCodeLine{1909                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1910                     \}}
+\DoxyCodeLine{1911                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j == 0 \&\& (current[i] == \textcolor{charliteral}{'n'} || current[i] == \textcolor{charliteral}{'s'})) \textcolor{comment}{//neagtion inside goniometric function}}
+\DoxyCodeLine{1912                     \{}
+\DoxyCodeLine{1913                         current.insert(i+1, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1914                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1915                     \}}
+\DoxyCodeLine{1916                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j == 0 \&\& current[i] == \textcolor{charliteral}{'('}) \textcolor{comment}{//negation in front of open bracket}}
+\DoxyCodeLine{1917                     \{}
+\DoxyCodeLine{1918                         active\_minus = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1919                         current.insert(i+1, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1920                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1921                     \}}
+\DoxyCodeLine{1922 }
+\DoxyCodeLine{1923                     \textcolor{keywordflow}{if} (i == 0) \textcolor{comment}{//negation when the bracket is the first part of the equation }}
+\DoxyCodeLine{1924                     \{}
+\DoxyCodeLine{1925                         active\_minus = \textcolor{keyword}{true};    }
+\DoxyCodeLine{1926                         current.insert(i, 1, \textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1927                     \}}
+\DoxyCodeLine{1928                 \}}
+\DoxyCodeLine{1929 }
+\DoxyCodeLine{1930                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1931             \}}
+\DoxyCodeLine{1932             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (bracket\_count \&\& addition == \textcolor{charliteral}{')'}) \textcolor{comment}{//the close bracket is added}}
+\DoxyCodeLine{1933                 bracket\_count--;}
+\DoxyCodeLine{1934             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1935                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1936 }
+\DoxyCodeLine{1937             current.push\_back(addition); \textcolor{comment}{//the character is added to the string}}
+\DoxyCodeLine{1938             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1939         }
+\DoxyCodeLine{1940         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}}:}
+\DoxyCodeLine{1941             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'-'} \&\& current.back() != \textcolor{charliteral}{'-'}) \textcolor{comment}{//to create negative number inside the goniometric function}}
+\DoxyCodeLine{1942             \{}
+\DoxyCodeLine{1943                 current.push\_back(\textcolor{charliteral}{'-'});}
+\DoxyCodeLine{1944                 active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1945             \}}
+\DoxyCodeLine{1946             \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(addition)) \textcolor{comment}{//digit is added}}
+\DoxyCodeLine{1947             \{}
+\DoxyCodeLine{1948                 current.push\_back(addition);}
+\DoxyCodeLine{1949                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}};}
+\DoxyCodeLine{1950             \}}
+\DoxyCodeLine{1951             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'('}) \textcolor{comment}{//open bracket is added}}
+\DoxyCodeLine{1952             \{}
+\DoxyCodeLine{1953                 bracket\_count++;}
+\DoxyCodeLine{1954                 position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}};}
+\DoxyCodeLine{1955                 current.push\_back(\textcolor{charliteral}{'('});}
+\DoxyCodeLine{1956             \}}
+\DoxyCodeLine{1957             \textcolor{keywordflow}{if} (addition == \textcolor{charliteral}{'D'})}
+\DoxyCodeLine{1958             \{}
+\DoxyCodeLine{1959                 current.erase(current.end()-3, current.end()); \textcolor{comment}{// 3 characters have to be deleted}}
+\DoxyCodeLine{1960                 \textcolor{keywordflow}{if} (current.size()) }
+\DoxyCodeLine{1961                 \{}
+\DoxyCodeLine{1962                     \textcolor{keywordflow}{if} (current.size() == 1 \&\& current.back() == \textcolor{charliteral}{'-'}) \textcolor{comment}{//when there is only one character and it is minus}}
+\DoxyCodeLine{1963                     \{                                                 \textcolor{comment}{//then the position is going to be a negative integer}}
+\DoxyCodeLine{1964                         position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}}; }
+\DoxyCodeLine{1965                         active\_minus = \textcolor{keyword}{true};}
+\DoxyCodeLine{1966                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1967                     \}}
+\DoxyCodeLine{1968                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(current.back())) \textcolor{comment}{//if the currently last character is an operator,}}
+\DoxyCodeLine{1969                     \{                                   \textcolor{comment}{//then the number of oprators is loaded}}
+\DoxyCodeLine{1970                         op\_count\_strcnt = 1;}
+\DoxyCodeLine{1971                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(current[current.size() - 2]))}
+\DoxyCodeLine{1972                             op\_count\_strcnt = 2;}
+\DoxyCodeLine{1973                         position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}};}
+\DoxyCodeLine{1974                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1975                     \}}
+\DoxyCodeLine{1976                 \}}
+\DoxyCodeLine{1977             \}}
+\DoxyCodeLine{1978 }
+\DoxyCodeLine{1979             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1980 }
+\DoxyCodeLine{1981         \textcolor{keywordflow}{case} \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}{NO\_STATE}}: \textcolor{comment}{//should not happen}}
+\DoxyCodeLine{1982             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1983     \}}
+\DoxyCodeLine{1984 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_logic_a168e83ee3c44c0fb69a97ad9d26645b1}\label{class_logic_a168e83ee3c44c0fb69a97ad9d26645b1}} 
+\index{Logic@{Logic}!erase\_equation@{erase\_equation}}
+\index{erase\_equation@{erase\_equation}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{erase\_equation()}{erase\_equation()}}
+{\footnotesize\ttfamily void Logic\+::erase\+\_\+equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Erases the currently ongoing equation (including the equation string control), sets everything to the starting state, so that new equation can start. 
+
+
+
+Definition at line 1986 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1987 \{}
+\DoxyCodeLine{1988     \textcolor{comment}{//erases the variables that are used for the current ongoing equation and sets them to the default values}}
+\DoxyCodeLine{1989     result = 0;}
+\DoxyCodeLine{1990     result\_parts.clear();}
+\DoxyCodeLine{1991     result\_parts\_op.clear();}
+\DoxyCodeLine{1992     result\_parts\_state.clear();}
+\DoxyCodeLine{1993     result\_parts\_op.push\_back(0);}
+\DoxyCodeLine{1994     result\_parts.push\_back(0);}
+\DoxyCodeLine{1995     result\_parts\_state.push\_back(\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a399c982a0c65189d8b619a10443b9a8e}{START\_STATE}});}
+\DoxyCodeLine{1996     \mbox{\hyperlink{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}{reset\_equation\_string\_control}}(); \textcolor{comment}{//the equation control also has to be reseted}}
+\DoxyCodeLine{1997 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_logic_aa5558988a60bada489bb0ddfae4466b4}\label{class_logic_aa5558988a60bada489bb0ddfae4466b4}} 
+\index{Logic@{Logic}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{get\_result()}{get\_result()}}
+{\footnotesize\ttfamily long double Logic\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the result 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_logic_a109d65be4a56e17e256d83bcc6912acb}\label{class_logic_a109d65be4a56e17e256d83bcc6912acb}} 
+\index{Logic@{Logic}!real\_time\_calculation@{real\_time\_calculation}}
+\index{real\_time\_calculation@{real\_time\_calculation}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{real\_time\_calculation()}{real\_time\_calculation()}}
+{\footnotesize\ttfamily int Logic\+::real\+\_\+time\+\_\+calculation (\begin{DoxyParamCaption}\item[{char}]{input\+\_\+char,  }\item[{std\+::string \&}]{output\+\_\+str\+\_\+result,  }\item[{std\+::string \&}]{output\+\_\+str\+\_\+equation }\end{DoxyParamCaption})}
+
+
+
+Provides new result after any added character, supported characters\+: \textquotesingle{}0\textquotesingle{}-\/\textquotesingle{}9\textquotesingle{} for digits \textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}, \textquotesingle{}$^\wedge$\textquotesingle{}, \textquotesingle{}?\textquotesingle{}, \textquotesingle{}\textquotesingle{}, \textquotesingle{}!\textquotesingle{}, \textquotesingle{}=\textquotesingle{} for operators (\textquotesingle{}?\textquotesingle{} represents the nrooth of a number) \textquotesingle{}.\textquotesingle{} for decimal point \textquotesingle{}N\textquotesingle{} for negation of a number \textquotesingle{}D\textquotesingle{} for deletion of the last character \textquotesingle{}C\textquotesingle{} for clearing the equation \textquotesingle{}(\textquotesingle{}, \textquotesingle{})\textquotesingle{} for brackets other characters are ignored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+char} & New addition to an ongoing equation or starts a new equation. \\
+\hline
+{\em output\+\_\+str\+\_\+result} & String where the new result, or the error message will be stored \\
+\hline
+{\em output\+\_\+str\+\_\+equation} & String where the ongoing equation will be stored in the text form \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success (includes wrong character), otherwise 1, when mathematical error occures 
+\end{DoxyReturn}
+
+
+Definition at line 1111 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1112 \{}
+\DoxyCodeLine{1113     \textcolor{comment}{//setting the locale, so that the decimal dot is used rather than comma}}
+\DoxyCodeLine{1114     std::setlocale(LC\_ALL, \textcolor{stringliteral}{"C"});}
+\DoxyCodeLine{1115     \textcolor{comment}{//static variables that holds data about the ongoing equation}}
+\DoxyCodeLine{1116     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}};}
+\DoxyCodeLine{1117     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} add\_position;}
+\DoxyCodeLine{1118     \textcolor{keyword}{static} \textcolor{keywordtype}{char} last\_input;}
+\DoxyCodeLine{1119     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} digit\_count;}
+\DoxyCodeLine{1120 }
+\DoxyCodeLine{1121     \textcolor{comment}{//when the equation is cleared or the last character is deleted, then the equation is reseted to the starting state }}
+\DoxyCodeLine{1122     \textcolor{keywordflow}{if} (input\_char == \textcolor{charliteral}{'C'} || (input\_char == \textcolor{charliteral}{'D'} \&\& output\_str\_equation.size() == 1))}
+\DoxyCodeLine{1123     \{}
+\DoxyCodeLine{1124         \mbox{\hyperlink{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}{reset\_equation\_string\_control}}();}
+\DoxyCodeLine{1125         output\_str\_equation.clear();}
+\DoxyCodeLine{1126         output\_str\_result.clear();}
+\DoxyCodeLine{1127         \textcolor{comment}{//output\_str\_result.push\_back('0');}}
+\DoxyCodeLine{1128         add\_to\_calculation(\textcolor{charliteral}{'C'}, last\_input);}
+\DoxyCodeLine{1129         \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1130         add\_position = 0;}
+\DoxyCodeLine{1131     \}}
+\DoxyCodeLine{1132     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (input\_char == \textcolor{charliteral}{'D'}) \textcolor{comment}{//when character is deleted}}
+\DoxyCodeLine{1133     \{}
+\DoxyCodeLine{1134         last\_input = output\_str\_equation.back();}
+\DoxyCodeLine{1135         \textcolor{comment}{//the request is sent to the equation string cotrol to change the string accordingly}}
+\DoxyCodeLine{1136         \mbox{\hyperlink{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}{equation\_string\_control}}(output\_str\_equation, input\_char);}
+\DoxyCodeLine{1137 }
+\DoxyCodeLine{1138         \textcolor{keywordflow}{if} (last\_input == \textcolor{charliteral}{'n'} || last\_input == \textcolor{charliteral}{'s'}) \textcolor{comment}{//if goniometric function was deleted}}
+\DoxyCodeLine{1139         \{}
+\DoxyCodeLine{1140             add\_position -= 2; \textcolor{comment}{//the position of currentlu added character to a equation is reduced accordingly}}
+\DoxyCodeLine{1141         \}}
+\DoxyCodeLine{1142         \textcolor{keywordflow}{if} (add\_position == output\_str\_equation.size() + 1) \textcolor{comment}{//if the deleted character was already added to the equation }}
+\DoxyCodeLine{1143         \{                                                   \textcolor{comment}{//f.e. operators aren't added immidiately, but with the first following digit3}}
+\DoxyCodeLine{1144             \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1145             \textcolor{keywordflow}{if} (last\_input == \textcolor{charliteral}{'('} || last\_input == \textcolor{charliteral}{')'} || last\_input == \textcolor{charliteral}{'!'}) \textcolor{comment}{//the equation has to be recalculated}}
+\DoxyCodeLine{1146             \{}
+\DoxyCodeLine{1147                 recalculate\_after\_delete(output\_str\_equation);}
+\DoxyCodeLine{1148             \}}
+\DoxyCodeLine{1149             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (last\_input == \textcolor{charliteral}{'.'}) \textcolor{comment}{//get state has to be informed, that integer was created from a floating point number}}
+\DoxyCodeLine{1150             \{}
+\DoxyCodeLine{1151                 get\_state(\textcolor{charliteral}{'q'}, 0);}
+\DoxyCodeLine{1152             \}}
+\DoxyCodeLine{1153             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (output\_str\_equation.back() == \textcolor{charliteral}{'('}) \textcolor{comment}{//if the current last character in the equation string is bracket,}}
+\DoxyCodeLine{1154             \{                                           \textcolor{comment}{//then the equation has to be recalculated, to avoid}}
+\DoxyCodeLine{1155                 currently\_entered\_num = 0;              \textcolor{comment}{//calculation with 0}}
+\DoxyCodeLine{1156                 decimal\_position = 0;}
+\DoxyCodeLine{1157                 recalculate\_after\_delete(output\_str\_equation);}
+\DoxyCodeLine{1158             \}}
+\DoxyCodeLine{1159             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(output\_str\_equation.back())) \textcolor{comment}{//if the current last character is an operator, then}}
+\DoxyCodeLine{1160             \{                                                    \textcolor{comment}{//the equation has to be recalculated, but without the operators,}}
+\DoxyCodeLine{1161                 currently\_entered\_num = 0;                       \textcolor{comment}{//so that the operator can be changed}}
+\DoxyCodeLine{1162                 decimal\_position = 0;}
+\DoxyCodeLine{1163                 \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{1164                 add\_position--;}
+\DoxyCodeLine{1165                 \textcolor{keywordtype}{char} hold1 = output\_str\_equation.back(); \textcolor{comment}{//the first operator is separated}}
+\DoxyCodeLine{1166                 output\_str\_equation.pop\_back();}
+\DoxyCodeLine{1167                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(output\_str\_equation.back())) \textcolor{comment}{//if there is +-, *-, /-, ... two operators have to be separated}}
+\DoxyCodeLine{1168                 \{}
+\DoxyCodeLine{1169                     add\_position--;}
+\DoxyCodeLine{1170                     \textcolor{keywordtype}{char} hold2 = output\_str\_equation.back(); \textcolor{comment}{//the first operator is separated}}
+\DoxyCodeLine{1171                     output\_str\_equation.pop\_back();}
+\DoxyCodeLine{1172                     recalculate\_after\_delete(output\_str\_equation); }
+\DoxyCodeLine{1173                     output\_str\_equation.push\_back(hold2);   \textcolor{comment}{//operator is added back}}
+\DoxyCodeLine{1174                     output\_str\_equation.push\_back(hold1);   \textcolor{comment}{//operator is added back}}
+\DoxyCodeLine{1175                 \}}
+\DoxyCodeLine{1176                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1177                 \{}
+\DoxyCodeLine{1178                     recalculate\_after\_delete(output\_str\_equation);}
+\DoxyCodeLine{1179                     output\_str\_equation.push\_back(hold1); \textcolor{comment}{//operator is added back}}
+\DoxyCodeLine{1180                 \}}
+\DoxyCodeLine{1181             \}}
+\DoxyCodeLine{1182             \textcolor{comment}{//if the deleted operator was a gonimetric function, the result has to be recalculated}}
+\DoxyCodeLine{1183         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (output\_str\_equation.back() == \textcolor{charliteral}{'n'} || output\_str\_equation.back() == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{1184             \{}
+\DoxyCodeLine{1185                 currently\_entered\_num = 0;              \textcolor{comment}{//calculation with 0}}
+\DoxyCodeLine{1186                 decimal\_position = 0;}
+\DoxyCodeLine{1187                 recalculate\_after\_delete(output\_str\_equation);}
+\DoxyCodeLine{1188             \}}
+\DoxyCodeLine{1189             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(last\_input)) \textcolor{comment}{//the currently entered number has to change }}
+\DoxyCodeLine{1190             \{}
+\DoxyCodeLine{1191                 \textcolor{keywordflow}{if} (decimal\_position > 2) \textcolor{comment}{//if it is a floating point number}}
+\DoxyCodeLine{1192                 \{}
+\DoxyCodeLine{1193                     \textcolor{keywordflow}{if} (negate)}
+\DoxyCodeLine{1194                         currently\_entered\_num += (last\_input - \textcolor{charliteral}{'0'})/decimal\_position;}
+\DoxyCodeLine{1195                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1196                         currently\_entered\_num -= (last\_input - \textcolor{charliteral}{'0'})/decimal\_position;}
+\DoxyCodeLine{1197                 \}}
+\DoxyCodeLine{1198                 \textcolor{keywordflow}{else} \textcolor{comment}{//if it is an integer}}
+\DoxyCodeLine{1199                 \{}
+\DoxyCodeLine{1200                     \textcolor{keywordflow}{if} (negate)}
+\DoxyCodeLine{1201                         currently\_entered\_num = (currently\_entered\_num + (last\_input - \textcolor{charliteral}{'0'})) / 10;}
+\DoxyCodeLine{1202                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1203                         currently\_entered\_num = (currently\_entered\_num - (last\_input - \textcolor{charliteral}{'0'})) / 10;}
+\DoxyCodeLine{1204                 \}}
+\DoxyCodeLine{1205 }
+\DoxyCodeLine{1206                 decimal\_position /= 10; \textcolor{comment}{// the decimal position is decresed}}
+\DoxyCodeLine{1207                 }
+\DoxyCodeLine{1208                 \textcolor{comment}{//the new number has to be included to the calculation}}
+\DoxyCodeLine{1209                 \textcolor{keywordflow}{if} (result\_parts\_op.back() == \textcolor{charliteral}{'/'} \&\& currently\_entered\_num > -\mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}} \&\& currently\_entered\_num < \mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{1210                 \{}
+\DoxyCodeLine{1211                     \textcolor{comment}{//if the last operation is division and the currentlu entered number is 0, division by 0 is avoided}}
+\DoxyCodeLine{1212                     currently\_entered\_num = 1; }
+\DoxyCodeLine{1213                     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{1214                     \{}
+\DoxyCodeLine{1215                         math\_calculation();}
+\DoxyCodeLine{1216 }
+\DoxyCodeLine{1217                     \}}
+\DoxyCodeLine{1218                     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception \&e)}
+\DoxyCodeLine{1219                     \{}
+\DoxyCodeLine{1220                         output\_str\_result.clear();}
+\DoxyCodeLine{1221                         output\_str\_result.assign(e.what());}
+\DoxyCodeLine{1222                         currently\_entered\_num = 0;}
+\DoxyCodeLine{1223                         \textcolor{keywordflow}{if} (add\_position > 0)}
+\DoxyCodeLine{1224                             add\_position--;}
+\DoxyCodeLine{1225                         \textcolor{keywordflow}{return} 1;    }
+\DoxyCodeLine{1226                     \}}
+\DoxyCodeLine{1227                     currently\_entered\_num = 0;}
+\DoxyCodeLine{1228                 \}}
+\DoxyCodeLine{1229                 \textcolor{keywordflow}{else} \textcolor{comment}{//otherwise the reusult is calculated}}
+\DoxyCodeLine{1230                 \{}
+\DoxyCodeLine{1231                     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{1232                     \{}
+\DoxyCodeLine{1233                         math\_calculation();}
+\DoxyCodeLine{1234                     \}}
+\DoxyCodeLine{1235                     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception \&e)}
+\DoxyCodeLine{1236                     \{}
+\DoxyCodeLine{1237                         output\_str\_result.clear();}
+\DoxyCodeLine{1238                         output\_str\_result.assign(e.what());}
+\DoxyCodeLine{1239                         \textcolor{keywordflow}{if} (add\_position > 0)}
+\DoxyCodeLine{1240                             add\_position--;}
+\DoxyCodeLine{1241                         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{1242                     \}}
+\DoxyCodeLine{1243                 \}}
+\DoxyCodeLine{1244 }
+\DoxyCodeLine{1245             \}}
+\DoxyCodeLine{1246                  }
+\DoxyCodeLine{1247             \textcolor{keywordflow}{if} (add\_position > 0)}
+\DoxyCodeLine{1248                 add\_position--; \textcolor{comment}{//the add position is decreased}}
+\DoxyCodeLine{1249         \}}
+\DoxyCodeLine{1250 }
+\DoxyCodeLine{1251         \textcolor{comment}{//if the current last character is a digit and operator or closed bracket was deleted, then the current number and data}}
+\DoxyCodeLine{1252         \textcolor{comment}{//about the number have to be reloaded (negative/positive, number of decimal places)}}
+\DoxyCodeLine{1253         \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(output\_str\_equation.back()) \&\& (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(last\_input) || last\_input == \textcolor{charliteral}{')'}))}
+\DoxyCodeLine{1254         \{}
+\DoxyCodeLine{1255             decimal\_position = 1;}
+\DoxyCodeLine{1256             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = output\_str\_equation.size()-1; i >= 0; i--)}
+\DoxyCodeLine{1257             \{}
+\DoxyCodeLine{1258                 \textcolor{keywordflow}{if} (output\_str\_equation[i] == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{1259                 \{}
+\DoxyCodeLine{1260                     get\_state(\textcolor{charliteral}{'Q'}, 0);}
+\DoxyCodeLine{1261                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1262                 \}}
+\DoxyCodeLine{1263                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{IS\_OPERATOR}}(output\_str\_equation[i]) || i == 0)}
+\DoxyCodeLine{1264                 \{}
+\DoxyCodeLine{1265                     get\_state(\textcolor{charliteral}{'q'}, 0);}
+\DoxyCodeLine{1266                     decimal\_position = 1;}
+\DoxyCodeLine{1267                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1268                 \}}
+\DoxyCodeLine{1269                 decimal\_position *= 10;}
+\DoxyCodeLine{1270             \}}
+\DoxyCodeLine{1271             \textcolor{keywordflow}{if} (currently\_entered\_num < 0) }
+\DoxyCodeLine{1272                 negate = \textcolor{keyword}{true};}
+\DoxyCodeLine{1273             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1274                 negate = \textcolor{keyword}{false};}
+\DoxyCodeLine{1275             }
+\DoxyCodeLine{1276         \}}
+\DoxyCodeLine{1277     \}}
+\DoxyCodeLine{1278     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (input\_char != \textcolor{charliteral}{'='}) \textcolor{comment}{//if digit, operators or brackets are added to the equation}}
+\DoxyCodeLine{1279     \{}
+\DoxyCodeLine{1280         \textcolor{comment}{//adding the character to the string, that is going to be diplayed in the window}}
+\DoxyCodeLine{1281         \textcolor{comment}{//the string is changed only when the input character is valid}}
+\DoxyCodeLine{1282         \mbox{\hyperlink{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}{equation\_string\_control}}(output\_str\_equation, input\_char);}
+\DoxyCodeLine{1283         }
+\DoxyCodeLine{1284         \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(input\_char) \&\& !\mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} \&\& output\_str\_equation.size() > 1) \textcolor{comment}{//if operator is added}}
+\DoxyCodeLine{1285         \{}
+\DoxyCodeLine{1286             add\_position = output\_str\_equation.size() - 1; \textcolor{comment}{//the position is rembered, and the next addition to the equation,}}
+\DoxyCodeLine{1287             \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{true};                                    \textcolor{comment}{//will be performed after a first digit is added }}
+\DoxyCodeLine{1288         \}}
+\DoxyCodeLine{1289         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (input\_char == \textcolor{charliteral}{'N'} \&\& add\_position != output\_str\_equation.size())\textcolor{comment}{//\&\& (output\_str\_equation.size() \&\& !IS\_OPERATOR(output\_str\_equation.back()))))}}
+\DoxyCodeLine{1290         \textcolor{comment}{//when the nagation button was pressed and the equation string changed (either minus was added, or subtracted)}}
+\DoxyCodeLine{1291         \{                                                    }
+\DoxyCodeLine{1292             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{1293             \{}
+\DoxyCodeLine{1294                 add\_to\_calculation(\textcolor{charliteral}{'N'}, last\_input); \textcolor{comment}{//the current number is negated}}
+\DoxyCodeLine{1295                 math\_calculation();}
+\DoxyCodeLine{1296             \}}
+\DoxyCodeLine{1297             \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{1298             \{}
+\DoxyCodeLine{1299                 output\_str\_result.clear();}
+\DoxyCodeLine{1300                 output\_str\_result.assign(e.what());}
+\DoxyCodeLine{1301                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{1302             \}}
+\DoxyCodeLine{1303             }
+\DoxyCodeLine{1304             add\_position = output\_str\_equation.size();}
+\DoxyCodeLine{1305             \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1306         \}}
+\DoxyCodeLine{1307         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(input\_char) \&\& add\_position < output\_str\_equation.size() \&\& input\_char != \textcolor{charliteral}{'N'} \&\& }
+\DoxyCodeLine{1308                  output\_str\_equation.back() == input\_char) \textcolor{comment}{//if the added character is not operator and there are characters to be}}
+\DoxyCodeLine{1309         \textcolor{comment}{//added (add\_position < str.size()), then the remaining characters are added         }}
+\DoxyCodeLine{1310         \{ }
+\DoxyCodeLine{1311             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = add\_position; i < output\_str\_equation.size(); i++)}
+\DoxyCodeLine{1312             \{   }
+\DoxyCodeLine{1313                 digit\_count++;}
+\DoxyCodeLine{1314                 \textcolor{keywordflow}{if} (digit\_count >= 20 \&\& \mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(output\_str\_equation[i])) \textcolor{comment}{//limitation to the size of a number}}
+\DoxyCodeLine{1315                 \{                                                          \textcolor{comment}{//solves the double overflow}}
+\DoxyCodeLine{1316                     output\_str\_equation.pop\_back();}
+\DoxyCodeLine{1317                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{1318                 \}}
+\DoxyCodeLine{1319                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (digit\_count == 0xFFFFFFFF)}
+\DoxyCodeLine{1320                     digit\_count = 20;}
+\DoxyCodeLine{1321                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(output\_str\_equation[i]))}
+\DoxyCodeLine{1322                     digit\_count = 0;}
+\DoxyCodeLine{1323 }
+\DoxyCodeLine{1324                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{1325                 \{}
+\DoxyCodeLine{1326                     add\_to\_calculation(output\_str\_equation[i], last\_input); \textcolor{comment}{//charcter is added to the calculation}}
+\DoxyCodeLine{1327                     \textcolor{keywordflow}{if} (output\_str\_equation[i] == \textcolor{charliteral}{'t'} || output\_str\_equation[i] == \textcolor{charliteral}{'c'} || output\_str\_equation[i] == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{1328                         i += 2; \textcolor{comment}{//when sin, cos, tan are 3 character, two of them have to be skipped}}
+\DoxyCodeLine{1329                 }
+\DoxyCodeLine{1330                     \textcolor{keywordflow}{if} (output\_str\_result[0] == \textcolor{charliteral}{'C'} || output\_str\_result[0] == \textcolor{charliteral}{'D'} || output\_str\_result[0] == \textcolor{charliteral}{'D'})}
+\DoxyCodeLine{1331                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1332                 \}}
+\DoxyCodeLine{1333                 \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e) \textcolor{comment}{//when something fails (division by 0, factoria of negative number..)}}
+\DoxyCodeLine{1334                 \{}
+\DoxyCodeLine{1335                     output\_str\_result.clear();}
+\DoxyCodeLine{1336                     output\_str\_result.assign(e.what());}
+\DoxyCodeLine{1337                     add\_position = output\_str\_equation.size();}
+\DoxyCodeLine{1338                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{1339                 \}}
+\DoxyCodeLine{1340                 last\_input = output\_str\_equation[i]; \textcolor{comment}{//the current input is stored to the last input, which is going to be used}}
+\DoxyCodeLine{1341             \}                                        \textcolor{comment}{//in the next call of this function}}
+\DoxyCodeLine{1342             add\_position = output\_str\_equation.size();}
+\DoxyCodeLine{1343             \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1344         \}}
+\DoxyCodeLine{1345     \}}
+\DoxyCodeLine{1346     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (input\_char == \textcolor{charliteral}{'='}) \textcolor{comment}{//equal button was pressed}}
+\DoxyCodeLine{1347     \{}
+\DoxyCodeLine{1348         \textcolor{keywordflow}{try}}
+\DoxyCodeLine{1349         \{}
+\DoxyCodeLine{1350             \textcolor{comment}{//add to calculation calculates the result, and then is reseted}}
+\DoxyCodeLine{1351             add\_to\_calculation(\textcolor{charliteral}{'='}, last\_input);}
+\DoxyCodeLine{1352         \}}
+\DoxyCodeLine{1353         \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{1354         \{}
+\DoxyCodeLine{1355             output\_str\_result.clear();}
+\DoxyCodeLine{1356             output\_str\_result.assign(e.what());}
+\DoxyCodeLine{1357             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{1358         \}}
+\DoxyCodeLine{1359         output\_str\_equation.clear();}
+\DoxyCodeLine{1360         output\_str\_equation.assign(output\_str\_result);}
+\DoxyCodeLine{1361 }
+\DoxyCodeLine{1362         \textcolor{comment}{//resets the string control}}
+\DoxyCodeLine{1363         \mbox{\hyperlink{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}{reset\_equation\_string\_control}}();}
+\DoxyCodeLine{1364         add\_position = output\_str\_result.size(); \textcolor{comment}{//the add position has to be reseted}}
+\DoxyCodeLine{1365         \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{1366     \}}
+\DoxyCodeLine{1367 }
+\DoxyCodeLine{1368     \textcolor{keywordflow}{if} (\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_char) || input\_char == \textcolor{charliteral}{'!'} || input\_char == \textcolor{charliteral}{'='} || input\_char == \textcolor{charliteral}{'D'} || input\_char == \textcolor{charliteral}{'N'})}
+\DoxyCodeLine{1369     \textcolor{comment}{// when some of these buttons were pressed, the calculated result has to be diplayed on the calculator}}
+\DoxyCodeLine{1370     \{}
+\DoxyCodeLine{1371         \textcolor{comment}{//output\_str\_result.clear();}}
+\DoxyCodeLine{1372         output\_str\_result.assign(std::to\_string(result)); \textcolor{comment}{//the result is converted to string}}
+\DoxyCodeLine{1373         output\_str\_result.erase(output\_str\_result.find\_last\_not\_of(\textcolor{charliteral}{'0'}) + 1, std::string::npos); \textcolor{comment}{//trailing 0 are striped}}
+\DoxyCodeLine{1374         \textcolor{keywordflow}{if} (output\_str\_result.back() == \textcolor{charliteral}{'.'}) \textcolor{comment}{//id the last character is '.', then it is also striped}}
+\DoxyCodeLine{1375             output\_str\_result.pop\_back();}
+\DoxyCodeLine{1376 }
+\DoxyCodeLine{1377     \}}
+\DoxyCodeLine{1378 }
+\DoxyCodeLine{1379     \textcolor{keywordflow}{if} (!output\_str\_result.size()) \textcolor{comment}{//if the strig is empty, then 0 is displayed}}
+\DoxyCodeLine{1380        \{}
+\DoxyCodeLine{1381         output\_str\_result.push\_back(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{1382        \} }
+\DoxyCodeLine{1383 }
+\DoxyCodeLine{1384     \textcolor{keywordflow}{if} (output\_str\_equation.size() \&\& add\_position > 0)}
+\DoxyCodeLine{1385         last\_input = output\_str\_equation[add\_position-1]; \textcolor{comment}{//the last input is stored, if it is possible}}
+\DoxyCodeLine{1386     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1387         last\_input = 0; \textcolor{comment}{//if not, it does not really matter, what the last input will be}}
+\DoxyCodeLine{1388 }
+\DoxyCodeLine{1389     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{1390 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}\label{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}} 
+\index{Logic@{Logic}!reset\_equation\_string\_control@{reset\_equation\_string\_control}}
+\index{reset\_equation\_string\_control@{reset\_equation\_string\_control}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{reset\_equation\_string\_control()}{reset\_equation\_string\_control()}}
+{\footnotesize\ttfamily void Logic\+::reset\+\_\+equation\+\_\+string\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the equation string control to the starting state. 
+
+
+
+Definition at line 1392 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1393 \{}
+\DoxyCodeLine{1394     \textcolor{comment}{//variables, that holds data about the ongoing equation are reseted}}
+\DoxyCodeLine{1395     bracket\_count = 0;}
+\DoxyCodeLine{1396     op\_count\_strcnt = 0;}
+\DoxyCodeLine{1397     position = \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}{NO\_STATE}};}
+\DoxyCodeLine{1398 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_logic_a014ef0be6c84ba01f492c8f789409cd3}\label{class_logic_a014ef0be6c84ba01f492c8f789409cd3}} 
+\index{Logic@{Logic}!result\_print@{result\_print}}
+\index{result\_print@{result\_print}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{result\_print()}{result\_print()}}
+{\footnotesize\ttfamily void Logic\+::result\+\_\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the result to stdout. 
+
+
+
+Definition at line 33 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     \textcolor{comment}{//result is printed to stdin}}
+\DoxyCodeLine{36     std::cout << result << std::endl;}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_logic_a93c8b12c4525549e7da3731ae7c53c7c}\label{class_logic_a93c8b12c4525549e7da3731ae7c53c7c}} 
+\index{Logic@{Logic}!calculate@{calculate}}
+\index{calculate@{calculate}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{calculate()}{calculate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Logic\+::calculate (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+\_\+str,  }\item[{std\+::string \&}]{output\+\_\+str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Parse the input string to numbers and operators and uses. 
+
+to calculate the final result 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+str} & String with the equation that needs to be calculated, this string has to be parsed, so it has mathematical sence, otherwise the behaviour is undefined \\
+\hline
+{\em output\+\_\+str} & Variable where the final result converted from long double, or an error message will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returs 0 on success otherwise 1 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{270 \{}
+\DoxyCodeLine{271     \textcolor{comment}{//adding R resets the current calculation}}
+\DoxyCodeLine{272     add\_to\_calculation(\textcolor{charliteral}{'R'}, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{273     output\_str.clear();}
+\DoxyCodeLine{274     std::setlocale(LC\_ALL, \textcolor{stringliteral}{"C"});}
+\DoxyCodeLine{275     std::size\_t increase;}
+\DoxyCodeLine{276     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < input\_str.size(); i++)}
+\DoxyCodeLine{277     \{}
+\DoxyCodeLine{278         \textcolor{comment}{//the test can be converted to a number if this conditions is true}}
+\DoxyCodeLine{279         \textcolor{keywordflow}{if} ((input\_str[i] >= \textcolor{charliteral}{'0'} \&\& input\_str[i] <= \textcolor{charliteral}{'9'}) || (i == 0 \&\& input\_str.size() > 1 \&\& }
+\DoxyCodeLine{280             input\_str[i] == \textcolor{charliteral}{'-'} \&\& \mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_str[1])) || ( input\_str[i] == \textcolor{charliteral}{'-'} \&\& }
+\DoxyCodeLine{281           (input\_str[i-1] == \textcolor{charliteral}{'+'} || input\_str[i-1] == \textcolor{charliteral}{'-'} || input\_str[i-1] == \textcolor{charliteral}{'*'} || input\_str[i-1] == \textcolor{charliteral}{'/'} || }
+\DoxyCodeLine{282           input\_str[i-1] == \textcolor{charliteral}{'\string^'} || input\_str[i-1] == \textcolor{charliteral}{'?'} ||  input\_str[i-1] == \textcolor{charliteral}{'\%'} || input\_str[i-1] == \textcolor{charliteral}{'('}) }
+\DoxyCodeLine{283           \&\& i != input\_str.size() - 1 \&\& (i + 1 < input\_str.size() \&\& input\_str[i+1] != \textcolor{charliteral}{'('})))}
+\DoxyCodeLine{284         \{}
+\DoxyCodeLine{285             currently\_entered\_num = std::stold(\&input\_str[i], \&increase);}
+\DoxyCodeLine{286             i += increase; \textcolor{comment}{//the iterator is increased for the lenght of the converted number}}
+\DoxyCodeLine{287         \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289         \textcolor{keywordflow}{if} (i < input\_str.size())}
+\DoxyCodeLine{290         \{}
+\DoxyCodeLine{291             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{292             \{}
+\DoxyCodeLine{293                 \textcolor{comment}{//the first operator is added}}
+\DoxyCodeLine{294                 add\_to\_calculation(input\_str[i], (i > 0)?input\_str[i-1]:0);}
+\DoxyCodeLine{295                 }
+\DoxyCodeLine{296                 \textcolor{comment}{//if there are multiple operators, they are also added}}
+\DoxyCodeLine{297                 \textcolor{keywordflow}{while} (i + 2 < input\_str.size() \&\& !\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_str[i + 1]) \&\& !\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_str[i + 2]))}
+\DoxyCodeLine{298                 \{                 }
+\DoxyCodeLine{299                     i++;  }
+\DoxyCodeLine{300                     \textcolor{keywordflow}{if} (input\_str[i] == \textcolor{charliteral}{'-'} \&\& (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(input\_str[i-1])))}
+\DoxyCodeLine{301                     \{}
+\DoxyCodeLine{302                         add\_to\_calculation(\textcolor{charliteral}{'M'}, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{303                     \}}
+\DoxyCodeLine{304                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{305                     \{}
+\DoxyCodeLine{306                         add\_to\_calculation(input\_str[i], input\_str[i - 1]);}
+\DoxyCodeLine{307                     \}}
+\DoxyCodeLine{308                     }
+\DoxyCodeLine{309                     \textcolor{keywordflow}{if}(input\_str[i] == \textcolor{charliteral}{'s'} || input\_str[i] == \textcolor{charliteral}{'c'} || input\_str[i] == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{310                         i+=2;}
+\DoxyCodeLine{311                 \}}
+\DoxyCodeLine{312             \}}
+\DoxyCodeLine{313             \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{314             \{}
+\DoxyCodeLine{315                 \textcolor{comment}{//when the calculation fails f.e. division by 0}}
+\DoxyCodeLine{316                 output\_str.clear();}
+\DoxyCodeLine{317                 output\_str.assign(e.what());}
+\DoxyCodeLine{318                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{319             \}}
+\DoxyCodeLine{320         \}}
+\DoxyCodeLine{321     }
+\DoxyCodeLine{322     \}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{325     \{   }
+\DoxyCodeLine{326         \textcolor{comment}{//the final result is calculated by simulatinf the press of '='}}
+\DoxyCodeLine{327         add\_to\_calculation(\textcolor{charliteral}{'='}, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{328     \}}
+\DoxyCodeLine{329     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception \&e)}
+\DoxyCodeLine{330     \{}
+\DoxyCodeLine{331         output\_str.assign(e.what());}
+\DoxyCodeLine{332         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{333     \}}
+\DoxyCodeLine{334     }
+\DoxyCodeLine{335     \textcolor{comment}{//the double result is converted to text, which is displayed on the calculator screen}}
+\DoxyCodeLine{336     output\_str.assign(std::to\_string(result));}
+\DoxyCodeLine{337     \textcolor{comment}{//the trailing 0 are stripped}}
+\DoxyCodeLine{338     output\_str.erase(output\_str.find\_last\_not\_of(\textcolor{charliteral}{'0'}) + 1, std::string::npos);}
+\DoxyCodeLine{339     \textcolor{comment}{//if the number wasn't floating point number the decimal dot is stripped}}
+\DoxyCodeLine{340     \textcolor{keywordflow}{if} (output\_str.back() == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{341         output\_str.pop\_back();}
+\DoxyCodeLine{342         }
+\DoxyCodeLine{343     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{344 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_logic_acd1683cf5265bacac5e0710ddb123e03}\label{class_logic_acd1683cf5265bacac5e0710ddb123e03}} 
+\index{Logic@{Logic}!calculate@{calculate}}
+\index{calculate@{calculate}!Logic@{Logic}}
+\subsubsection{\texorpdfstring{calculate()}{calculate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Logic\+::calculate (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+\_\+str,  }\item[{long double \&}]{output\+\_\+result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Parses the input string to numbers and operators and uses. 
+
+to calculate the final result 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+str} & String with the equation that needs to be calculated, this string has to be parsed, so it has mathematical sence, otherwise the behaviour is undefined \\
+\hline
+{\em output\+\_\+result} & variable where the final result will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success otherwise 1 and std\+::runtime\+\_\+exception is thrown 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file logic.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{347 \{}
+\DoxyCodeLine{348     \textcolor{comment}{//adding R resets the current calculation}}
+\DoxyCodeLine{349     add\_to\_calculation(\textcolor{charliteral}{'R'}, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{350     std::size\_t increase;}
+\DoxyCodeLine{351     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < input\_str.size(); i++)}
+\DoxyCodeLine{352     \{}
+\DoxyCodeLine{353         \textcolor{comment}{//the test can be converted to a number if this conditions is true}}
+\DoxyCodeLine{354         \textcolor{keywordflow}{if} ((input\_str[i] >= \textcolor{charliteral}{'0'} \&\& input\_str[i] <= \textcolor{charliteral}{'9'}) || (i == 0 \&\& input\_str.size() > 1 \&\& }
+\DoxyCodeLine{355             input\_str[i] == \textcolor{charliteral}{'-'} \&\& \mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_str[1])) || ( input\_str[i] == \textcolor{charliteral}{'-'} \&\& }
+\DoxyCodeLine{356           (input\_str[i-1] == \textcolor{charliteral}{'+'} || input\_str[i-1] == \textcolor{charliteral}{'-'} || input\_str[i-1] == \textcolor{charliteral}{'*'} || input\_str[i-1] == \textcolor{charliteral}{'/'} || }
+\DoxyCodeLine{357           input\_str[i-1] == \textcolor{charliteral}{'\string^'} || input\_str[i-1] == \textcolor{charliteral}{'?'} ||  input\_str[i-1] == \textcolor{charliteral}{'\%'} || input\_str[i-1] == \textcolor{charliteral}{'('}) }
+\DoxyCodeLine{358           \&\& i != input\_str.size() - 1 \&\& (i + 1 < input\_str.size() \&\& input\_str[i+1] != \textcolor{charliteral}{'('})))}
+\DoxyCodeLine{359         \{}
+\DoxyCodeLine{360             currently\_entered\_num = std::stold(\&input\_str[i], \&increase); }
+\DoxyCodeLine{361             i += increase; \textcolor{comment}{//the iterator is increased for the lenght of the converted number}}
+\DoxyCodeLine{362         \}}
+\DoxyCodeLine{363         \textcolor{keywordflow}{if} (i < input\_str.size())}
+\DoxyCodeLine{364         \{}
+\DoxyCodeLine{365             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{366             \{}
+\DoxyCodeLine{367                 \textcolor{comment}{//the first operator is added}}
+\DoxyCodeLine{368                 add\_to\_calculation(input\_str[i], (i > 0)?input\_str[i-1]:0);}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370                 \textcolor{comment}{//if there are multiple operators, they are also added}}
+\DoxyCodeLine{371                 \textcolor{keywordflow}{while} (i + 2 < input\_str.size() \&\& !\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_str[i + 1]) \&\& !\mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{IS\_DIGIT}}(input\_str[i + 2]))}
+\DoxyCodeLine{372                 \{  }
+\DoxyCodeLine{373                     \textcolor{keywordflow}{if} (input\_str[++i] == \textcolor{charliteral}{'-'} \&\& (\mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{IS\_OPERATOR\_NF}}(input\_str[i-1])))}
+\DoxyCodeLine{374                         add\_to\_calculation(\textcolor{charliteral}{'M'}, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{375                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{376                         add\_to\_calculation(input\_str[i], input\_str[i - 1]);}
+\DoxyCodeLine{377                     }
+\DoxyCodeLine{378                     \textcolor{keywordflow}{if}(input\_str[i] == \textcolor{charliteral}{'s'} || input\_str[i] == \textcolor{charliteral}{'c'} || input\_str[i] == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{379                         i+=2;}
+\DoxyCodeLine{380                 \}}
+\DoxyCodeLine{381             \}}
+\DoxyCodeLine{382             \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{383             \{}
+\DoxyCodeLine{384                 \textcolor{comment}{// if the calculation fails, the result is set to NAN }}
+\DoxyCodeLine{385                 output\_result = NAN;}
+\DoxyCodeLine{386                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{387             \}}
+\DoxyCodeLine{388         \}}
+\DoxyCodeLine{389     }
+\DoxyCodeLine{390     \}}
+\DoxyCodeLine{391     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{392     \{}
+\DoxyCodeLine{393         \textcolor{comment}{//simulates pressing equal button}}
+\DoxyCodeLine{394         add\_to\_calculation(\textcolor{charliteral}{'='}, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{395     \}}
+\DoxyCodeLine{396     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception \&e)}
+\DoxyCodeLine{397     \{}
+\DoxyCodeLine{398         output\_result = NAN;}
+\DoxyCodeLine{399         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{400     \}}
+\DoxyCodeLine{401     }
+\DoxyCodeLine{402     \textcolor{comment}{//the result is loaded to the output\_result}}
+\DoxyCodeLine{403     output\_result = result;}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{406 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{logic_8h}{logic.\+h}}\item 
+source/\mbox{\hyperlink{logic_8cpp}{logic.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,157 @@
+
+Date: 28. 4. 2020
+
+Files:
+    |
+    |-doc/
+    |   |
+    |   |-documentation.pdf
+    |   |
+    |   |-html/
+    |   |   |
+    |   |   |-*
+    |   |
+    |   |-latex/
+    |   |   |
+    |   |   |-*
+    |
+    |-install/
+    |   |
+    |	|-PP_calc-1.0.0-Linux.deb
+    |   |
+    |   |-PP_calc_dynamic-1.0.0-Linux.deb
+    |
+    |-repo/
+    |   |
+    |   |-CMakeLists.txt
+    |   |
+    |   |-debugging.pdf
+    |   |
+    |   |-dokumentace.pdf
+    |   |
+    |   |-hodnoceni.txt
+    |   |
+    |   |-LICENSE.txt
+    |   |
+    |   |-mockup/
+    |   |   |
+    |   |   |-convertor.png
+    |   |   |
+    |   |   |-currency.png
+    |   |   |
+    |   |   |-graph.png
+    |   |   |
+    |   |   |-mockup_description.txt
+    |   |   |
+    |   |   |-mstack.png
+    |   |
+    |   |-plan/
+    |   |   |
+    |   |   |-Wire_frame1.jpg
+    |   |   |
+    |   |   |-Wire_frame2.jpg
+    |   |   |
+    |   |   |-xfolty17_xmihol00_xsokol15_plan.txt
+    |   |   |
+    |   |   |-xfolty17_xmihol00_xsokol15_plan01.png
+    |   |   |
+    |   |   |-xfolty17_xmihol00_xsokol15_plan02.png
+    |   |
+    |   |-profiling/
+    |   |   |
+    |   |   |-vystup.1.callgrind
+    |   |   |
+    |   |   |-vystup.2.callgrind
+    |   |   |
+    |   |   |-vystup.3.callgrind
+    |   |   |
+    |   |   |-profiling.txt
+    |   |   |
+    |   |   |-profiling_screenshots.pdf
+    |   |   |
+    |   |   |-stddev_profiling_10
+    |   |   |
+    |   |   |-stddev_profiling_100
+    |   |   |
+    |   |   |-stddev_profiling_1000
+    |   |
+    |   |-README.md
+    |   |
+    |   |-screenshot.png
+    |   |
+    |   |-screenshot_pro.png
+    |   |
+    |   |-skutecnost.txt
+    |   |
+    |   |-src/
+    |   |   |
+    |   |   |-Doxyfile
+    |   |   |
+    |   |   |-google_test/
+    |   |   |   |
+    |   |   |   |-*
+    |   |   |
+    |   |   |-include/
+    |   |   |   |
+    |   |   |   |-graphics.h
+    |   |   |   |
+    |   |   |   |-logic.h
+    |   |   |   |
+    |   |   |   |-our_math.h
+    |   |   |   |
+    |   |   |   |-test.h
+    |   |   |
+    |   |   |-installation/
+    |   |   |   |
+    |   |   |   |-calc_icon.ico
+    |   |   |   |
+    |   |   |   |-PP_calc.desktop
+    |   |   |   |
+    |   |   |   |-PP_calc_dynamic.desktop
+    |   |   |   |
+    |   |   |   |-PP_calc_uninstaller
+    |   |   |
+    |   |   |-Makefile
+    |   |   |
+    |   |   |-source/
+    |   |   |   |
+    |   |   |   |-CMakeLists.txt
+    |   |   |   |
+    |   |   |   |-grap.glade
+    |   |   |   |
+    |   |   |   |-graphics.cpp
+    |   |   |   |
+    |   |   |   |-logic.cpp
+    |   |   |   |
+    |   |   |   |-main.cpp
+    |   |   |   |
+    |   |   |   |-our_math.cpp
+    |   |   |   |
+    |   |   |   |-stddev.cpp
+    |   |   |   |
+    |   |   |   |-test_mock_stub.cpp
+    |   |   |   |
+    |   |   |   |-test.cpp
+    |   |   |
+    |   |   |-stddev_tests/
+    |   |   |   |
+    |   |   |   |-test1
+    |   |   |   |
+    |   |   |   |-test2_fail
+    |   |   |   |
+    |   |   |   |-test3
+    |   |   |   |
+    |   |   |   |-test4_fail
+    |   |
+    |   |-.editorconfig
+    |   |
+    |   |-.gitignore
+    |   |
+    |   |-.git/
+    |   |   |
+    |   |   |-*
+    |   |
+
+
+
+

@@ -1,0 +1,91 @@
+\hypertarget{class_xpow__test}{}\section{Xpow\+\_\+test Class Reference}
+\label{class_xpow__test}\index{Xpow\_test@{Xpow\_test}}
+
+
+class that tests the X-\/power calculation(X -\/ long double)  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Xpow\+\_\+test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_xpow__test}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_xpow__test_a561006cff5ae01179db6d42fa3e9fc70}{pow\+\_\+test}} (long double num, long double exp, long double expected\+\_\+result, bool fail\+\_\+expected)
+\begin{DoxyCompactList}\small\item\em function that compares calculation of X-\/power with expected result \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests the X-\/power calculation(X -\/ long double) 
+
+Definition at line 167 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xpow__test_a561006cff5ae01179db6d42fa3e9fc70}\label{class_xpow__test_a561006cff5ae01179db6d42fa3e9fc70}} 
+\index{Xpow\_test@{Xpow\_test}!pow\_test@{pow\_test}}
+\index{pow\_test@{pow\_test}!Xpow\_test@{Xpow\_test}}
+\subsubsection{\texorpdfstring{pow\_test()}{pow\_test()}}
+{\footnotesize\ttfamily bool Xpow\+\_\+test\+::pow\+\_\+test (\begin{DoxyParamCaption}\item[{long double}]{num,  }\item[{long double}]{exp,  }\item[{long double}]{expected\+\_\+result,  }\item[{bool}]{fail\+\_\+expected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function that compares calculation of X-\/power with expected result 
+
+\begin{DoxyPrecond}{Precondition}
+expected result has to be accurate to 5 decimal digits 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em num} & number from which the X-\/power is calculated \\
+\hline
+{\em exp} & exponent of num variable \\
+\hline
+{\em expected\+\_\+result} & number, that is expected to be correct result of calculation \\
+\hline
+{\em fail\+\_\+expected} & boolean, set to true if fail of calculation is expected (too large number), else set to to false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success -\/ expected\+\_\+result matches the result of calculator or calculation fails while fail\+\_\+expected is set to true, otherwise false is returned 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123 \{}
+\DoxyCodeLine{124     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} npow\_result;}
+\DoxyCodeLine{125     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         npow\_result = \mbox{\hyperlink{our__math_8h_ab176128ff3d88739eb03ae8937e7b059}{xpow}}(num, exp);}
+\DoxyCodeLine{128         \textcolor{keywordflow}{if} (npow\_result >= expected\_result - \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}} \&\& npow\_result <= expected\_result + \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}})}
+\DoxyCodeLine{129             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{130         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{131         \{}
+\DoxyCodeLine{132             fprintf(stderr, \textcolor{stringliteral}{"\%Lf\(\backslash\)n"}, npow\_result);}
+\DoxyCodeLine{133             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

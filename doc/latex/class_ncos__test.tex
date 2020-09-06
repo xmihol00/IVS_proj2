@@ -1,0 +1,94 @@
+\hypertarget{class_ncos__test}{}\section{Ncos\+\_\+test Class Reference}
+\label{class_ncos__test}\index{Ncos\_test@{Ncos\_test}}
+
+
+class that tests cosx calculation  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Ncos\+\_\+test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ncos__test}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ncos__test_a8cc800b62ffc9a3d7de090899dfb856e}{cosx\+\_\+test}} (long double val, long double expected\+\_\+result, bool fail\+\_\+expected)
+\begin{DoxyCompactList}\small\item\em function that compares calculation of cosx with expected result given user \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests cosx calculation 
+
+Definition at line 207 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ncos__test_a8cc800b62ffc9a3d7de090899dfb856e}\label{class_ncos__test_a8cc800b62ffc9a3d7de090899dfb856e}} 
+\index{Ncos\_test@{Ncos\_test}!cosx\_test@{cosx\_test}}
+\index{cosx\_test@{cosx\_test}!Ncos\_test@{Ncos\_test}}
+\subsubsection{\texorpdfstring{cosx\_test()}{cosx\_test()}}
+{\footnotesize\ttfamily bool Ncos\+\_\+test\+::cosx\+\_\+test (\begin{DoxyParamCaption}\item[{long double}]{val,  }\item[{long double}]{expected\+\_\+result,  }\item[{bool}]{fail\+\_\+expected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function that compares calculation of cosx with expected result given user 
+
+\begin{DoxyPrecond}{Precondition}
+expected result has to be accurate to 5 decimal digits 
+
+cosx expects value in degrees 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & number from which the cosx is calculated (given in degrees) \\
+\hline
+{\em expected\+\_\+result} & number, that is expected to be correct result of calculation \\
+\hline
+{\em fail\+\_\+expected} & boolean, set to true if fail of calculation is expected (values where function does not exist), else set to to false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success -\/ expected\+\_\+result matches the result of calculator or calculation fails while fail\+\_\+expected is set to true, otherwise false is returned 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{167 \{}
+\DoxyCodeLine{168     \textcolor{keywordflow}{if} (expected\_result > 1 || expected\_result < -1)}
+\DoxyCodeLine{169         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{170     }
+\DoxyCodeLine{171     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} cosx\_result;}
+\DoxyCodeLine{172     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{173     \{}
+\DoxyCodeLine{174         cosx\_result = \mbox{\hyperlink{our__math_8h_a929568b885981031f43b82df997ff6a9}{cosx}}(val);}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (cosx\_result >= expected\_result - \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}} \&\& cosx\_result <= expected\_result + \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}})}
+\DoxyCodeLine{176                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{177         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{178         \{}
+\DoxyCodeLine{179                 fprintf(stderr, \textcolor{stringliteral}{"\%Lf\(\backslash\)n"}, cosx\_result);}
+\DoxyCodeLine{180                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{181         \}}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{184     \{}
+\DoxyCodeLine{185         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+####Pied Piper
+
+#INITIAL PHASE (18.02.2020 – 09.03.2020) :
+
+1.1. Choose tools
+	- programming language (C++)
+	- GUI library (GTK)
+	- VSC (Git)
+	- testing framework (Google tests)
+	- communication channel (Discrod group chat)
+	- licence (GPL v.3)
+	- environment for installation (Linux)
+
+1.2. Divide work in team
+	xsokol15 Sokolovskii Vladislav :
+		- create licensing and readme
+		- create project plan
+		- GUI implementation
+		- link GUI and math library 
+		- implement tests
+		- mockup GUI
+	
+	xmihol00 Mihola David :
+		- prepare repository
+		- initialize project work
+			- cmake
+			- add google test library
+			- libraries linking
+		- implementation of basic and advanced arithmetic
+		- implement tests
+		
+	xfolty17 Foltyn Lukáš : 
+		- implement special function
+		- profiling
+		- implementation of basic and advanced arithmetic
+		- implement tests
+		- user documentation
+		
+	Pied Piper :
+		- create un/installer
+		- create hodnoceni.txt
+		- create plan_reality.txt
+		- create problems.txt
+		- product release presentation
+
+1.3. Initilize project work
+	- create Git repository (ivs server) 
+	- create *.cpp and *.h files (logic, graphics)
+	- create Makefile (done)
+	- add GoogleTests (done)
+
+1.4. Implement raw GUI (deadline: 08.03.2020)
+	- work out design of the calculator
+	- choose fonts and colours
+	
+
+#MAIN PHASE (10.03.2020 – 10.04.2020) :
+
+2.1. Implement GUI:
+	- basic mode
+	- advanced mode 
+	*DEADLINE: 16.03.2020
+
+2.2. Write tests for math library (TDD)
+	*DEADLINE: 15.03.2020
+
+2.3.  Implement basic arithmetic operations
+	- add, sub, div, mul
+	*DEADLINE: 22.03.2020
+
+2.4. Implement advanced operations:
+	- factorial, power, root, +secret function
+	*DEADLINE: 29.03.2020
+
+2.5.1 Improve Makefile
+2.5.2 Create installer/uninstaller
+	*DEADLINE: 10.04.2020
+
+#FINISHING PHASE 
+
+3.1. Create program documentation
+	- Doxygen
+	*DEADLINE: 10.04.2020
+
+3.2. Create user documentation
+	*DEADLIINE: 12.04.2020
+
+3.3.1 Debugger, make screenshot
+	*DEADLINE: 13.04.2020
+3.3.2 Create GUI mockup
+	*DEADLINE: 17.04.2020
+	
+3.4 RELEASE (22.04.2020)
+
+3.5 INSTALLATION (30.04.2020)
+
+3.6 PRESENTATION
+	
+
+
+	
+		
+		

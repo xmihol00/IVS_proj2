@@ -1,0 +1,138 @@
+\hypertarget{class_real__time__calc}{}\section{Real\+\_\+time\+\_\+calc Class Reference}
+\label{class_real__time__calc}\index{Real\_time\_calc@{Real\_time\_calc}}
+
+
+class that tests the calculations of the real time calculator  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Real\+\_\+time\+\_\+calc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_real__time__calc}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_real__time__calc_a84f90f6bd1e5e47ad347097c6f2a0067}{test\+\_\+real\+\_\+time\+\_\+calculation}} (std\+::string calculation\+\_\+string, std\+::vector$<$ unsigned $>$ comparison\+\_\+offsets, std\+::vector$<$ long double $>$ intercount\+\_\+results)
+\begin{DoxyCompactList}\small\item\em function gets an equation as an input and then tests the correctness of results at certain positions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_logic}{Logic}} \mbox{\hyperlink{class_real__time__calc_a28c9b3ee44288355ebb2fe4bd20646a6}{test}}
+\item 
+std\+::string \mbox{\hyperlink{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}{result}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests the calculations of the real time calculator 
+
+Definition at line 108 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_real__time__calc_a84f90f6bd1e5e47ad347097c6f2a0067}\label{class_real__time__calc_a84f90f6bd1e5e47ad347097c6f2a0067}} 
+\index{Real\_time\_calc@{Real\_time\_calc}!test\_real\_time\_calculation@{test\_real\_time\_calculation}}
+\index{test\_real\_time\_calculation@{test\_real\_time\_calculation}!Real\_time\_calc@{Real\_time\_calc}}
+\subsubsection{\texorpdfstring{test\_real\_time\_calculation()}{test\_real\_time\_calculation()}}
+{\footnotesize\ttfamily void Real\+\_\+time\+\_\+calc\+::test\+\_\+real\+\_\+time\+\_\+calculation (\begin{DoxyParamCaption}\item[{std\+::string}]{calculation\+\_\+string,  }\item[{std\+::vector$<$ unsigned $>$}]{comparison\+\_\+offsets,  }\item[{std\+::vector$<$ long double $>$}]{intercount\+\_\+results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function gets an equation as an input and then tests the correctness of results at certain positions 
+
+function that adds to the real-\/time calculation characters from string by one and checks at given ofsets, if the intercount result is correct
+
+
+\begin{DoxyParams}{Parameters}
+{\em calculation\+\_\+string} & equation that is being calculated \\
+\hline
+{\em comparison\+\_\+offsets} & positions in equation, where we want to know the result, indexing starts from zero \\
+\hline
+{\em intercount\+\_\+results} & results, that are expected at positions given by comparison\+\_\+offsets \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success -\/ expected results matche the results of calculator, otherwise false is returned
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em calculation\+\_\+string} & an equation that will be parsed, so it can contain random characters \\
+\hline
+{\em comparison\+\_\+offsets} & vector with the possitions where, the intercout result is going to be checked (the index of the string where you want to check the intercount result) \\
+\hline
+{\em intercount\+\_\+results} & vector with results to be checked \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     std::string dummy;}
+\DoxyCodeLine{54     \textcolor{keywordflow}{if} (calculation\_string.size() == 0 || comparison\_offsets.size() == 0 || intercount\_results.size() == 0)}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         fprintf(stderr, \textcolor{stringliteral}{"Invalid parameters\(\backslash\)n"});}
+\DoxyCodeLine{57         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \mbox{\hyperlink{class_real__time__calc_a28c9b3ee44288355ebb2fe4bd20646a6}{test}}.\mbox{\hyperlink{class_logic_a109d65be4a56e17e256d83bcc6912acb}{real\_time\_calculation}}(\textcolor{charliteral}{'C'}, \mbox{\hyperlink{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}{result}}, dummy);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0, j = 0, k = comparison\_offsets[j]; i < calculation\_string.size(); i++)}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64         \mbox{\hyperlink{class_real__time__calc_a28c9b3ee44288355ebb2fe4bd20646a6}{test}}.\mbox{\hyperlink{class_logic_a109d65be4a56e17e256d83bcc6912acb}{real\_time\_calculation}}(calculation\_string[i], \mbox{\hyperlink{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}{result}}, dummy);}
+\DoxyCodeLine{65         \textcolor{keywordflow}{if} (intercount\_results.size() > j \&\& k-- == 0)}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             \textcolor{keywordflow}{if} (!(std::stold(\mbox{\hyperlink{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}{result}}) >= (intercount\_results[j] - \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}}) \&\& }
+\DoxyCodeLine{68                         std::stold(\mbox{\hyperlink{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}{result}}) <= (intercount\_results[j] + \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}})))}
+\DoxyCodeLine{69             \{}
+\DoxyCodeLine{70                 fprintf(stderr, \textcolor{stringliteral}{"False result at position: \%u. Value is: \%s, expected: \%Lf\(\backslash\)n"},  comparison\_offsets[j],}
+\DoxyCodeLine{71                         \mbox{\hyperlink{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}{result}}.c\_str(), intercount\_results[j]);}
+\DoxyCodeLine{72                 EXPECT\_TRUE(\textcolor{keyword}{false});}
+\DoxyCodeLine{73             \}}
+\DoxyCodeLine{74             \textcolor{keywordflow}{if} (comparison\_offsets.size() > j + 1)}
+\DoxyCodeLine{75                 k = comparison\_offsets[j+1] - comparison\_offsets[j] - 1;}
+\DoxyCodeLine{76             }
+\DoxyCodeLine{77             j++;}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}\label{class_real__time__calc_a8b93db8f774dd3e3ffef2d9e6bc56079}} 
+\index{Real\_time\_calc@{Real\_time\_calc}!result@{result}}
+\index{result@{result}!Real\_time\_calc@{Real\_time\_calc}}
+\subsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily std\+::string Real\+\_\+time\+\_\+calc\+::result\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 112 of file tests.\+h.
+
+\mbox{\Hypertarget{class_real__time__calc_a28c9b3ee44288355ebb2fe4bd20646a6}\label{class_real__time__calc_a28c9b3ee44288355ebb2fe4bd20646a6}} 
+\index{Real\_time\_calc@{Real\_time\_calc}!test@{test}}
+\index{test@{test}!Real\_time\_calc@{Real\_time\_calc}}
+\subsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_logic}{Logic}} Real\+\_\+time\+\_\+calc\+::test\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 111 of file tests.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

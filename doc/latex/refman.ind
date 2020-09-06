@@ -1,0 +1,540 @@
+\begin{theindex}
+
+  \item {$\sim$Stddev\_function}
+    \subitem {Stddev\_function}, \hyperpage{51}
+
+  \indexspace
+
+  \item {ACCURACY\_COS}
+    \subitem {our\_math.h}, \hyperpage{62}
+  \item {ACCURACY\_SIN}
+    \subitem {our\_math.h}, \hyperpage{62}
+  \item {add}
+    \subitem {our\_math.cpp}, \hyperpage{77}
+    \subitem {our\_math.h}, \hyperpage{63}
+  \item {ADD\_EQUATION\_WITH\_RESULT\_STD}
+    \subitem {tests.h}, \hyperpage{71}
+  \item {ADD\_EQUATION\_WITH\_RESULT\_STS}
+    \subitem {tests.h}, \hyperpage{72}
+  \item {add\_library}
+    \subitem {CMakeLists.txt}, \hyperpage{73}
+  \item {ADDITION}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {advanced\_menu}
+    \subitem {GUI}, \hyperpage{16}
+
+  \indexspace
+
+  \item {basic\_mode}
+    \subitem {GUI}, \hyperpage{17}
+  \item {BLOCK\_SIZE}
+    \subitem {logic.h}, \hyperpage{57}
+  \item {builder}
+    \subitem {GUI}, \hyperpage{17}
+  \item {button}
+    \subitem {GUI}, \hyperpage{17}
+  \item {button\_names}
+    \subitem {GUI}, \hyperpage{17}
+  \item {button\_text}
+    \subitem {GUI}, \hyperpage{17}
+
+  \indexspace
+
+  \item {C\_BRACKET}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {calculate}
+    \subitem {Logic}, \hyperpage{37}, \hyperpage{39}
+  \item {calculate\_stddev}
+    \subitem {Stddev\_function}, \hyperpage{51}
+  \item {calculator}
+    \subitem {GUI}, \hyperpage{18}
+  \item {character\_input\_states}
+    \subitem {logic.h}, \hyperpage{58}
+  \item {CLEAR}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {CLOSED\_BRACKET}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {CMakeLists.txt}
+    \subitem {add\_library}, \hyperpage{73}
+    \subitem {link\_directories}, \hyperpage{74}
+    \subitem {set}, \hyperpage{74}
+  \item {cosx}
+    \subitem {our\_math.cpp}, \hyperpage{78}
+    \subitem {our\_math.h}, \hyperpage{64}
+  \item {cosx\_test}
+    \subitem {Ncos\_test}, \hyperpage{41}
+
+  \indexspace
+
+  \item {DECIMAL}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {DECIMAL\_DOT}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {DECIMAL\_NUM}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {DIGIT}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {display}
+    \subitem {GUI}, \hyperpage{18}
+  \item {div\_}
+    \subitem {our\_math.cpp}, \hyperpage{78}
+    \subitem {our\_math.h}, \hyperpage{64}
+
+  \indexspace
+
+  \item {EPS}
+    \subitem {logic.h}, \hyperpage{57}
+    \subitem {our\_math.h}, \hyperpage{62}
+  \item {EQUAL}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {equation\_string\_control}
+    \subitem {Logic}, \hyperpage{25}
+  \item {erase\_equation}
+    \subitem {Logic}, \hyperpage{32}
+
+  \indexspace
+
+  \item {fact\_test}
+    \subitem {Factorial\_tests}, \hyperpage{9}
+  \item {FACTORIAL}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {factorial}
+    \subitem {our\_math.cpp}, \hyperpage{79}
+    \subitem {our\_math.h}, \hyperpage{65}
+  \item {Factorial\_tests}, \hyperpage{9}
+    \subitem {fact\_test}, \hyperpage{9}
+  \item {fixed}
+    \subitem {GUI}, \hyperpage{18}
+
+  \indexspace
+
+  \item {get\_data\_pointer}
+    \subitem {Stddev\_function}, \hyperpage{51}
+  \item {get\_result}
+    \subitem {Logic}, \hyperpage{32}
+  \item {GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {GONIO\_ADDITION}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {GONIO\_EPS}
+    \subitem {our\_math.h}, \hyperpage{62}
+  \item {GONIO\_NEGATE}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {GONIO\_PROCCEDE}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {GONIOOMETRY}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {graphics.h}
+    \subitem {NUM\_OF\_BUTTONS}, \hyperpage{56}
+  \item {graphics\_mode}
+    \subitem {GUI}, \hyperpage{18}
+  \item {GUI}, \hyperpage{10}
+    \subitem {advanced\_menu}, \hyperpage{16}
+    \subitem {basic\_mode}, \hyperpage{17}
+    \subitem {builder}, \hyperpage{17}
+    \subitem {button}, \hyperpage{17}
+    \subitem {button\_names}, \hyperpage{17}
+    \subitem {button\_text}, \hyperpage{17}
+    \subitem {calculator}, \hyperpage{18}
+    \subitem {display}, \hyperpage{18}
+    \subitem {fixed}, \hyperpage{18}
+    \subitem {graphics\_mode}, \hyperpage{18}
+    \subitem {help}, \hyperpage{18}
+    \subitem {index\_arr}, \hyperpage{19}
+    \subitem {init\_graphics}, \hyperpage{12}
+    \subitem {label}, \hyperpage{19}
+    \subitem {label\_advanced}, \hyperpage{19}
+    \subitem {label\_text}, \hyperpage{19}
+    \subitem {label\_text\_advanced}, \hyperpage{19}
+    \subitem {logic}, \hyperpage{20}
+    \subitem {main\_menu}, \hyperpage{20}
+    \subitem {mode}, \hyperpage{20}
+    \subitem {on\_basic\_mode\_active}, \hyperpage{14}
+    \subitem {on\_button\_clicked}, \hyperpage{14}
+    \subitem {on\_help\_active}, \hyperpage{15}
+    \subitem {on\_pro\_mode\_active}, \hyperpage{16}
+    \subitem {on\_switch\_state\_set}, \hyperpage{16}
+    \subitem {pro\_mode}, \hyperpage{20}
+    \subitem {provider}, \hyperpage{20}
+    \subitem {quit}, \hyperpage{21}
+    \subitem {screen}, \hyperpage{21}
+    \subitem {switcher\_button}, \hyperpage{21}
+    \subitem {view}, \hyperpage{21}
+    \subitem {window}, \hyperpage{21}
+
+  \indexspace
+
+  \item {help}
+    \subitem {GUI}, \hyperpage{18}
+
+  \indexspace
+
+  \item {include/graphics.h}, \hyperpage{55}
+  \item {include/logic.h}, \hyperpage{56}
+  \item {include/our\_math.h}, \hyperpage{60}
+  \item {include/tests.h}, \hyperpage{70}
+  \item {index\_arr}
+    \subitem {GUI}, \hyperpage{19}
+  \item {init\_graphics}
+    \subitem {GUI}, \hyperpage{12}
+  \item {Input\_control}, \hyperpage{22}
+    \subitem {output}, \hyperpage{23}
+    \subitem {parse\_string}, \hyperpage{22}
+    \subitem {test}, \hyperpage{23}
+  \item {INTEGER}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {IS\_DIGIT}
+    \subitem {logic.h}, \hyperpage{58}
+  \item {IS\_OPERATOR}
+    \subitem {logic.h}, \hyperpage{58}
+  \item {IS\_OPERATOR\_NF}
+    \subitem {logic.h}, \hyperpage{58}
+
+  \indexspace
+
+  \item {L1}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1L2}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1L2\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1L2L3}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1L2L3\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1L3}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L1L3\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L2}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L2\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L2L3}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L2L3\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L3}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {L3\_GONIO}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {label}
+    \subitem {GUI}, \hyperpage{19}
+  \item {label\_advanced}
+    \subitem {GUI}, \hyperpage{19}
+  \item {label\_text}
+    \subitem {GUI}, \hyperpage{19}
+  \item {label\_text\_advanced}
+    \subitem {GUI}, \hyperpage{19}
+  \item {link\_directories}
+    \subitem {CMakeLists.txt}, \hyperpage{74}
+  \item {load\_function}
+    \subitem {Stddev\_function}, \hyperpage{52}
+  \item {Logic}, \hyperpage{23}
+    \subitem {calculate}, \hyperpage{37}, \hyperpage{39}
+    \subitem {equation\_string\_control}, \hyperpage{25}
+    \subitem {erase\_equation}, \hyperpage{32}
+    \subitem {get\_result}, \hyperpage{32}
+    \subitem {Logic}, \hyperpage{24}
+    \subitem {real\_time\_calculation}, \hyperpage{33}
+    \subitem {reset\_equation\_string\_control}, \hyperpage{37}
+    \subitem {result\_print}, \hyperpage{37}
+  \item {logic}
+    \subitem {GUI}, \hyperpage{20}
+  \item {logic.h}
+    \subitem {ADDITION}, \hyperpage{59}
+    \subitem {BLOCK\_SIZE}, \hyperpage{57}
+    \subitem {C\_BRACKET}, \hyperpage{60}
+    \subitem {character\_input\_states}, \hyperpage{58}
+    \subitem {CLEAR}, \hyperpage{59}
+    \subitem {CLOSED\_BRACKET}, \hyperpage{59}
+    \subitem {DECIMAL}, \hyperpage{59}
+    \subitem {DECIMAL\_DOT}, \hyperpage{59}
+    \subitem {DECIMAL\_NUM}, \hyperpage{60}
+    \subitem {DIGIT}, \hyperpage{59}
+    \subitem {EPS}, \hyperpage{57}
+    \subitem {EQUAL}, \hyperpage{59}
+    \subitem {FACTORIAL}, \hyperpage{59}
+    \subitem {GONIO}, \hyperpage{59}
+    \subitem {GONIO\_ADDITION}, \hyperpage{59}
+    \subitem {GONIO\_NEGATE}, \hyperpage{59}
+    \subitem {GONIO\_PROCCEDE}, \hyperpage{59}
+    \subitem {GONIOOMETRY}, \hyperpage{60}
+    \subitem {INTEGER}, \hyperpage{60}
+    \subitem {IS\_DIGIT}, \hyperpage{58}
+    \subitem {IS\_OPERATOR}, \hyperpage{58}
+    \subitem {IS\_OPERATOR\_NF}, \hyperpage{58}
+    \subitem {L1}, \hyperpage{59}
+    \subitem {L1\_GONIO}, \hyperpage{59}
+    \subitem {L1L2}, \hyperpage{59}
+    \subitem {L1L2\_GONIO}, \hyperpage{59}
+    \subitem {L1L2L3}, \hyperpage{59}
+    \subitem {L1L2L3\_GONIO}, \hyperpage{59}
+    \subitem {L1L3}, \hyperpage{59}
+    \subitem {L1L3\_GONIO}, \hyperpage{59}
+    \subitem {L2}, \hyperpage{59}
+    \subitem {L2\_GONIO}, \hyperpage{59}
+    \subitem {L2L3}, \hyperpage{59}
+    \subitem {L2L3\_GONIO}, \hyperpage{59}
+    \subitem {L3}, \hyperpage{59}
+    \subitem {L3\_GONIO}, \hyperpage{59}
+    \subitem {NEGATE}, \hyperpage{59}
+    \subitem {NEGATION}, \hyperpage{59}
+    \subitem {NO\_STATE}, \hyperpage{60}
+    \subitem {O\_BRACKET}, \hyperpage{60}
+    \subitem {OPENED\_BRACKET}, \hyperpage{59}
+    \subitem {OPERATOR}, \hyperpage{60}
+    \subitem {PROCCEDE}, \hyperpage{59}
+    \subitem {REDUCTION\_BY1}, \hyperpage{59}
+    \subitem {REDUCTION\_BY2}, \hyperpage{59}
+    \subitem {REDUCTION\_BY3}, \hyperpage{59}
+    \subitem {RESET}, \hyperpage{59}
+    \subitem {START\_STATE}, \hyperpage{59}
+    \subitem {string\_control}, \hyperpage{60}
+    \subitem {UNDEFINED}, \hyperpage{59}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{76}
+    \subitem {stddev.cpp}, \hyperpage{85}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{76}
+  \item {main\_menu}
+    \subitem {GUI}, \hyperpage{20}
+  \item {mode}
+    \subitem {GUI}, \hyperpage{20}
+  \item {mul}
+    \subitem {our\_math.cpp}, \hyperpage{79}
+    \subitem {our\_math.h}, \hyperpage{65}
+
+  \indexspace
+
+  \item {Ncos\_test}, \hyperpage{40}
+    \subitem {cosx\_test}, \hyperpage{41}
+  \item {NEGATE}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {NEGATION}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {NO}
+    \subitem {tests.h}, \hyperpage{72}
+  \item {NO\_STATE}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {npow}
+    \subitem {our\_math.cpp}, \hyperpage{80}
+    \subitem {our\_math.h}, \hyperpage{66}
+  \item {Npow\_test}, \hyperpage{42}
+    \subitem {pow\_test}, \hyperpage{42}
+  \item {nroot}
+    \subitem {our\_math.cpp}, \hyperpage{80}
+    \subitem {our\_math.h}, \hyperpage{66}
+  \item {Nroot\_test}, \hyperpage{43}
+    \subitem {root\_test}, \hyperpage{44}
+  \item {Nsin\_test}, \hyperpage{44}
+    \subitem {sinx\_test}, \hyperpage{45}
+  \item {Ntan\_test}, \hyperpage{46}
+    \subitem {tanx\_test}, \hyperpage{47}
+  \item {NUM\_OF\_BUTTONS}
+    \subitem {graphics.h}, \hyperpage{56}
+  \item {NUMS}
+    \subitem {tests.h}, \hyperpage{72}
+
+  \indexspace
+
+  \item {O\_BRACKET}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {on\_basic\_mode\_active}
+    \subitem {GUI}, \hyperpage{14}
+  \item {on\_button\_clicked}
+    \subitem {GUI}, \hyperpage{14}
+  \item {on\_help\_active}
+    \subitem {GUI}, \hyperpage{15}
+  \item {on\_pro\_mode\_active}
+    \subitem {GUI}, \hyperpage{16}
+  \item {on\_switch\_state\_set}
+    \subitem {GUI}, \hyperpage{16}
+  \item {OPENED\_BRACKET}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {OPERATOR}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {OPS}
+    \subitem {tests.h}, \hyperpage{72}
+  \item {our\_math.cpp}
+    \subitem {add}, \hyperpage{77}
+    \subitem {cosx}, \hyperpage{78}
+    \subitem {div\_}, \hyperpage{78}
+    \subitem {factorial}, \hyperpage{79}
+    \subitem {mul}, \hyperpage{79}
+    \subitem {npow}, \hyperpage{80}
+    \subitem {nroot}, \hyperpage{80}
+    \subitem {sinx}, \hyperpage{81}
+    \subitem {sub}, \hyperpage{82}
+    \subitem {tanx}, \hyperpage{82}
+    \subitem {xpow}, \hyperpage{83}
+  \item {our\_math.h}
+    \subitem {ACCURACY\_COS}, \hyperpage{62}
+    \subitem {ACCURACY\_SIN}, \hyperpage{62}
+    \subitem {add}, \hyperpage{63}
+    \subitem {cosx}, \hyperpage{64}
+    \subitem {div\_}, \hyperpage{64}
+    \subitem {EPS}, \hyperpage{62}
+    \subitem {factorial}, \hyperpage{65}
+    \subitem {GONIO\_EPS}, \hyperpage{62}
+    \subitem {mul}, \hyperpage{65}
+    \subitem {npow}, \hyperpage{66}
+    \subitem {nroot}, \hyperpage{66}
+    \subitem {PI}, \hyperpage{63}
+    \subitem {sinx}, \hyperpage{67}
+    \subitem {sub}, \hyperpage{68}
+    \subitem {tanx}, \hyperpage{68}
+    \subitem {xpow}, \hyperpage{69}
+    \subitem {XPOW\_EPS}, \hyperpage{63}
+  \item {output}
+    \subitem {Input\_control}, \hyperpage{23}
+
+  \indexspace
+
+  \item {parse\_string}
+    \subitem {Input\_control}, \hyperpage{22}
+  \item {PI}
+    \subitem {our\_math.h}, \hyperpage{63}
+  \item {pow\_test}
+    \subitem {Npow\_test}, \hyperpage{42}
+    \subitem {Xpow\_test}, \hyperpage{53}
+  \item {pro\_mode}
+    \subitem {GUI}, \hyperpage{20}
+  \item {PROCCEDE}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {provider}
+    \subitem {GUI}, \hyperpage{20}
+
+  \indexspace
+
+  \item {quit}
+    \subitem {GUI}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Real\_time\_calc}, \hyperpage{48}
+    \subitem {result}, \hyperpage{49}
+    \subitem {test}, \hyperpage{49}
+    \subitem {test\_real\_time\_calculation}, \hyperpage{48}
+  \item {real\_time\_calculation}
+    \subitem {Logic}, \hyperpage{33}
+  \item {REDUCTION\_BY1}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {REDUCTION\_BY2}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {REDUCTION\_BY3}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {RESET}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {reset\_equation\_string\_control}
+    \subitem {Logic}, \hyperpage{37}
+  \item {result}
+    \subitem {Real\_time\_calc}, \hyperpage{49}
+  \item {result\_print}
+    \subitem {Logic}, \hyperpage{37}
+  \item {root\_test}
+    \subitem {Nroot\_test}, \hyperpage{44}
+
+  \indexspace
+
+  \item {screen}
+    \subitem {GUI}, \hyperpage{21}
+  \item {set}
+    \subitem {CMakeLists.txt}, \hyperpage{74}
+  \item {sinx}
+    \subitem {our\_math.cpp}, \hyperpage{81}
+    \subitem {our\_math.h}, \hyperpage{67}
+  \item {sinx\_test}
+    \subitem {Nsin\_test}, \hyperpage{45}
+  \item {source/CMakeLists.txt}, \hyperpage{73}
+  \item {source/graphics.cpp}, \hyperpage{75}
+  \item {source/logic.cpp}, \hyperpage{75}
+  \item {source/main.cpp}, \hyperpage{76}
+  \item {source/our\_math.cpp}, \hyperpage{77}
+  \item {source/stddev.cpp}, \hyperpage{84}
+  \item {source/test\_mock\_stub.cpp}, \hyperpage{85}
+  \item {source/tests.cpp}, \hyperpage{86}
+  \item {START\_STATE}
+    \subitem {logic.h}, \hyperpage{59}
+  \item {stddev.cpp}
+    \subitem {main}, \hyperpage{85}
+  \item {Stddev\_function}, \hyperpage{50}
+    \subitem {$\sim$Stddev\_function}, \hyperpage{51}
+    \subitem {calculate\_stddev}, \hyperpage{51}
+    \subitem {get\_data\_pointer}, \hyperpage{51}
+    \subitem {load\_function}, \hyperpage{52}
+    \subitem {Stddev\_function}, \hyperpage{50}
+  \item {string\_control}
+    \subitem {logic.h}, \hyperpage{60}
+  \item {sub}
+    \subitem {our\_math.cpp}, \hyperpage{82}
+    \subitem {our\_math.h}, \hyperpage{68}
+  \item {switcher\_button}
+    \subitem {GUI}, \hyperpage{21}
+
+  \indexspace
+
+  \item {tanx}
+    \subitem {our\_math.cpp}, \hyperpage{82}
+    \subitem {our\_math.h}, \hyperpage{68}
+  \item {tanx\_test}
+    \subitem {Ntan\_test}, \hyperpage{47}
+  \item {TEST}
+    \subitem {tests.cpp}, \hyperpage{89--103}
+  \item {test}
+    \subitem {Input\_control}, \hyperpage{23}
+    \subitem {Real\_time\_calc}, \hyperpage{49}
+  \item {TEST\_EPS}
+    \subitem {tests.h}, \hyperpage{73}
+  \item {TEST\_F}
+    \subitem {tests.cpp}, \hyperpage{103--133}
+  \item {test\_real\_time\_calculation}
+    \subitem {Real\_time\_calc}, \hyperpage{48}
+  \item {tests.cpp}
+    \subitem {TEST}, \hyperpage{89--103}
+    \subitem {TEST\_F}, \hyperpage{103--133}
+  \item {tests.h}
+    \subitem {ADD\_EQUATION\_WITH\_RESULT\_STD}, \hyperpage{71}
+    \subitem {ADD\_EQUATION\_WITH\_RESULT\_STS}, \hyperpage{72}
+    \subitem {NO}, \hyperpage{72}
+    \subitem {NUMS}, \hyperpage{72}
+    \subitem {OPS}, \hyperpage{72}
+    \subitem {TEST\_EPS}, \hyperpage{73}
+    \subitem {YES}, \hyperpage{73}
+
+  \indexspace
+
+  \item {UNDEFINED}
+    \subitem {logic.h}, \hyperpage{59}
+
+  \indexspace
+
+  \item {view}
+    \subitem {GUI}, \hyperpage{21}
+
+  \indexspace
+
+  \item {window}
+    \subitem {GUI}, \hyperpage{21}
+
+  \indexspace
+
+  \item {xpow}
+    \subitem {our\_math.cpp}, \hyperpage{83}
+    \subitem {our\_math.h}, \hyperpage{69}
+  \item {XPOW\_EPS}
+    \subitem {our\_math.h}, \hyperpage{63}
+  \item {Xpow\_test}, \hyperpage{53}
+    \subitem {pow\_test}, \hyperpage{53}
+
+  \indexspace
+
+  \item {YES}
+    \subitem {tests.h}, \hyperpage{73}
+
+\end{theindex}

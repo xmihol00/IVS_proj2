@@ -1,0 +1,94 @@
+\hypertarget{class_nsin__test}{}\section{Nsin\+\_\+test Class Reference}
+\label{class_nsin__test}\index{Nsin\_test@{Nsin\_test}}
+
+
+class that tests sinx calculation  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Nsin\+\_\+test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nsin__test}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_nsin__test_a2f69a91a89cc3cf5f65a4ab0d9d24538}{sinx\+\_\+test}} (double val, long double expected\+\_\+result, bool fail\+\_\+expected)
+\begin{DoxyCompactList}\small\item\em function that compares calculation of sinx with expected result \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests sinx calculation 
+
+Definition at line 187 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nsin__test_a2f69a91a89cc3cf5f65a4ab0d9d24538}\label{class_nsin__test_a2f69a91a89cc3cf5f65a4ab0d9d24538}} 
+\index{Nsin\_test@{Nsin\_test}!sinx\_test@{sinx\_test}}
+\index{sinx\_test@{sinx\_test}!Nsin\_test@{Nsin\_test}}
+\subsubsection{\texorpdfstring{sinx\_test()}{sinx\_test()}}
+{\footnotesize\ttfamily bool Nsin\+\_\+test\+::sinx\+\_\+test (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{long double}]{expected\+\_\+result,  }\item[{bool}]{fail\+\_\+expected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function that compares calculation of sinx with expected result 
+
+\begin{DoxyPrecond}{Precondition}
+expected result has to be accurate to 5 decimal digits 
+
+sinx expects value in degrees 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & number from which the sinx is calculated (given in degrees) \\
+\hline
+{\em expected\+\_\+result} & number, that is expected to be correct result of calculation \\
+\hline
+{\em fail\+\_\+expected} & boolean, set to true if fail of calculation is expected (values where function does not exist), else set to to false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success -\/ expected\+\_\+result matches the result of calculator or calculation fails while fail\+\_\+expected is set to true, otherwise false is returned 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144 \{}
+\DoxyCodeLine{145     \textcolor{keywordflow}{if} (expected\_result > 1 || expected\_result < -1)}
+\DoxyCodeLine{146         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{147     }
+\DoxyCodeLine{148     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} sinx\_result;}
+\DoxyCodeLine{149     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{150     \{}
+\DoxyCodeLine{151         sinx\_result = \mbox{\hyperlink{our__math_8h_ac4f3a73dafdd578d338030c348790c53}{sinx}}(val);}
+\DoxyCodeLine{152         \textcolor{keywordflow}{if} (sinx\_result >= expected\_result - \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}} \&\& sinx\_result <= expected\_result + \mbox{\hyperlink{tests_8h_af9fa7d0043194c6e7b2e9d2bc0661100}{TEST\_EPS}})}
+\DoxyCodeLine{153                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{154         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{155         \{}
+\DoxyCodeLine{156                 fprintf(stderr, \textcolor{stringliteral}{"\%Lf\(\backslash\)n"}, sinx\_result);}
+\DoxyCodeLine{157                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{161     \{}
+\DoxyCodeLine{162         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+*.o
+*.out
+*.a
+*.zip
+build
+BUILD
+CMakeFiles
+.DS_Store
+src/.DS_Store
+CMakeCache.txt
+cmake_install.cmake
+

@@ -1,0 +1,770 @@
+\hypertarget{class_g_u_i}{}\section{G\+UI Class Reference}
+\label{class_g_u_i}\index{GUI@{GUI}}
+
+
+This class includes all the widgets and functions that are needed for initialization of graphics.  
+
+
+
+
+{\ttfamily \#include $<$graphics.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_g_u_i_a72e9ac1e445f6c6984b27e063b894dfc}{init\+\_\+graphics}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em This functions starts the main loop of the window, connects the graphics to the grap.\+glade file, handles callbacks and sets the C\+SS styles for the calculator. Basically the main \mbox{\hyperlink{class_g_u_i}{G\+UI}} function. Retrieves all the information about eh widgets from the frab.\+glade file (builder), checks validity of the widgets and initialized all buttons. Handles the callbacks of buttons and \textquotesingle{}window destoyer\textquotesingle{}. In C\+SS sections sets fonts and colors for all widgets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_g_u_i_ac8eef0703944714586fff5b345bb4f0a}{on\+\_\+basic\+\_\+mode\+\_\+active}} ()
+\begin{DoxyCompactList}\small\item\em This function is responsible for switching to the basic mode after choosing the option in the menu bar View –$>$ Basic mode. Checks graphics\+\_\+mode variable and switch the mode if it is needed, otherwise does nothing. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_g_u_i_a9720b1f8f68eb084dd81d499c5700dfe}{on\+\_\+pro\+\_\+mode\+\_\+active}} ()
+\begin{DoxyCompactList}\small\item\em This function is responsible for switching to the P\+RO mode after choosing the option in the menu bar View –$>$ Professional mode. Checks graphics\+\_\+mode variable and switch the mode if it is needed, otherwise does nothing. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_g_u_i_a9d0280f8709063c1064f942c1eea7608}{on\+\_\+help\+\_\+active}} ()
+\begin{DoxyCompactList}\small\item\em This function open the separate window with help message if the user chose option in the menu bar Help. Starts separate gtk\+\_\+main\+\_\+loop. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_g_u_i_ab304a773588b83f791473af089954465}{on\+\_\+button\+\_\+clicked}} (Gtk\+Button $\ast$\mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}}, gpointer data)
+\begin{DoxyCompactList}\small\item\em This function reacts to a buttons clicks, in both modes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_g_u_i_a89703c7bb0f5b09a4605b70e6636e509}{on\+\_\+switch\+\_\+state\+\_\+set}} ()
+\begin{DoxyCompactList}\small\item\em This function resizes the window, moves container with the basic buttons and makes the advanced functions visible. When gets a callback from the switcher button switch the mode – moves container with basic buttons and makes advanced menu visible/invisible. Also, switching from basic to P\+RO mode sets graphics\+\_\+mode variable to true (necessary for connecting to logic). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}{window}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}{fixed}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}{main\+\_\+menu}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}{advanced\+\_\+menu}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}} \mbox{[}\mbox{\hyperlink{graphics_8h_ab076d40d6e2ef36100620d3d12ca54dd}{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}}\mbox{]} = \{0,\}
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}{label\+\_\+advanced}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}{mode}} = N\+U\+LL
+\item 
+static Gtk\+Builder $\ast$ \mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}{switcher\+\_\+button}} = N\+U\+LL
+\item 
+static Gdk\+Screen $\ast$ \mbox{\hyperlink{class_g_u_i_ac56be6803c5b398fc0ce30fb1fb23e47}{screen}} = N\+U\+LL
+\item 
+static Gtk\+Css\+Provider $\ast$ \mbox{\hyperlink{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}{provider}} = N\+U\+LL
+\item 
+static Gdk\+Display $\ast$ \mbox{\hyperlink{class_g_u_i_a3c9c6eda274513cd9316a2d8bdc127b0}{display}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a5e8f3b867b0e1a6ecb2ce8b86281fae5}{calculator}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a3ecda752022bea96ce708bcb6566cea6}{view}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a9074ece2c54a94cfd0cba3fa1116ca48}{quit}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}{help}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_a846712dc55efc3b44efe70cad65e4f8a}{basic\+\_\+mode}} = N\+U\+LL
+\item 
+static Gtk\+Widget $\ast$ \mbox{\hyperlink{class_g_u_i_ab7f93bcfb9342c9ea4a53197253e8b10}{pro\+\_\+mode}} = N\+U\+LL
+\item 
+static \mbox{\hyperlink{class_logic}{Logic}} \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}
+\item 
+static int \mbox{\hyperlink{class_g_u_i_a370dccd74ba9ec5b2b7f16ec17bed2bc}{index\+\_\+arr}} \mbox{[}\mbox{\hyperlink{graphics_8h_ab076d40d6e2ef36100620d3d12ca54dd}{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}}\mbox{]}
+\item 
+static const char $\ast$ \mbox{\hyperlink{class_g_u_i_a21c0b141996ee0d0009b86e176024633}{button\+\_\+names}} \mbox{[}\mbox{\hyperlink{graphics_8h_ab076d40d6e2ef36100620d3d12ca54dd}{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}}\mbox{]}
+\item 
+static char \mbox{\hyperlink{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}{button\+\_\+text}} \mbox{[}\mbox{\hyperlink{graphics_8h_ab076d40d6e2ef36100620d3d12ca54dd}{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}}\mbox{]}
+\item 
+static std\+::string \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\+\_\+text}}
+\item 
+static std\+::string \mbox{\hyperlink{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}{label\+\_\+text\+\_\+advanced}}
+\item 
+static bool \mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\+\_\+mode}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class includes all the widgets and functions that are needed for initialization of graphics. 
+
+Definition at line 28 of file graphics.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_u_i_a72e9ac1e445f6c6984b27e063b894dfc}\label{class_g_u_i_a72e9ac1e445f6c6984b27e063b894dfc}} 
+\index{GUI@{GUI}!init\_graphics@{init\_graphics}}
+\index{init\_graphics@{init\_graphics}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{init\_graphics()}{init\_graphics()}}
+{\footnotesize\ttfamily int G\+U\+I\+::init\+\_\+graphics (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This functions starts the main loop of the window, connects the graphics to the grap.\+glade file, handles callbacks and sets the C\+SS styles for the calculator. Basically the main \mbox{\hyperlink{class_g_u_i}{G\+UI}} function. Retrieves all the information about eh widgets from the frab.\+glade file (builder), checks validity of the widgets and initialized all buttons. Handles the callbacks of buttons and \textquotesingle{}window destoyer\textquotesingle{}. In C\+SS sections sets fonts and colors for all widgets. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & Number of arguments from the comand line. \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & Vector of given arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns zero value if work of the window was finihed successfully, otherwise returns non-\/zero value. 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     \textcolor{comment}{//initiates GTK}}
+\DoxyCodeLine{73     gtk\_init(\&argc, \&argv);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{//caling builder, which will toad graphics data from specified file}}
+\DoxyCodeLine{76     \textcolor{comment}{//TODO expetions }}
+\DoxyCodeLine{77     \textcolor{comment}{//checking the location of the file contaning graphic layout}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (access(\textcolor{stringliteral}{"/usr/local/bin/grap.glade"}, F\_OK ) == 0)}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80     \textcolor{comment}{//for installed version    }}
+\DoxyCodeLine{81         \mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}} = gtk\_builder\_new\_from\_file(\textcolor{stringliteral}{"/usr/local/bin/grap.glade"});}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (access(\textcolor{stringliteral}{"grap.glade"}, F\_OK ) == 0)}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85     \textcolor{comment}{//for version running prom the source directory    }}
+\DoxyCodeLine{86         \mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}} = gtk\_builder\_new\_from\_file(\textcolor{stringliteral}{"grap.glade"});}
+\DoxyCodeLine{87     \}       }
+\DoxyCodeLine{88     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{89     \{}
+\DoxyCodeLine{90     \textcolor{comment}{//when the graphic file could not be locate    }}
+\DoxyCodeLine{91         std::cerr << \textcolor{stringliteral}{"Graphics initialization failed"} << std::endl;}
+\DoxyCodeLine{92         std::cerr << \textcolor{stringliteral}{"File with graphic layout coul not be located"} << std::endl;}
+\DoxyCodeLine{93         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{//inicialization of the main window}}
+\DoxyCodeLine{97     \mbox{\hyperlink{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}{window}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"window"}));}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{//inicialization of other parts of the graphics}}
+\DoxyCodeLine{100     \mbox{\hyperlink{class_g_u_i_ab7f93bcfb9342c9ea4a53197253e8b10}{pro\_mode}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"pro\_mode"}));}
+\DoxyCodeLine{101     \mbox{\hyperlink{class_g_u_i_a846712dc55efc3b44efe70cad65e4f8a}{basic\_mode}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"basic\_mode"}));}
+\DoxyCodeLine{102     \mbox{\hyperlink{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}{help}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"help"}));}
+\DoxyCodeLine{103     \mbox{\hyperlink{class_g_u_i_a3ecda752022bea96ce708bcb6566cea6}{view}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"view"}));}
+\DoxyCodeLine{104     \mbox{\hyperlink{class_g_u_i_a5e8f3b867b0e1a6ecb2ce8b86281fae5}{calculator}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"calculator"}));}
+\DoxyCodeLine{105     \mbox{\hyperlink{class_g_u_i_a9074ece2c54a94cfd0cba3fa1116ca48}{quit}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"quit"}));}
+\DoxyCodeLine{106     \mbox{\hyperlink{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}{fixed}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"fixed"}));}
+\DoxyCodeLine{107     \mbox{\hyperlink{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}{main\_menu}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"main\_menu"}));}
+\DoxyCodeLine{108     \mbox{\hyperlink{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}{advanced\_menu}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"advanced\_menu"}));}
+\DoxyCodeLine{109     \mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"label1"}));}
+\DoxyCodeLine{110     \mbox{\hyperlink{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}{label\_advanced}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"label3"}));}
+\DoxyCodeLine{111     \mbox{\hyperlink{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}{mode}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"label2"}));}
+\DoxyCodeLine{112     \mbox{\hyperlink{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}{switcher\_button}} = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \textcolor{stringliteral}{"switcher\_button"}));}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}{window}} == NULL || \mbox{\hyperlink{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}{main\_menu}} == NULL || \mbox{\hyperlink{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}{advanced\_menu}} == NULL  || \mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}} == NULL || \mbox{\hyperlink{class_g_u_i_a846712dc55efc3b44efe70cad65e4f8a}{basic\_mode}} == NULL || \mbox{\hyperlink{class_g_u_i_a3ecda752022bea96ce708bcb6566cea6}{view}} == NULL ||}
+\DoxyCodeLine{115         \mbox{\hyperlink{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}{label\_advanced}} == NULL || \mbox{\hyperlink{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}{mode}} == NULL || \mbox{\hyperlink{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}{switcher\_button}} == NULL || \mbox{\hyperlink{class_g_u_i_ab7f93bcfb9342c9ea4a53197253e8b10}{pro\_mode}} == NULL || \mbox{\hyperlink{class_g_u_i_a5e8f3b867b0e1a6ecb2ce8b86281fae5}{calculator}} == NULL || }
+\DoxyCodeLine{116         \mbox{\hyperlink{class_g_u_i_a9074ece2c54a94cfd0cba3fa1116ca48}{quit}} == NULL || \mbox{\hyperlink{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}{help}} == NULL || \mbox{\hyperlink{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}{fixed}} == NULL || \mbox{\hyperlink{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}{switcher\_button}} == NULL )}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118         std::cerr << \textcolor{stringliteral}{"Graphics initialization failed\(\backslash\)n"} << std::endl;}
+\DoxyCodeLine{119         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{120     \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{//add signal to close the app when the X button on the top of the window is pressed}}
+\DoxyCodeLine{123     g\_signal\_connect(\mbox{\hyperlink{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}{window}}, \textcolor{stringliteral}{"destroy"}, G\_CALLBACK(gtk\_main\_quit), NULL);}
+\DoxyCodeLine{124     g\_signal\_connect(\mbox{\hyperlink{class_g_u_i_a9074ece2c54a94cfd0cba3fa1116ca48}{quit}}, \textcolor{stringliteral}{"activate"}, G\_CALLBACK(gtk\_main\_quit), NULL);}
+\DoxyCodeLine{125     }
+\DoxyCodeLine{126     \textcolor{comment}{//signal for the switcher when it is turned on/off}}
+\DoxyCodeLine{127     }
+\DoxyCodeLine{128     g\_signal\_connect(GTK\_WIDGET (\mbox{\hyperlink{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}{switcher\_button}}), \textcolor{stringliteral}{"clicked"}, G\_CALLBACK (\mbox{\hyperlink{class_g_u_i_a89703c7bb0f5b09a4605b70e6636e509}{on\_switch\_state\_set}}), NULL);}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     g\_signal\_connect(GTK\_WIDGET (\mbox{\hyperlink{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}{help}}), \textcolor{stringliteral}{"activate"}, G\_CALLBACK(\mbox{\hyperlink{class_g_u_i_a9d0280f8709063c1064f942c1eea7608}{on\_help\_active}}), NULL);}
+\DoxyCodeLine{131     }
+\DoxyCodeLine{132     g\_signal\_connect(GTK\_WIDGET (\mbox{\hyperlink{class_g_u_i_ab7f93bcfb9342c9ea4a53197253e8b10}{pro\_mode}}), \textcolor{stringliteral}{"activate"}, G\_CALLBACK(\mbox{\hyperlink{class_g_u_i_a9720b1f8f68eb084dd81d499c5700dfe}{on\_pro\_mode\_active}}), NULL);}
+\DoxyCodeLine{133     }
+\DoxyCodeLine{134     g\_signal\_connect(GTK\_WIDGET (\mbox{\hyperlink{class_g_u_i_a846712dc55efc3b44efe70cad65e4f8a}{basic\_mode}}), \textcolor{stringliteral}{"activate"}, G\_CALLBACK(\mbox{\hyperlink{class_g_u_i_ac8eef0703944714586fff5b345bb4f0a}{on\_basic\_mode\_active}}), NULL);}
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{graphics_8h_ab076d40d6e2ef36100620d3d12ca54dd}{NUM\_OF\_BUTTONS}}; i++)}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         \textcolor{comment}{//inicialization of all the buttons (appart from advanced and basic)}}
+\DoxyCodeLine{139         \mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}}[i] = GTK\_WIDGET(gtk\_builder\_get\_object(\mbox{\hyperlink{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}{builder}}, \mbox{\hyperlink{class_g_u_i_a21c0b141996ee0d0009b86e176024633}{button\_names}}[i]));}
+\DoxyCodeLine{140         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}}[i] == NULL)}
+\DoxyCodeLine{141         \{}
+\DoxyCodeLine{142             std::cerr << \textcolor{stringliteral}{"Graphics initialization failed\(\backslash\)n"} << std::endl;}
+\DoxyCodeLine{143             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145         }
+\DoxyCodeLine{146         \textcolor{comment}{//signal for each button when pressed}}
+\DoxyCodeLine{147         \textcolor{comment}{//passing data with poineter to the index\_arr}}
+\DoxyCodeLine{148         g\_signal\_connect(\mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}}[i], \textcolor{stringliteral}{"clicked"}, G\_CALLBACK(\mbox{\hyperlink{class_g_u_i_ab304a773588b83f791473af089954465}{on\_button\_clicked}}), \&\mbox{\hyperlink{class_g_u_i_a370dccd74ba9ec5b2b7f16ec17bed2bc}{index\_arr}}[i]);}
+\DoxyCodeLine{149         \textcolor{comment}{//naming all the buttons for css styling}}
+\DoxyCodeLine{150         gtk\_widget\_set\_name(\mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}}[i], \mbox{\hyperlink{class_g_u_i_a21c0b141996ee0d0009b86e176024633}{button\_names}}[i]);}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152     \textcolor{comment}{//advanced menu is hidden by default}}
+\DoxyCodeLine{153     gtk\_widget\_hide(\mbox{\hyperlink{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}{advanced\_menu}});}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{//------------------------------------------------------- CSS styles -------------------------------------------------------//}}
+\DoxyCodeLine{156     \mbox{\hyperlink{class_g_u_i_a3c9c6eda274513cd9316a2d8bdc127b0}{display}} = gdk\_display\_get\_default();}
+\DoxyCodeLine{157     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_a3c9c6eda274513cd9316a2d8bdc127b0}{display}} == NULL)}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         std::cerr << \textcolor{stringliteral}{"Graphics initialization failed\(\backslash\)n"} << std::endl;}
+\DoxyCodeLine{160         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{161     \}}
+\DoxyCodeLine{162     \mbox{\hyperlink{class_g_u_i_ac56be6803c5b398fc0ce30fb1fb23e47}{screen}} = gdk\_display\_get\_default\_screen (\mbox{\hyperlink{class_g_u_i_a3c9c6eda274513cd9316a2d8bdc127b0}{display}});}
+\DoxyCodeLine{163     \mbox{\hyperlink{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}{provider}} = gtk\_css\_provider\_new ();}
+\DoxyCodeLine{164     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_ac56be6803c5b398fc0ce30fb1fb23e47}{screen}} == NULL || \mbox{\hyperlink{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}{provider}} == NULL)}
+\DoxyCodeLine{165     \{}
+\DoxyCodeLine{166         std::cerr << \textcolor{stringliteral}{"Graphics initialization failed\(\backslash\)n"} << std::endl;}
+\DoxyCodeLine{167         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169     }
+\DoxyCodeLine{170     gtk\_widget\_set\_name(\mbox{\hyperlink{class_g_u_i_a3ecda752022bea96ce708bcb6566cea6}{view}}, \textcolor{stringliteral}{"view"});}
+\DoxyCodeLine{171     gtk\_widget\_set\_name(\mbox{\hyperlink{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}{help}}, \textcolor{stringliteral}{"help"});}
+\DoxyCodeLine{172     gtk\_widget\_set\_name(\mbox{\hyperlink{class_g_u_i_a5e8f3b867b0e1a6ecb2ce8b86281fae5}{calculator}}, \textcolor{stringliteral}{"calculator"});}
+\DoxyCodeLine{173     gtk\_widget\_set\_name(\mbox{\hyperlink{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}{mode}}, \textcolor{stringliteral}{"mode"});}
+\DoxyCodeLine{174     gtk\_widget\_set\_name(\mbox{\hyperlink{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}{switcher\_button}}, \textcolor{stringliteral}{"switcher"});}
+\DoxyCodeLine{175     \textcolor{comment}{//css styling of all the widgets and text}}
+\DoxyCodeLine{176     gtk\_css\_provider\_load\_from\_data(GTK\_CSS\_PROVIDER(\mbox{\hyperlink{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}{provider}}), \textcolor{stringliteral}{"\#button0, \#button1, \#button2, \#button3, \#button4,\(\backslash\)}}
+\DoxyCodeLine{177 \textcolor{stringliteral}{                                     \#button5, \#button6, \#button7, \#button8, \#button9, \#comma\_button\{\(\backslash\)}}
+\DoxyCodeLine{178 \textcolor{stringliteral}{                                     background: \#E5E4E2; color:black; font-family: Helvetica Neue; font-size: 18px; font-weight: 200;\(\backslash\)}}
+\DoxyCodeLine{179 \textcolor{stringliteral}{                                     \}\(\backslash\)}}
+\DoxyCodeLine{180 \textcolor{stringliteral}{                                     \#equal\_button, \#add\_button, \#subb\_button, \#mul\_button, \#fact\_button, \#pow\_button, \#sign\_button, \(\backslash\)}}
+\DoxyCodeLine{181 \textcolor{stringliteral}{                                     \#div\_button, \#mod\_button \{background: \#7494b8; color: white; font-family: Helvetica Neue; font-size: 18px; font-weight: 300;\(\backslash\)}}
+\DoxyCodeLine{182 \textcolor{stringliteral}{                                     \}\(\backslash\)}}
+\DoxyCodeLine{183 \textcolor{stringliteral}{                                     \#OB\_button, \#CB\_button, \#bck\_button, \#clear\_button, \(\backslash\)}}
+\DoxyCodeLine{184 \textcolor{stringliteral}{                                     \#sin\_button, \#cos\_button, \#tan\_button\{\(\backslash\)}}
+\DoxyCodeLine{185 \textcolor{stringliteral}{                                     background: \#8394A1; color: \#ffffff; font-family: Helvetica Neue; font-size: 18px; font-weight: 200;\(\backslash\)}}
+\DoxyCodeLine{186 \textcolor{stringliteral}{                                     \}\(\backslash\)}}
+\DoxyCodeLine{187 \textcolor{stringliteral}{                                     \#switcher\{\(\backslash\)}}
+\DoxyCodeLine{188 \textcolor{stringliteral}{                                     font-family: Helvetica Neue;\(\backslash\)}}
+\DoxyCodeLine{189 \textcolor{stringliteral}{                                     background: \#083A4A;\(\backslash\)}}
+\DoxyCodeLine{190 \textcolor{stringliteral}{                                     color: \#ffffff;\(\backslash\)}}
+\DoxyCodeLine{191 \textcolor{stringliteral}{                                     \}\(\backslash\)}}
+\DoxyCodeLine{192 \textcolor{stringliteral}{                                     \#calculator, \#view, \#help\{\(\backslash\)}}
+\DoxyCodeLine{193 \textcolor{stringliteral}{                                     font-family: Helvetica Neue;\(\backslash\)}}
+\DoxyCodeLine{194 \textcolor{stringliteral}{                                     font-weight: 400;\(\backslash\)}}
+\DoxyCodeLine{195 \textcolor{stringliteral}{                                     \}\(\backslash\)}}
+\DoxyCodeLine{196 \textcolor{stringliteral}{                                     "}, -1 , NULL);}
+\DoxyCodeLine{197     }
+\DoxyCodeLine{198     gtk\_style\_context\_add\_provider\_for\_screen (\mbox{\hyperlink{class_g_u_i_ac56be6803c5b398fc0ce30fb1fb23e47}{screen}}, GTK\_STYLE\_PROVIDER(\mbox{\hyperlink{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}{provider}}), GTK\_STYLE\_PROVIDER\_PRIORITY\_USER);}
+\DoxyCodeLine{199 \textcolor{comment}{//-------------------------------------------------------------------------------------------------------------------------//}}
+\DoxyCodeLine{200     }
+\DoxyCodeLine{201     \textcolor{comment}{//windows shows on the screen}}
+\DoxyCodeLine{202     gtk\_widget\_show(\mbox{\hyperlink{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}{window}});}
+\DoxyCodeLine{203     \textcolor{comment}{//program is held here waiting for new actions (user input)}}
+\DoxyCodeLine{204     gtk\_main();}
+\DoxyCodeLine{205     }
+\DoxyCodeLine{206     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{207 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_u_i_ac8eef0703944714586fff5b345bb4f0a}\label{class_g_u_i_ac8eef0703944714586fff5b345bb4f0a}} 
+\index{GUI@{GUI}!on\_basic\_mode\_active@{on\_basic\_mode\_active}}
+\index{on\_basic\_mode\_active@{on\_basic\_mode\_active}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{on\_basic\_mode\_active()}{on\_basic\_mode\_active()}}
+{\footnotesize\ttfamily void G\+U\+I\+::on\+\_\+basic\+\_\+mode\+\_\+active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+This function is responsible for switching to the basic mode after choosing the option in the menu bar View –$>$ Basic mode. Checks graphics\+\_\+mode variable and switch the mode if it is needed, otherwise does nothing. 
+
+
+
+Definition at line 219 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{220 \{}
+\DoxyCodeLine{221     \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\_mode}})}
+\DoxyCodeLine{222         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{223   }
+\DoxyCodeLine{224     \mbox{\hyperlink{class_g_u_i_a89703c7bb0f5b09a4605b70e6636e509}{on\_switch\_state\_set}}();}
+\DoxyCodeLine{225 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_u_i_ab304a773588b83f791473af089954465}\label{class_g_u_i_ab304a773588b83f791473af089954465}} 
+\index{GUI@{GUI}!on\_button\_clicked@{on\_button\_clicked}}
+\index{on\_button\_clicked@{on\_button\_clicked}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{on\_button\_clicked()}{on\_button\_clicked()}}
+{\footnotesize\ttfamily void G\+U\+I\+::on\+\_\+button\+\_\+clicked (\begin{DoxyParamCaption}\item[{Gtk\+Button $\ast$}]{button,  }\item[{gpointer}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+This function reacts to a buttons clicks, in both modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Pointer to the button that was clicked. \\
+\hline
+{\em data} & Void pointer to a data sent to the function with each button click. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 294 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{295 \{}
+\DoxyCodeLine{296     \textcolor{keywordtype}{int} index = *(\textcolor{keywordtype}{int} *)data;}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\_mode}}) \textcolor{comment}{//for the advanced mode}}
+\DoxyCodeLine{299     \{   }
+\DoxyCodeLine{300         \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a109d65be4a56e17e256d83bcc6912acb}{real\_time\_calculation}}(\mbox{\hyperlink{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}{button\_text}}[index], \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}, \mbox{\hyperlink{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}{label\_text\_advanced}});}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302         gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}}), \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.c\_str());}
+\DoxyCodeLine{303         gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}{label\_advanced}}), \mbox{\hyperlink{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}{label\_text\_advanced}}.c\_str());}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \}}
+\DoxyCodeLine{306     \textcolor{keywordflow}{else} \textcolor{comment}{// for the basic mode}}
+\DoxyCodeLine{307     \{}
+\DoxyCodeLine{308         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}{button\_text}}[index] == \textcolor{charliteral}{'C'})}
+\DoxyCodeLine{309         \{}
+\DoxyCodeLine{310             \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}{reset\_equation\_string\_control}}();}
+\DoxyCodeLine{311             \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.clear();}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313             \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.push\_back(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{314             gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}}), \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.c\_str());}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316             \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a168e83ee3c44c0fb69a97ad9d26645b1}{erase\_equation}}();}
+\DoxyCodeLine{317         \}}
+\DoxyCodeLine{318         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}{button\_text}}[index] != \textcolor{charliteral}{'='})}
+\DoxyCodeLine{319         \{}
+\DoxyCodeLine{320             \textcolor{comment}{//adding the character to the string, that is going to be diplayed in the window}}
+\DoxyCodeLine{321             \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a69ca39fc8e7df2d81f50d6d10b38677b}{equation\_string\_control}}(\mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}, \mbox{\hyperlink{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}{button\_text}}[index]);}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323             \textcolor{comment}{//displaying the changed text on the label}}
+\DoxyCodeLine{324             gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}}), \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.c\_str());}
+\DoxyCodeLine{325         \}}
+\DoxyCodeLine{326         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{327         \{}
+\DoxyCodeLine{328             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{329             \{}
+\DoxyCodeLine{330                 \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a93c8b12c4525549e7da3731ae7c53c7c}{calculate}}(\mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}, \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}});}
+\DoxyCodeLine{331                 gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}}), \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.c\_str());}
+\DoxyCodeLine{332             \}}
+\DoxyCodeLine{333             \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::runtime\_error \&e)}
+\DoxyCodeLine{334             \{}
+\DoxyCodeLine{335                 gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}}), e.what());}
+\DoxyCodeLine{336                 \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a168e83ee3c44c0fb69a97ad9d26645b1}{erase\_equation}}();}
+\DoxyCodeLine{337             \}}
+\DoxyCodeLine{338             }
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340             \textcolor{comment}{//prepares variables for next calculation}}
+\DoxyCodeLine{341             \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_aa2cf521dfcbfd80d476ebb91a95a7eca}{reset\_equation\_string\_control}}();}
+\DoxyCodeLine{342         \}}
+\DoxyCodeLine{343     \}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345     (void)\mbox{\hyperlink{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}{button}}; \textcolor{comment}{//dummy for the compiler}}
+\DoxyCodeLine{346 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_u_i_a9d0280f8709063c1064f942c1eea7608}\label{class_g_u_i_a9d0280f8709063c1064f942c1eea7608}} 
+\index{GUI@{GUI}!on\_help\_active@{on\_help\_active}}
+\index{on\_help\_active@{on\_help\_active}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{on\_help\_active()}{on\_help\_active()}}
+{\footnotesize\ttfamily void G\+U\+I\+::on\+\_\+help\+\_\+active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+This function open the separate window with help message if the user chose option in the menu bar Help. Starts separate gtk\+\_\+main\+\_\+loop. 
+
+
+
+Definition at line 228 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{229 \{}
+\DoxyCodeLine{230     GtkWidget *p\_window;}
+\DoxyCodeLine{231     GtkWidget *p\_v\_box;}
+\DoxyCodeLine{232     GtkWidget *helpmsg;}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234     p\_window = gtk\_window\_new(GTK\_WINDOW\_TOPLEVEL);}
+\DoxyCodeLine{235     gtk\_window\_set\_title(GTK\_WINDOW(p\_window), \textcolor{stringliteral}{"Help"});}
+\DoxyCodeLine{236     gtk\_window\_set\_default\_size(GTK\_WINDOW(p\_window), 320, 150);}
+\DoxyCodeLine{237     }
+\DoxyCodeLine{238     g\_signal\_connect(p\_window, \textcolor{stringliteral}{"destroy"}, G\_CALLBACK(gtk\_main\_quit), NULL);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     p\_v\_box = gtk\_box\_new(GTK\_ORIENTATION\_VERTICAL, 0);}
+\DoxyCodeLine{241     gtk\_container\_add(GTK\_CONTAINER(p\_window), p\_v\_box);}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{comment}{//help message}}
+\DoxyCodeLine{244     helpmsg = gtk\_label\_new(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"}}
+\DoxyCodeLine{245                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tPied Piper Calculator can operte in two separate modes.\(\backslash\)n"} }
+\DoxyCodeLine{246                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tBasic mode, which provides basic arithmetic operation,\(\backslash\)n"}}
+\DoxyCodeLine{247                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tand PRO mode, which enables you to see the the development of\(\backslash\)n"}}
+\DoxyCodeLine{248                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)ta calculation in real time. It also offers additional functionality\(\backslash\)t\(\backslash\)n"} }
+\DoxyCodeLine{249                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tsuch as calculations with brackets and gonimetric functions.\(\backslash\)n\(\backslash\)n"}}
+\DoxyCodeLine{250                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tTo switch between the two modes you can either use the\(\backslash\)n"}}
+\DoxyCodeLine{251                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tdark-blue button 'PRO/Basic mode' or you can navigate to\(\backslash\)n"}}
+\DoxyCodeLine{252                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tthe top menu bar and use the section View to chagne the mode\(\backslash\)n"}}
+\DoxyCodeLine{253                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tthere. Note, that any change in modes will reset the ongoing\(\backslash\)n"}}
+\DoxyCodeLine{254                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tcalculation.\(\backslash\)n\(\backslash\)n"}}
+\DoxyCodeLine{255                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tTo calculate the result in Basic mode or to get the current result\(\backslash\)t\(\backslash\)t\(\backslash\)n"}}
+\DoxyCodeLine{256                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tin PRO mode use the '=' button. To reset the ongoing calculation\(\backslash\)n"}}
+\DoxyCodeLine{257                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tuse the 'C' button. And to delete the last character of the\(\backslash\)n"}}
+\DoxyCodeLine{258                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tcalculation use the backspace button. The 'x\string^y' button can be\(\backslash\)n"}}
+\DoxyCodeLine{259                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)talso used as a root function, when the absolute value of 'y' is\(\backslash\)n"}}
+\DoxyCodeLine{260                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tbetween 0 and 1. Other buttons have expected functionalites as\(\backslash\)t\(\backslash\)t\(\backslash\)n"}}
+\DoxyCodeLine{261                             \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)ttheir labels describes.\(\backslash\)n"}}
+\DoxyCodeLine{262                             \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{263                             }
+\DoxyCodeLine{264     gtk\_box\_pack\_start(GTK\_BOX(p\_v\_box), helpmsg, TRUE, FALSE, 0);}
+\DoxyCodeLine{265     gtk\_widget\_show\_all(p\_window);}
+\DoxyCodeLine{266     gtk\_main();}
+\DoxyCodeLine{267 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_u_i_a9720b1f8f68eb084dd81d499c5700dfe}\label{class_g_u_i_a9720b1f8f68eb084dd81d499c5700dfe}} 
+\index{GUI@{GUI}!on\_pro\_mode\_active@{on\_pro\_mode\_active}}
+\index{on\_pro\_mode\_active@{on\_pro\_mode\_active}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{on\_pro\_mode\_active()}{on\_pro\_mode\_active()}}
+{\footnotesize\ttfamily void G\+U\+I\+::on\+\_\+pro\+\_\+mode\+\_\+active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+This function is responsible for switching to the P\+RO mode after choosing the option in the menu bar View –$>$ Professional mode. Checks graphics\+\_\+mode variable and switch the mode if it is needed, otherwise does nothing. 
+
+
+
+Definition at line 210 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{211 \{}
+\DoxyCodeLine{212     \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\_mode}})}
+\DoxyCodeLine{213         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \mbox{\hyperlink{class_g_u_i_a89703c7bb0f5b09a4605b70e6636e509}{on\_switch\_state\_set}}();}
+\DoxyCodeLine{216 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_u_i_a89703c7bb0f5b09a4605b70e6636e509}\label{class_g_u_i_a89703c7bb0f5b09a4605b70e6636e509}} 
+\index{GUI@{GUI}!on\_switch\_state\_set@{on\_switch\_state\_set}}
+\index{on\_switch\_state\_set@{on\_switch\_state\_set}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{on\_switch\_state\_set()}{on\_switch\_state\_set()}}
+{\footnotesize\ttfamily void G\+U\+I\+::on\+\_\+switch\+\_\+state\+\_\+set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+This function resizes the window, moves container with the basic buttons and makes the advanced functions visible. When gets a callback from the switcher button switch the mode – moves container with basic buttons and makes advanced menu visible/invisible. Also, switching from basic to P\+RO mode sets graphics\+\_\+mode variable to true (necessary for connecting to logic). 
+
+
+
+Definition at line 271 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{272 \{}
+\DoxyCodeLine{273     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\_mode}})\{}
+\DoxyCodeLine{274         gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}{mode}}), \textcolor{stringliteral}{"Basic\(\backslash\)nmode"});}
+\DoxyCodeLine{275         gtk\_fixed\_move(GTK\_FIXED(\mbox{\hyperlink{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}{fixed}}), \mbox{\hyperlink{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}{main\_menu}}, 0, 175);}
+\DoxyCodeLine{276         gtk\_widget\_show\_all(\mbox{\hyperlink{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}{advanced\_menu}});}
+\DoxyCodeLine{277         }
+\DoxyCodeLine{278         \mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\_mode}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{279     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{280         gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}{mode}}), \textcolor{stringliteral}{"PRO\(\backslash\)nmode"});}
+\DoxyCodeLine{281         gtk\_fixed\_move(GTK\_FIXED(\mbox{\hyperlink{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}{fixed}}), \mbox{\hyperlink{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}{main\_menu}}, 0, 100);}
+\DoxyCodeLine{282         gtk\_widget\_hide(\mbox{\hyperlink{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}{advanced\_menu}});}
+\DoxyCodeLine{283         }
+\DoxyCodeLine{284         \mbox{\hyperlink{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}{graphics\_mode}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{285     \}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a109d65be4a56e17e256d83bcc6912acb}{real\_time\_calculation}}(\textcolor{charliteral}{'C'}, \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}, \mbox{\hyperlink{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}{label\_text\_advanced}});}
+\DoxyCodeLine{288     \mbox{\hyperlink{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}{logic}}.\mbox{\hyperlink{class_logic_a168e83ee3c44c0fb69a97ad9d26645b1}{erase\_equation}}();}
+\DoxyCodeLine{289     \mbox{\hyperlink{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}{label\_text\_advanced}}.push\_back(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{290     gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}{label}}), \mbox{\hyperlink{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}{label\_text}}.c\_str());}
+\DoxyCodeLine{291     gtk\_label\_set\_text(GTK\_LABEL(\mbox{\hyperlink{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}{label\_advanced}}), \mbox{\hyperlink{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}{label\_text\_advanced}}.c\_str());}
+\DoxyCodeLine{292 \} }
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}\label{class_g_u_i_ac5c18505875e1951276cb6cbf6b8b53d}} 
+\index{GUI@{GUI}!advanced\_menu@{advanced\_menu}}
+\index{advanced\_menu@{advanced\_menu}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{advanced\_menu}{advanced\_menu}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::advanced\+\_\+menu = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Container with advanced functions 
+
+Definition at line 35 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a846712dc55efc3b44efe70cad65e4f8a}\label{class_g_u_i_a846712dc55efc3b44efe70cad65e4f8a}} 
+\index{GUI@{GUI}!basic\_mode@{basic\_mode}}
+\index{basic\_mode@{basic\_mode}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{basic\_mode}{basic\_mode}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::basic\+\_\+mode = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Basic mode option in menu 
+
+Definition at line 49 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}\label{class_g_u_i_aaf698841371f1491d0bba4257187c7b1}} 
+\index{GUI@{GUI}!builder@{builder}}
+\index{builder@{builder}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{builder}{builder}}
+{\footnotesize\ttfamily Gtk\+Builder $\ast$ G\+U\+I\+::builder = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Widget for connecting to the grape.\+glade file 
+
+Definition at line 40 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}\label{class_g_u_i_af57253dc8e8f22f62675d9e05972f189}} 
+\index{GUI@{GUI}!button@{button}}
+\index{button@{button}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{button}{button}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::button = \{0,\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a21c0b141996ee0d0009b86e176024633}\label{class_g_u_i_a21c0b141996ee0d0009b86e176024633}} 
+\index{GUI@{GUI}!button\_names@{button\_names}}
+\index{button\_names@{button\_names}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{button\_names}{button\_names}}
+{\footnotesize\ttfamily char const  $\ast$ G\+U\+I\+::button\+\_\+names\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\textcolor{stringliteral}{"button0"}, \textcolor{stringliteral}{"button1"}, \textcolor{stringliteral}{"button2"}, \textcolor{stringliteral}{"button3"}, \textcolor{stringliteral}{"button4"}, \textcolor{stringliteral}{"button5"},}
+\DoxyCodeLine{                                                  \textcolor{stringliteral}{"button6"}, \textcolor{stringliteral}{"button7"}, \textcolor{stringliteral}{"button8"}, \textcolor{stringliteral}{"button9"}, \textcolor{stringliteral}{"add\_button"}, \textcolor{stringliteral}{"subb\_button"},}
+\DoxyCodeLine{                                                  \textcolor{stringliteral}{"mul\_button"}, \textcolor{stringliteral}{"div\_button"}, \textcolor{stringliteral}{"mod\_button"}, \textcolor{stringliteral}{"sign\_button"}, \textcolor{stringliteral}{"clear\_button"},}
+\DoxyCodeLine{                                                  \textcolor{stringliteral}{"comma\_button"}, \textcolor{stringliteral}{"equal\_button"}, \textcolor{stringliteral}{"fact\_button"}, \textcolor{stringliteral}{"pow\_button"},}
+\DoxyCodeLine{                                                  \textcolor{stringliteral}{"OB\_button"}, \textcolor{stringliteral}{"CB\_button"}, \textcolor{stringliteral}{"bck\_button"}, \textcolor{stringliteral}{"sin\_button"}, \textcolor{stringliteral}{"cos\_button"}, \textcolor{stringliteral}{"tan\_button"}\}}
+
+\end{DoxyCode}
+I\+Ds of all buttons declared in the grap.\+glade file 
+
+Definition at line 54 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}\label{class_g_u_i_a6d8bc11493b295fc1a37a062634dd7c0}} 
+\index{GUI@{GUI}!button\_text@{button\_text}}
+\index{button\_text@{button\_text}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{button\_text}{button\_text}}
+{\footnotesize\ttfamily char G\+U\+I\+::button\+\_\+text\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\textcolor{charliteral}{'0'}, \textcolor{charliteral}{'1'}, \textcolor{charliteral}{'2'}, \textcolor{charliteral}{'3'}, \textcolor{charliteral}{'4'}, \textcolor{charliteral}{'5'}, \textcolor{charliteral}{'6'}, \textcolor{charliteral}{'7'}, \textcolor{charliteral}{'8'}, \textcolor{charliteral}{'9'}, \textcolor{charliteral}{'+'}, \textcolor{charliteral}{'-'}, \textcolor{charliteral}{'*'}, \textcolor{charliteral}{'/'},}
+\DoxyCodeLine{                                               \textcolor{charliteral}{'\%'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'.'}, \textcolor{charliteral}{'='}, \textcolor{charliteral}{'!'}, \textcolor{charliteral}{'\string^'}, \textcolor{charliteral}{'('}, \textcolor{charliteral}{')'}, \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'s'}, \textcolor{charliteral}{'c'}, \textcolor{charliteral}{'t'}\}}
+
+\end{DoxyCode}
+One char values of every button 
+
+Definition at line 55 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a5e8f3b867b0e1a6ecb2ce8b86281fae5}\label{class_g_u_i_a5e8f3b867b0e1a6ecb2ce8b86281fae5}} 
+\index{GUI@{GUI}!calculator@{calculator}}
+\index{calculator@{calculator}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{calculator}{calculator}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::calculator = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Calculator menu button 
+
+Definition at line 45 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a3c9c6eda274513cd9316a2d8bdc127b0}\label{class_g_u_i_a3c9c6eda274513cd9316a2d8bdc127b0}} 
+\index{GUI@{GUI}!display@{display}}
+\index{display@{display}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily Gdk\+Display $\ast$ G\+U\+I\+::display = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Widget for setting the C\+SS styles 
+
+Definition at line 44 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}\label{class_g_u_i_a71dba7d167bef1305da908de9f0eba80}} 
+\index{GUI@{GUI}!fixed@{fixed}}
+\index{fixed@{fixed}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{fixed}{fixed}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::fixed = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Main grid of the app 
+
+Definition at line 33 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}\label{class_g_u_i_abb868a957e22d3debbf9c707aadfdd44}} 
+\index{GUI@{GUI}!graphics\_mode@{graphics\_mode}}
+\index{graphics\_mode@{graphics\_mode}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{graphics\_mode}{graphics\_mode}}
+{\footnotesize\ttfamily bool G\+U\+I\+::graphics\+\_\+mode\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+true for P\+RO mode, false for Basic mode 
+
+Definition at line 58 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}\label{class_g_u_i_a4fe5d81a72449afa0cbd2228cddd48c0}} 
+\index{GUI@{GUI}!help@{help}}
+\index{help@{help}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::help = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Help menu button 
+
+Definition at line 48 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a370dccd74ba9ec5b2b7f16ec17bed2bc}\label{class_g_u_i_a370dccd74ba9ec5b2b7f16ec17bed2bc}} 
+\index{GUI@{GUI}!index\_arr@{index\_arr}}
+\index{index\_arr@{index\_arr}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{index\_arr}{index\_arr}}
+{\footnotesize\ttfamily int G\+U\+I\+::index\+\_\+arr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,}
+\DoxyCodeLine{                                      15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26\}}
+
+\end{DoxyCode}
+Array the assigned button numbers 
+
+Definition at line 53 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}\label{class_g_u_i_ad2408a0ec1775ce2d112157ccac24af8}} 
+\index{GUI@{GUI}!label@{label}}
+\index{label@{label}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::label = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Main label for displaying the result 
+
+Definition at line 37 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}\label{class_g_u_i_a4f2532f4151e5387f715efc462d8f24e}} 
+\index{GUI@{GUI}!label\_advanced@{label\_advanced}}
+\index{label\_advanced@{label\_advanced}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{label\_advanced}{label\_advanced}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::label\+\_\+advanced = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Advanced label for displaying the steps of the calculation process 
+
+Definition at line 38 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}\label{class_g_u_i_a999eed2f94439640a5b3e7381d0486fb}} 
+\index{GUI@{GUI}!label\_text@{label\_text}}
+\index{label\_text@{label\_text}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{label\_text}{label\_text}}
+{\footnotesize\ttfamily std\+::string G\+U\+I\+::label\+\_\+text\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+text to be leaded to the claculator main dispaly 
+
+Definition at line 56 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}\label{class_g_u_i_a517b263240970d2867605ea2c7f5fcde}} 
+\index{GUI@{GUI}!label\_text\_advanced@{label\_text\_advanced}}
+\index{label\_text\_advanced@{label\_text\_advanced}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{label\_text\_advanced}{label\_text\_advanced}}
+{\footnotesize\ttfamily std\+::string G\+U\+I\+::label\+\_\+text\+\_\+advanced\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+text to be leaded to the claculator advanced dispaly 
+
+Definition at line 57 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}\label{class_g_u_i_ae76cddcd30061092ac9c1bd4720d3ea2}} 
+\index{GUI@{GUI}!logic@{logic}}
+\index{logic@{logic}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{logic}{logic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_logic}{Logic}} G\+U\+I\+::logic\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Object of the calculation 
+
+Definition at line 52 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}\label{class_g_u_i_a752852ce4ab08ffb3e14d510db6d9451}} 
+\index{GUI@{GUI}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{main\_menu}{main\_menu}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::main\+\_\+menu = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Container with basic functions 
+
+Definition at line 34 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}\label{class_g_u_i_a5f0b2e50665aec708c645d505ee32101}} 
+\index{GUI@{GUI}!mode@{mode}}
+\index{mode@{mode}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::mode = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Name of the current mode 
+
+Definition at line 39 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_ab7f93bcfb9342c9ea4a53197253e8b10}\label{class_g_u_i_ab7f93bcfb9342c9ea4a53197253e8b10}} 
+\index{GUI@{GUI}!pro\_mode@{pro\_mode}}
+\index{pro\_mode@{pro\_mode}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{pro\_mode}{pro\_mode}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::pro\+\_\+mode = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+P\+RO mode option in menu 
+
+Definition at line 50 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}\label{class_g_u_i_abd7af241445c2d978c1c5a2621761cda}} 
+\index{GUI@{GUI}!provider@{provider}}
+\index{provider@{provider}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{provider}{provider}}
+{\footnotesize\ttfamily Gtk\+Css\+Provider $\ast$ G\+U\+I\+::provider = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Widget for setting the C\+SS styles 
+
+Definition at line 43 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a9074ece2c54a94cfd0cba3fa1116ca48}\label{class_g_u_i_a9074ece2c54a94cfd0cba3fa1116ca48}} 
+\index{GUI@{GUI}!quit@{quit}}
+\index{quit@{quit}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{quit}{quit}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::quit = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Calculator quit option in menu 
+
+Definition at line 47 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_ac56be6803c5b398fc0ce30fb1fb23e47}\label{class_g_u_i_ac56be6803c5b398fc0ce30fb1fb23e47}} 
+\index{GUI@{GUI}!screen@{screen}}
+\index{screen@{screen}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{screen}{screen}}
+{\footnotesize\ttfamily Gdk\+Screen $\ast$ G\+U\+I\+::screen = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Widget for setting the C\+SS styles 
+
+Definition at line 42 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}\label{class_g_u_i_a46b07a48ff0779e2a39d7c760849431f}} 
+\index{GUI@{GUI}!switcher\_button@{switcher\_button}}
+\index{switcher\_button@{switcher\_button}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{switcher\_button}{switcher\_button}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::switcher\+\_\+button = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Button for switching between modes 
+
+Definition at line 41 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_a3ecda752022bea96ce708bcb6566cea6}\label{class_g_u_i_a3ecda752022bea96ce708bcb6566cea6}} 
+\index{GUI@{GUI}!view@{view}}
+\index{view@{view}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::view = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+top menu bar 
+
+Definition at line 46 of file graphics.\+h.
+
+\mbox{\Hypertarget{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}\label{class_g_u_i_ae307bf43cbe1839cc5d849b916e0c27c}} 
+\index{GUI@{GUI}!window@{window}}
+\index{window@{window}!GUI@{GUI}}
+\subsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily Gtk\+Widget $\ast$ G\+U\+I\+::window = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Main window widget 
+
+Definition at line 32 of file graphics.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{graphics_8h}{graphics.\+h}}\item 
+source/\mbox{\hyperlink{graphics_8cpp}{graphics.\+cpp}}\end{DoxyCompactItemize}

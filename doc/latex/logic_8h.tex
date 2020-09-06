@@ -1,0 +1,457 @@
+\hypertarget{logic_8h}{}\section{include/logic.h File Reference}
+\label{logic_8h}\index{include/logic.h@{include/logic.h}}
+
+
+Header file consisting declarations of functions and variables that creates the \textquotesingle{}brain\textquotesingle{} of the calculator.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$clocale$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$locale$>$}\newline
+{\ttfamily \#include \char`\"{}our\+\_\+math.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_logic}{Logic}}
+\begin{DoxyCompactList}\small\item\em class containing all declaration needed to calculate complex equations, on which either \mbox{\hyperlink{class_g_u_i}{G\+UI}} can be added or can be run from the terminal \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_stddev__function}{Stddev\+\_\+function}}
+\begin{DoxyCompactList}\small\item\em Class containing all the functions necessary for running the stddev program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{logic_8h_ad51ded0bbd705f02f73fc60c0b721ced}{B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}~20
+\begin{DoxyCompactList}\small\item\em the size of one block of allocated data \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{E\+PS}}~1e-\/10
+\begin{DoxyCompactList}\small\item\em the deviation of a correct result \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logic_8h_a0b9c79077957121135b992618eb53ab1}{I\+S\+\_\+\+O\+P\+E\+R\+A\+T\+OR}}(char\+\_\+value)
+\begin{DoxyCompactList}\small\item\em determines wheather the input character is an operator or not @char\+\_\+value the character to be checked \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}{I\+S\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+NF}}(char\+\_\+value)
+\begin{DoxyCompactList}\small\item\em determines wheather the input character is an operator or not, \textquotesingle{}!\textquotesingle{} is not considered as an operator @char\+\_\+value the character to be checked \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logic_8h_acd0782df04a3f13343d4efa655468b08}{I\+S\+\_\+\+D\+I\+G\+IT}}(char\+\_\+value)~(char\+\_\+value $>$= \textquotesingle{}0\textquotesingle{} \&\& char\+\_\+value $<$= \textquotesingle{}9\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em determines wheather the input character is a digit or not @char\+\_\+value the character to be checked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958}{character\+\_\+input\+\_\+states}} \{ \newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a605159e8a4c32319fd69b5d151369d93}{U\+N\+D\+E\+F\+I\+N\+ED}} = 0, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ae5bc7ee7d6dda5340a28f91834f10543}{L1}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a0adffb24dae0c41be5b803f4d444f066}{L2}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a78d20b793a10e7c2f1012114803147c3}{L3}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a5e2df115b7e0e08a9bf082eb2aa1d125}{L1\+L2}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958adaa3eb2359010ee2c7e4c5c10a971663}{L1\+L3}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958aa9039f9cfec7b686af1d9d26423224e6}{L2\+L3}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958af471128a0351ee9039a4680e1dd0af4c}{L1\+L2\+L3}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a1b1406e3d0746ccb290c331db527df12}{D\+I\+G\+IT}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a3c9afb1c199b344e8b4634e14388e0a5}{L1\+\_\+\+G\+O\+N\+IO}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a665c93eafb7e9547950be0f1f6b2823d}{L2\+\_\+\+G\+O\+N\+IO}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a8d288103074a9f47aad31030741737f9}{L3\+\_\+\+G\+O\+N\+IO}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958afa6cb0a580f54b1f7d68ae46feb5511e}{G\+O\+N\+I\+O\+\_\+\+N\+E\+G\+A\+TE}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ad3c172da241b32a6d8191548caf378bf}{L1\+L2\+\_\+\+G\+O\+N\+IO}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ad795e3e5f120b352dc17ef4446c4fe09}{L1\+L3\+\_\+\+G\+O\+N\+IO}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a16d96bb5644075d399c99e267ea6ce1f}{L2\+L3\+\_\+\+G\+O\+N\+IO}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a47cfa0fa9050bb691f711881b5510b54}{L1\+L2\+L3\+\_\+\+G\+O\+N\+IO}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a86c987c12dded36a690f189b8182b0af}{G\+O\+N\+IO}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a4d115be379d16c70b68747c91bcb790a}{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+B\+Y3}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a438916ef97edc74aaf61b36cc7e54760}{G\+O\+N\+I\+O\+\_\+\+A\+D\+D\+I\+T\+I\+ON}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a589b7d94a3d91d145720e2fed0eb3a05}{R\+E\+S\+ET}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958af08a543d5a1549321682e12569d0fbd6}{D\+E\+C\+I\+M\+AL}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958aac40e142253b09dca77c5bf9979fcc29}{P\+R\+O\+C\+C\+E\+DE}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a399c982a0c65189d8b619a10443b9a8e}{S\+T\+A\+R\+T\+\_\+\+S\+T\+A\+TE}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a17e66d41adcbfef2471843bcf8e8d0f4}{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+B\+Y1}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a95532599b087d9afcc0a2625a4d94000}{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+B\+Y2}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ad464bf0ab855a4dd25d3ad1cd34c2d3c}{A\+D\+D\+I\+T\+I\+ON}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a6e03f275c09bc302b861e86c19ca70a1}{N\+E\+G\+A\+TE}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a75ab6fa2b65e56fdf3a8ec9c09353e87}{N\+E\+G\+A\+T\+I\+ON}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a9cf86679372d1ddd42bbf52ea4ed5f75}{O\+P\+E\+N\+E\+D\+\_\+\+B\+R\+A\+C\+K\+ET}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958aedb1c41372694645d160ed0c9870a2d4}{C\+L\+O\+S\+E\+D\+\_\+\+B\+R\+A\+C\+K\+ET}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a59a84258a4cb9025b567ee5139455029}{E\+Q\+U\+AL}}, 
+\newline
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a5ef0b5615aceaa696caa64eb3c5bec55}{F\+A\+C\+T\+O\+R\+I\+AL}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a4e2994d435c769e0376e79d765b4a853}{D\+E\+C\+I\+M\+A\+L\+\_\+\+D\+OT}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a1e1a4aba20a5a009e616cbc8fad33ac7}{C\+L\+E\+AR}}, 
+\mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a8f593ed14ffb978e54f461c05886380a}{G\+O\+N\+I\+O\+\_\+\+P\+R\+O\+C\+C\+E\+DE}}
+ \}
+\item 
+enum \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916}{string\+\_\+control}} \{ \newline
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{I\+N\+T\+E\+G\+ER}}, 
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{D\+E\+C\+I\+M\+A\+L\+\_\+\+N\+UM}}, 
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{O\+P\+E\+R\+A\+T\+OR}}, 
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}{N\+O\+\_\+\+S\+T\+A\+TE}}, 
+\newline
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\+\_\+\+B\+R\+A\+C\+K\+ET}}, 
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\+\_\+\+B\+R\+A\+C\+K\+ET}}, 
+\mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{G\+O\+N\+I\+O\+O\+M\+E\+T\+RY}}
+ \}
+\begin{DoxyCompactList}\small\item\em enumeration used to determin different states in which the equation string can appear \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file consisting declarations of functions and variables that creates the \textquotesingle{}brain\textquotesingle{} of the calculator. 
+
+\begin{DoxyAuthor}{Author}
+Mihola David 
+
+Sokolovskii Vladislav 
+
+Foltyn Lukas 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27.\+02.\+2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+©\+Pied Piper 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{logic_8h_ad51ded0bbd705f02f73fc60c0b721ced}\label{logic_8h_ad51ded0bbd705f02f73fc60c0b721ced}} 
+\index{logic.h@{logic.h}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE~20}
+
+
+
+the size of one block of allocated data 
+
+
+
+Definition at line 29 of file logic.\+h.
+
+\mbox{\Hypertarget{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}\label{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}} 
+\index{logic.h@{logic.h}!EPS@{EPS}}
+\index{EPS@{EPS}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{EPS}{EPS}}
+{\footnotesize\ttfamily \#define E\+PS~1e-\/10}
+
+
+
+the deviation of a correct result 
+
+
+
+Definition at line 35 of file logic.\+h.
+
+\mbox{\Hypertarget{logic_8h_acd0782df04a3f13343d4efa655468b08}\label{logic_8h_acd0782df04a3f13343d4efa655468b08}} 
+\index{logic.h@{logic.h}!IS\_DIGIT@{IS\_DIGIT}}
+\index{IS\_DIGIT@{IS\_DIGIT}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{IS\_DIGIT}{IS\_DIGIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+I\+G\+IT(\begin{DoxyParamCaption}\item[{}]{char\+\_\+value }\end{DoxyParamCaption})~(char\+\_\+value $>$= \textquotesingle{}0\textquotesingle{} \&\& char\+\_\+value $<$= \textquotesingle{}9\textquotesingle{})}
+
+
+
+determines wheather the input character is a digit or not @char\+\_\+value the character to be checked 
+
+
+
+Definition at line 57 of file logic.\+h.
+
+\mbox{\Hypertarget{logic_8h_a0b9c79077957121135b992618eb53ab1}\label{logic_8h_a0b9c79077957121135b992618eb53ab1}} 
+\index{logic.h@{logic.h}!IS\_OPERATOR@{IS\_OPERATOR}}
+\index{IS\_OPERATOR@{IS\_OPERATOR}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{IS\_OPERATOR}{IS\_OPERATOR}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+O\+P\+E\+R\+A\+T\+OR(\begin{DoxyParamCaption}\item[{}]{char\+\_\+value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(char\_value == \textcolor{charliteral}{'+'} || char\_value == \textcolor{charliteral}{'-'} || char\_value == \textcolor{charliteral}{'*'} || char\_value == \textcolor{charliteral}{'/'} ||\(\backslash\)}
+\DoxyCodeLine{                                 char\_value == \textcolor{charliteral}{'\string^'} || char\_value == \textcolor{charliteral}{'?'} || char\_value == \textcolor{charliteral}{'!'} || char\_value == \textcolor{charliteral}{'\%'})}
+
+\end{DoxyCode}
+
+
+determines wheather the input character is an operator or not @char\+\_\+value the character to be checked 
+
+
+
+Definition at line 42 of file logic.\+h.
+
+\mbox{\Hypertarget{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}\label{logic_8h_ad920b9f1035b118a6afc42d9c29323b6}} 
+\index{logic.h@{logic.h}!IS\_OPERATOR\_NF@{IS\_OPERATOR\_NF}}
+\index{IS\_OPERATOR\_NF@{IS\_OPERATOR\_NF}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{IS\_OPERATOR\_NF}{IS\_OPERATOR\_NF}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+NF(\begin{DoxyParamCaption}\item[{}]{char\+\_\+value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(char\_value == \textcolor{charliteral}{'+'} || char\_value == \textcolor{charliteral}{'-'} || char\_value == \textcolor{charliteral}{'*'} || char\_value == \textcolor{charliteral}{'/'} ||\(\backslash\)}
+\DoxyCodeLine{                                 char\_value == \textcolor{charliteral}{'\string^'} || char\_value == \textcolor{charliteral}{'?'} || char\_value == \textcolor{charliteral}{'\%'})}
+
+\end{DoxyCode}
+
+
+determines wheather the input character is an operator or not, \textquotesingle{}!\textquotesingle{} is not considered as an operator @char\+\_\+value the character to be checked 
+
+
+
+Definition at line 50 of file logic.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958}\label{logic_8h_aec92c874ba64629974ff08036ae2d958}} 
+\index{logic.h@{logic.h}!character\_input\_states@{character\_input\_states}}
+\index{character\_input\_states@{character\_input\_states}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{character\_input\_states}{character\_input\_states}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958}{character\+\_\+input\+\_\+states}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDEFINED@{UNDEFINED}!logic.h@{logic.h}}\index{logic.h@{logic.h}!UNDEFINED@{UNDEFINED}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a605159e8a4c32319fd69b5d151369d93}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a605159e8a4c32319fd69b5d151369d93}} 
+U\+N\+D\+E\+F\+I\+N\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1@{L1}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1@{L1}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958ae5bc7ee7d6dda5340a28f91834f10543}\label{logic_8h_aec92c874ba64629974ff08036ae2d958ae5bc7ee7d6dda5340a28f91834f10543}} 
+L1&Level 1 operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L2@{L2}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L2@{L2}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a0adffb24dae0c41be5b803f4d444f066}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a0adffb24dae0c41be5b803f4d444f066}} 
+L2&Level 2 operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L3@{L3}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L3@{L3}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a78d20b793a10e7c2f1012114803147c3}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a78d20b793a10e7c2f1012114803147c3}} 
+L3&Level 3 operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1L2@{L1L2}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1L2@{L1L2}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a5e2df115b7e0e08a9bf082eb2aa1d125}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a5e2df115b7e0e08a9bf082eb2aa1d125}} 
+L1\+L2&Combination of level 1 operator followed by level 2 operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1L3@{L1L3}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1L3@{L1L3}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958adaa3eb2359010ee2c7e4c5c10a971663}\label{logic_8h_aec92c874ba64629974ff08036ae2d958adaa3eb2359010ee2c7e4c5c10a971663}} 
+L1\+L3&Combination of level 1 operator followed by level 3 operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L2L3@{L2L3}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L2L3@{L2L3}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958aa9039f9cfec7b686af1d9d26423224e6}\label{logic_8h_aec92c874ba64629974ff08036ae2d958aa9039f9cfec7b686af1d9d26423224e6}} 
+L2\+L3&Combination of level 2 operator followed by level 3 operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1L2L3@{L1L2L3}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1L2L3@{L1L2L3}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958af471128a0351ee9039a4680e1dd0af4c}\label{logic_8h_aec92c874ba64629974ff08036ae2d958af471128a0351ee9039a4680e1dd0af4c}} 
+L1\+L2\+L3&Combination of level 1, level 2 and level 3 operators followed respectivly \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIGIT@{DIGIT}!logic.h@{logic.h}}\index{logic.h@{logic.h}!DIGIT@{DIGIT}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a1b1406e3d0746ccb290c331db527df12}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a1b1406e3d0746ccb290c331db527df12}} 
+D\+I\+G\+IT&Digit was entered (i.\+e. \textquotesingle{}0\textquotesingle{}, ..., \textquotesingle{}9\textquotesingle{} characters) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_GONIO@{L1\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1\_GONIO@{L1\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a3c9afb1c199b344e8b4634e14388e0a5}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a3c9afb1c199b344e8b4634e14388e0a5}} 
+L1\+\_\+\+G\+O\+N\+IO&Combination of level 1 operator followed by goniometric operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L2\_GONIO@{L2\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L2\_GONIO@{L2\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a665c93eafb7e9547950be0f1f6b2823d}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a665c93eafb7e9547950be0f1f6b2823d}} 
+L2\+\_\+\+G\+O\+N\+IO&Combination of level 2 operator followed by goniometric operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L3\_GONIO@{L3\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L3\_GONIO@{L3\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a8d288103074a9f47aad31030741737f9}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a8d288103074a9f47aad31030741737f9}} 
+L3\+\_\+\+G\+O\+N\+IO&Combination of level 3 operator followed by goniometric operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GONIO\_NEGATE@{GONIO\_NEGATE}!logic.h@{logic.h}}\index{logic.h@{logic.h}!GONIO\_NEGATE@{GONIO\_NEGATE}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958afa6cb0a580f54b1f7d68ae46feb5511e}\label{logic_8h_aec92c874ba64629974ff08036ae2d958afa6cb0a580f54b1f7d68ae46feb5511e}} 
+G\+O\+N\+I\+O\+\_\+\+N\+E\+G\+A\+TE&Goniometric operator with a negation in front \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1L2\_GONIO@{L1L2\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1L2\_GONIO@{L1L2\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958ad3c172da241b32a6d8191548caf378bf}\label{logic_8h_aec92c874ba64629974ff08036ae2d958ad3c172da241b32a6d8191548caf378bf}} 
+L1\+L2\+\_\+\+G\+O\+N\+IO&Combination of level 1, level 2 and goniometric operators followed respectivly \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1L3\_GONIO@{L1L3\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1L3\_GONIO@{L1L3\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958ad795e3e5f120b352dc17ef4446c4fe09}\label{logic_8h_aec92c874ba64629974ff08036ae2d958ad795e3e5f120b352dc17ef4446c4fe09}} 
+L1\+L3\+\_\+\+G\+O\+N\+IO&Combination of level 1, level 3 and goniometric operators followed respectivly \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L2L3\_GONIO@{L2L3\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L2L3\_GONIO@{L2L3\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a16d96bb5644075d399c99e267ea6ce1f}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a16d96bb5644075d399c99e267ea6ce1f}} 
+L2\+L3\+\_\+\+G\+O\+N\+IO&Combination of level 2, level 3 and goniometric operators followed respectivly \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1L2L3\_GONIO@{L1L2L3\_GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!L1L2L3\_GONIO@{L1L2L3\_GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a47cfa0fa9050bb691f711881b5510b54}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a47cfa0fa9050bb691f711881b5510b54}} 
+L1\+L2\+L3\+\_\+\+G\+O\+N\+IO&Combination of level 1, level 2, level 3 and goniometric operators followed respectivly \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GONIO@{GONIO}!logic.h@{logic.h}}\index{logic.h@{logic.h}!GONIO@{GONIO}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a86c987c12dded36a690f189b8182b0af}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a86c987c12dded36a690f189b8182b0af}} 
+G\+O\+N\+IO&Goniometric operator on its own \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REDUCTION\_BY3@{REDUCTION\_BY3}!logic.h@{logic.h}}\index{logic.h@{logic.h}!REDUCTION\_BY3@{REDUCTION\_BY3}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a4d115be379d16c70b68747c91bcb790a}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a4d115be379d16c70b68747c91bcb790a}} 
+R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+B\+Y3&Reduction of 3 operators in the operator stack \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GONIO\_ADDITION@{GONIO\_ADDITION}!logic.h@{logic.h}}\index{logic.h@{logic.h}!GONIO\_ADDITION@{GONIO\_ADDITION}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a438916ef97edc74aaf61b36cc7e54760}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a438916ef97edc74aaf61b36cc7e54760}} 
+G\+O\+N\+I\+O\+\_\+\+A\+D\+D\+I\+T\+I\+ON&When goniometric function is added \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESET@{RESET}!logic.h@{logic.h}}\index{logic.h@{logic.h}!RESET@{RESET}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a589b7d94a3d91d145720e2fed0eb3a05}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a589b7d94a3d91d145720e2fed0eb3a05}} 
+R\+E\+S\+ET&For reseting the equation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DECIMAL@{DECIMAL}!logic.h@{logic.h}}\index{logic.h@{logic.h}!DECIMAL@{DECIMAL}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958af08a543d5a1549321682e12569d0fbd6}\label{logic_8h_aec92c874ba64629974ff08036ae2d958af08a543d5a1549321682e12569d0fbd6}} 
+D\+E\+C\+I\+M\+AL&Digit was entered to a floating point number \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROCCEDE@{PROCCEDE}!logic.h@{logic.h}}\index{logic.h@{logic.h}!PROCCEDE@{PROCCEDE}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958aac40e142253b09dca77c5bf9979fcc29}\label{logic_8h_aec92c874ba64629974ff08036ae2d958aac40e142253b09dca77c5bf9979fcc29}} 
+P\+R\+O\+C\+C\+E\+DE&Operator that does not change the operator arrangement, calculation is procceded \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START\_STATE@{START\_STATE}!logic.h@{logic.h}}\index{logic.h@{logic.h}!START\_STATE@{START\_STATE}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a399c982a0c65189d8b619a10443b9a8e}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a399c982a0c65189d8b619a10443b9a8e}} 
+S\+T\+A\+R\+T\+\_\+\+S\+T\+A\+TE&State, in which is the calculation, when it starts or a new bracket is open \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REDUCTION\_BY1@{REDUCTION\_BY1}!logic.h@{logic.h}}\index{logic.h@{logic.h}!REDUCTION\_BY1@{REDUCTION\_BY1}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a17e66d41adcbfef2471843bcf8e8d0f4}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a17e66d41adcbfef2471843bcf8e8d0f4}} 
+R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+B\+Y1&Reduction of 1 operator in the operator stack \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REDUCTION\_BY2@{REDUCTION\_BY2}!logic.h@{logic.h}}\index{logic.h@{logic.h}!REDUCTION\_BY2@{REDUCTION\_BY2}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a95532599b087d9afcc0a2625a4d94000}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a95532599b087d9afcc0a2625a4d94000}} 
+R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+B\+Y2&Reduction of 2 operators in the operator stack \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADDITION@{ADDITION}!logic.h@{logic.h}}\index{logic.h@{logic.h}!ADDITION@{ADDITION}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958ad464bf0ab855a4dd25d3ad1cd34c2d3c}\label{logic_8h_aec92c874ba64629974ff08036ae2d958ad464bf0ab855a4dd25d3ad1cd34c2d3c}} 
+A\+D\+D\+I\+T\+I\+ON&New operator is added to the operator stack \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATE@{NEGATE}!logic.h@{logic.h}}\index{logic.h@{logic.h}!NEGATE@{NEGATE}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a6e03f275c09bc302b861e86c19ca70a1}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a6e03f275c09bc302b861e86c19ca70a1}} 
+N\+E\+G\+A\+TE&Input number negation is engaged (i.\+e. the number is negative) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATION@{NEGATION}!logic.h@{logic.h}}\index{logic.h@{logic.h}!NEGATION@{NEGATION}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a75ab6fa2b65e56fdf3a8ec9c09353e87}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a75ab6fa2b65e56fdf3a8ec9c09353e87}} 
+N\+E\+G\+A\+T\+I\+ON&\textquotesingle{}N\textquotesingle{} was added negation of a currently entered number is performed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPENED\_BRACKET@{OPENED\_BRACKET}!logic.h@{logic.h}}\index{logic.h@{logic.h}!OPENED\_BRACKET@{OPENED\_BRACKET}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a9cf86679372d1ddd42bbf52ea4ed5f75}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a9cf86679372d1ddd42bbf52ea4ed5f75}} 
+O\+P\+E\+N\+E\+D\+\_\+\+B\+R\+A\+C\+K\+ET&\textquotesingle{}(\textquotesingle{} character was added, new bracket is opened \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOSED\_BRACKET@{CLOSED\_BRACKET}!logic.h@{logic.h}}\index{logic.h@{logic.h}!CLOSED\_BRACKET@{CLOSED\_BRACKET}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958aedb1c41372694645d160ed0c9870a2d4}\label{logic_8h_aec92c874ba64629974ff08036ae2d958aedb1c41372694645d160ed0c9870a2d4}} 
+C\+L\+O\+S\+E\+D\+\_\+\+B\+R\+A\+C\+K\+ET&\textquotesingle{})\textquotesingle{} character was added, currently opened bracket is closed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EQUAL@{EQUAL}!logic.h@{logic.h}}\index{logic.h@{logic.h}!EQUAL@{EQUAL}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a59a84258a4cb9025b567ee5139455029}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a59a84258a4cb9025b567ee5139455029}} 
+E\+Q\+U\+AL&\textquotesingle{}=\textquotesingle{} character was added, result is calculated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FACTORIAL@{FACTORIAL}!logic.h@{logic.h}}\index{logic.h@{logic.h}!FACTORIAL@{FACTORIAL}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a5ef0b5615aceaa696caa64eb3c5bec55}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a5ef0b5615aceaa696caa64eb3c5bec55}} 
+F\+A\+C\+T\+O\+R\+I\+AL&\textquotesingle{}!\textquotesingle{} character was added to the equation, which invokes the calculation of factorial \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DECIMAL\_DOT@{DECIMAL\_DOT}!logic.h@{logic.h}}\index{logic.h@{logic.h}!DECIMAL\_DOT@{DECIMAL\_DOT}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a4e2994d435c769e0376e79d765b4a853}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a4e2994d435c769e0376e79d765b4a853}} 
+D\+E\+C\+I\+M\+A\+L\+\_\+\+D\+OT&\textquotesingle{}.\textquotesingle{} charcter was added to the equation, which invokes, that floating point nuber is added \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLEAR@{CLEAR}!logic.h@{logic.h}}\index{logic.h@{logic.h}!CLEAR@{CLEAR}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a1e1a4aba20a5a009e616cbc8fad33ac7}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a1e1a4aba20a5a009e616cbc8fad33ac7}} 
+C\+L\+E\+AR&\textquotesingle{}C\textquotesingle{} character was added, equation cleared and reseted \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GONIO\_PROCCEDE@{GONIO\_PROCCEDE}!logic.h@{logic.h}}\index{logic.h@{logic.h}!GONIO\_PROCCEDE@{GONIO\_PROCCEDE}}}\mbox{\Hypertarget{logic_8h_aec92c874ba64629974ff08036ae2d958a8f593ed14ffb978e54f461c05886380a}\label{logic_8h_aec92c874ba64629974ff08036ae2d958a8f593ed14ffb978e54f461c05886380a}} 
+G\+O\+N\+I\+O\+\_\+\+P\+R\+O\+C\+C\+E\+DE&Operator that does not change the operator arrangement added after the goniometric operator, calculation is procceded \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 67 of file logic.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                             \{}
+\DoxyCodeLine{68                          \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a605159e8a4c32319fd69b5d151369d93}{UNDEFINED}} = 0 , }
+\DoxyCodeLine{69                          \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ae5bc7ee7d6dda5340a28f91834f10543}{L1}} , }
+\DoxyCodeLine{70                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a0adffb24dae0c41be5b803f4d444f066}{L2}} , \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a78d20b793a10e7c2f1012114803147c3}{L3}} , }
+\DoxyCodeLine{71                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a5e2df115b7e0e08a9bf082eb2aa1d125}{L1L2}} , }
+\DoxyCodeLine{72                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958adaa3eb2359010ee2c7e4c5c10a971663}{L1L3}} , }
+\DoxyCodeLine{73                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958aa9039f9cfec7b686af1d9d26423224e6}{L2L3}} , }
+\DoxyCodeLine{74                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958af471128a0351ee9039a4680e1dd0af4c}{L1L2L3}} , }
+\DoxyCodeLine{75                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a1b1406e3d0746ccb290c331db527df12}{DIGIT}} , }
+\DoxyCodeLine{76                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a3c9afb1c199b344e8b4634e14388e0a5}{L1\_GONIO}} , }
+\DoxyCodeLine{77                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a665c93eafb7e9547950be0f1f6b2823d}{L2\_GONIO}} , }
+\DoxyCodeLine{78                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a8d288103074a9f47aad31030741737f9}{L3\_GONIO}} , }
+\DoxyCodeLine{79                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958afa6cb0a580f54b1f7d68ae46feb5511e}{GONIO\_NEGATE}} ,}
+\DoxyCodeLine{80                              \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ad3c172da241b32a6d8191548caf378bf}{L1L2\_GONIO}} , }
+\DoxyCodeLine{81                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ad795e3e5f120b352dc17ef4446c4fe09}{L1L3\_GONIO}} , }
+\DoxyCodeLine{82                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a16d96bb5644075d399c99e267ea6ce1f}{L2L3\_GONIO}} , }
+\DoxyCodeLine{83                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a47cfa0fa9050bb691f711881b5510b54}{L1L2L3\_GONIO}} , }
+\DoxyCodeLine{84                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a86c987c12dded36a690f189b8182b0af}{GONIO}} , }
+\DoxyCodeLine{85                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a4d115be379d16c70b68747c91bcb790a}{REDUCTION\_BY3}} , }
+\DoxyCodeLine{86                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a438916ef97edc74aaf61b36cc7e54760}{GONIO\_ADDITION}} , }
+\DoxyCodeLine{87                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a589b7d94a3d91d145720e2fed0eb3a05}{RESET}} ,}
+\DoxyCodeLine{88                              \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958af08a543d5a1549321682e12569d0fbd6}{DECIMAL}} , }
+\DoxyCodeLine{89                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958aac40e142253b09dca77c5bf9979fcc29}{PROCCEDE}} , }
+\DoxyCodeLine{90                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a399c982a0c65189d8b619a10443b9a8e}{START\_STATE}} , }
+\DoxyCodeLine{91                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a17e66d41adcbfef2471843bcf8e8d0f4}{REDUCTION\_BY1}} , }
+\DoxyCodeLine{92                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a95532599b087d9afcc0a2625a4d94000}{REDUCTION\_BY2}} , }
+\DoxyCodeLine{93                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958ad464bf0ab855a4dd25d3ad1cd34c2d3c}{ADDITION}} , }
+\DoxyCodeLine{94                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a6e03f275c09bc302b861e86c19ca70a1}{NEGATE}} , }
+\DoxyCodeLine{95                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a75ab6fa2b65e56fdf3a8ec9c09353e87}{NEGATION}} ,}
+\DoxyCodeLine{96                              \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a9cf86679372d1ddd42bbf52ea4ed5f75}{OPENED\_BRACKET}} , }
+\DoxyCodeLine{97                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958aedb1c41372694645d160ed0c9870a2d4}{CLOSED\_BRACKET}} , }
+\DoxyCodeLine{98                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a59a84258a4cb9025b567ee5139455029}{EQUAL}} , }
+\DoxyCodeLine{99                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a5ef0b5615aceaa696caa64eb3c5bec55}{FACTORIAL}} , }
+\DoxyCodeLine{100                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a4e2994d435c769e0376e79d765b4a853}{DECIMAL\_DOT}} , }
+\DoxyCodeLine{101                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a1e1a4aba20a5a009e616cbc8fad33ac7}{CLEAR}} , }
+\DoxyCodeLine{102                  \mbox{\hyperlink{logic_8h_aec92c874ba64629974ff08036ae2d958a8f593ed14ffb978e54f461c05886380a}{GONIO\_PROCCEDE}} }
+\DoxyCodeLine{103 \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916}} 
+\index{logic.h@{logic.h}!string\_control@{string\_control}}
+\index{string\_control@{string\_control}!logic.h@{logic.h}}
+\subsubsection{\texorpdfstring{string\_control}{string\_control}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916}{string\+\_\+control}}}
+
+
+
+enumeration used to determin different states in which the equation string can appear 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTEGER@{INTEGER}!logic.h@{logic.h}}\index{logic.h@{logic.h}!INTEGER@{INTEGER}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}} 
+I\+N\+T\+E\+G\+ER&Digit was entered (i.\+e. \textquotesingle{}0\textquotesingle{}, ..., \textquotesingle{}9\textquotesingle{} characters) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DECIMAL\_NUM@{DECIMAL\_NUM}!logic.h@{logic.h}}\index{logic.h@{logic.h}!DECIMAL\_NUM@{DECIMAL\_NUM}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}} 
+D\+E\+C\+I\+M\+A\+L\+\_\+\+N\+UM&Digit was added (i.\+e. \textquotesingle{}0\textquotesingle{}, ..., \textquotesingle{}9\textquotesingle{} characters) to a floating point \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPERATOR@{OPERATOR}!logic.h@{logic.h}}\index{logic.h@{logic.h}!OPERATOR@{OPERATOR}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}} 
+O\+P\+E\+R\+A\+T\+OR&Operator was added (\textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}, \textquotesingle{}\textquotesingle{}, \textquotesingle{}$^\wedge$\textquotesingle{}, \textquotesingle{}?\textquotesingle{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_STATE@{NO\_STATE}!logic.h@{logic.h}}\index{logic.h@{logic.h}!NO\_STATE@{NO\_STATE}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}} 
+N\+O\+\_\+\+S\+T\+A\+TE&First enter to the function \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\_BRACKET@{O\_BRACKET}!logic.h@{logic.h}}\index{logic.h@{logic.h}!O\_BRACKET@{O\_BRACKET}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}} 
+O\+\_\+\+B\+R\+A\+C\+K\+ET&\textquotesingle{}(\textquotesingle{} character was entered \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\_BRACKET@{C\_BRACKET}!logic.h@{logic.h}}\index{logic.h@{logic.h}!C\_BRACKET@{C\_BRACKET}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}} 
+C\+\_\+\+B\+R\+A\+C\+K\+ET&\textquotesingle{})\textquotesingle{} character was enterd \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GONIOOMETRY@{GONIOOMETRY}!logic.h@{logic.h}}\index{logic.h@{logic.h}!GONIOOMETRY@{GONIOOMETRY}}}\mbox{\Hypertarget{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}\label{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}} 
+G\+O\+N\+I\+O\+O\+M\+E\+T\+RY&Goniometric operator was entered (\textquotesingle{}s\textquotesingle{} -\/ for sinus, \textquotesingle{}c\textquotesingle{} -\/ for cosinus, \textquotesingle{}t\textquotesingle{} -\/ for tangens) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 109 of file logic.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109                     \{}
+\DoxyCodeLine{110              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}} , }
+\DoxyCodeLine{111              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a9e2687c88728efc4e3f4158d5fee1098}{DECIMAL\_NUM}} , }
+\DoxyCodeLine{112              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a6411d9d6073252e4d316493506bbb979}{OPERATOR}} , }
+\DoxyCodeLine{113              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916abacd1f79fd3d7541c133792402702dc2}{NO\_STATE}} , }
+\DoxyCodeLine{114              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a62693fa1f213e13c67a7fdff910e7e7e}{O\_BRACKET}} , }
+\DoxyCodeLine{115              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916aa85f0ab9fbe904afe445c73dda4345af}{C\_BRACKET}} , }
+\DoxyCodeLine{116              \mbox{\hyperlink{logic_8h_afe2dec747a9b5d98cb21bcca8b893916a91bd9c7768fbfd98fa5d963050aa53e7}{GONIOOMETRY}} }
+\DoxyCodeLine{117 \};}
+
+\end{DoxyCode}

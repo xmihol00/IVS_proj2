@@ -1,0 +1,668 @@
+\hypertarget{our__math_8h}{}\section{include/our\+\_\+math.h File Reference}
+\label{our__math_8h}\index{include/our\_math.h@{include/our\_math.h}}
+
+
+Header file containing definition of inline functions for basic arithmetics like addition, subtraction, division, multiplication as well as more advanced functions for calculating factorial, n-\/power, n-\/root, cosx, sinx, tanx. Also contains a declaration of xpow function.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{our__math_8h_a800f239a0583d7facf279b3b02046486}{X\+P\+O\+W\+\_\+\+E\+PS}}~1e-\/4
+\begin{DoxyCompactList}\small\item\em deviation for x-\/power functions to calculate decimal part as well as fraction part \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{our__math_8h_aa0affb6b43d15f6dca352ae1d00a35bd}{G\+O\+N\+I\+O\+\_\+\+E\+PS}}~1e-\/5
+\begin{DoxyCompactList}\small\item\em deviation for goniometric functions \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{our__math_8h_ad2b646c50523592a1a55bdbfd0dc0504}{A\+C\+C\+U\+R\+A\+C\+Y\+\_\+\+S\+IN}}~26
+\begin{DoxyCompactList}\small\item\em limit for loop in sinx fucntion, where cosx is accurate in 5 decimal places at minimum \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{our__math_8h_a61d0b35f17081a1a372d8b9cea7fd02e}{A\+C\+C\+U\+R\+A\+C\+Y\+\_\+\+C\+OS}}~25
+\begin{DoxyCompactList}\small\item\em limit for loop in cosx function, where cosx is accurate in 5 decimal places at minimum \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{our__math_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979323846
+\begin{DoxyCompactList}\small\item\em constant for calculatin sinx, cosx and tanx \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{E\+PS}}~1e-\/10
+\begin{DoxyCompactList}\small\item\em deviation for npower, xpower, nroot to get quite accurate result \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long double \mbox{\hyperlink{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}{add}} (long double x, long double y)
+\begin{DoxyCompactList}\small\item\em calculates addition of given numbers \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a5fbfcd7ee129a9b4aadea00b11a1a4f1}{sub}} (long double x, long double y)
+\begin{DoxyCompactList}\small\item\em calculates subtraction of given numbers \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_abd7fb5a538a5db0fa98553fe4f6064d7}{mul}} (long double x, long double y)
+\begin{DoxyCompactList}\small\item\em claculates multiplication of given numbers \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a136ef5464b9cba94b331e0401be946ef}{div\+\_\+}} (long double x, long double y)
+\begin{DoxyCompactList}\small\item\em calculates division of given numbers \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a9e753ee3390aba5fed74f311a3540a67}{factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em calculates a factorial of input number \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a8654e4271319de98c4099cc70943c4ac}{npow}} (long double x, long unsigned n)
+\begin{DoxyCompactList}\small\item\em calculates the power of input number, the number can be powerd only to a natural number \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a5d18b3f46c834dee86520a5c64a69ae1}{nroot}} (long double x, long unsigned n)
+\begin{DoxyCompactList}\small\item\em calculates the nth-\/root of input number, the number can be rooted only to a natural number \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_ab176128ff3d88739eb03ae8937e7b059}{xpow}} (long double base, long double exponent)
+\begin{DoxyCompactList}\small\item\em calculates calculates power of a floating point number powered by floating point number (also works as nroot) \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_ac4f3a73dafdd578d338030c348790c53}{sinx}} (double x)
+\begin{DoxyCompactList}\small\item\em calculates sinus value of input number given in degrees \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a929568b885981031f43b82df997ff6a9}{cosx}} (double x)
+\begin{DoxyCompactList}\small\item\em calculates cosinus value of input number given in degrees \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{our__math_8h_a1694b7f6c823dd78bc66dceada977220}{tanx}} (double x)
+\begin{DoxyCompactList}\small\item\em calculates tangens value of input number given in degrees \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file containing definition of inline functions for basic arithmetics like addition, subtraction, division, multiplication as well as more advanced functions for calculating factorial, n-\/power, n-\/root, cosx, sinx, tanx. Also contains a declaration of xpow function. 
+
+\begin{DoxyAuthor}{Author}
+Mihola David 
+
+Foltyn Lukas 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27.\+02.\+2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+©\+Pied Piper 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{our__math_8h_a61d0b35f17081a1a372d8b9cea7fd02e}\label{our__math_8h_a61d0b35f17081a1a372d8b9cea7fd02e}} 
+\index{our\_math.h@{our\_math.h}!ACCURACY\_COS@{ACCURACY\_COS}}
+\index{ACCURACY\_COS@{ACCURACY\_COS}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{ACCURACY\_COS}{ACCURACY\_COS}}
+{\footnotesize\ttfamily \#define A\+C\+C\+U\+R\+A\+C\+Y\+\_\+\+C\+OS~25}
+
+
+
+limit for loop in cosx function, where cosx is accurate in 5 decimal places at minimum 
+
+
+
+Definition at line 42 of file our\+\_\+math.\+h.
+
+\mbox{\Hypertarget{our__math_8h_ad2b646c50523592a1a55bdbfd0dc0504}\label{our__math_8h_ad2b646c50523592a1a55bdbfd0dc0504}} 
+\index{our\_math.h@{our\_math.h}!ACCURACY\_SIN@{ACCURACY\_SIN}}
+\index{ACCURACY\_SIN@{ACCURACY\_SIN}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{ACCURACY\_SIN}{ACCURACY\_SIN}}
+{\footnotesize\ttfamily \#define A\+C\+C\+U\+R\+A\+C\+Y\+\_\+\+S\+IN~26}
+
+
+
+limit for loop in sinx fucntion, where cosx is accurate in 5 decimal places at minimum 
+
+
+
+Definition at line 35 of file our\+\_\+math.\+h.
+
+\mbox{\Hypertarget{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}\label{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}} 
+\index{our\_math.h@{our\_math.h}!EPS@{EPS}}
+\index{EPS@{EPS}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{EPS}{EPS}}
+{\footnotesize\ttfamily \#define E\+PS~1e-\/10}
+
+
+
+deviation for npower, xpower, nroot to get quite accurate result 
+
+
+
+Definition at line 54 of file our\+\_\+math.\+h.
+
+\mbox{\Hypertarget{our__math_8h_aa0affb6b43d15f6dca352ae1d00a35bd}\label{our__math_8h_aa0affb6b43d15f6dca352ae1d00a35bd}} 
+\index{our\_math.h@{our\_math.h}!GONIO\_EPS@{GONIO\_EPS}}
+\index{GONIO\_EPS@{GONIO\_EPS}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{GONIO\_EPS}{GONIO\_EPS}}
+{\footnotesize\ttfamily \#define G\+O\+N\+I\+O\+\_\+\+E\+PS~1e-\/5}
+
+
+
+deviation for goniometric functions 
+
+
+
+Definition at line 28 of file our\+\_\+math.\+h.
+
+\mbox{\Hypertarget{our__math_8h_a598a3330b3c21701223ee0ca14316eca}\label{our__math_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\index{our\_math.h@{our\_math.h}!PI@{PI}}
+\index{PI@{PI}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+14159265358979323846}
+
+
+
+constant for calculatin sinx, cosx and tanx 
+
+
+
+Definition at line 48 of file our\+\_\+math.\+h.
+
+\mbox{\Hypertarget{our__math_8h_a800f239a0583d7facf279b3b02046486}\label{our__math_8h_a800f239a0583d7facf279b3b02046486}} 
+\index{our\_math.h@{our\_math.h}!XPOW\_EPS@{XPOW\_EPS}}
+\index{XPOW\_EPS@{XPOW\_EPS}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{XPOW\_EPS}{XPOW\_EPS}}
+{\footnotesize\ttfamily \#define X\+P\+O\+W\+\_\+\+E\+PS~1e-\/4}
+
+
+
+deviation for x-\/power functions to calculate decimal part as well as fraction part 
+
+
+
+Definition at line 22 of file our\+\_\+math.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}\label{our__math_8h_a646aff04f24e702a04d401eb1c4d1fdc}} 
+\index{our\_math.h@{our\_math.h}!add@{add}}
+\index{add@{add}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily long double add (\begin{DoxyParamCaption}\item[{long double}]{x,  }\item[{long double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates addition of given numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & first number for addition \\
+\hline
+{\em y} & second number for addition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+addition of given numbers x,y 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} x + y;}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a929568b885981031f43b82df997ff6a9}\label{our__math_8h_a929568b885981031f43b82df997ff6a9}} 
+\index{our\_math.h@{our\_math.h}!cosx@{cosx}}
+\index{cosx@{cosx}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{cosx()}{cosx()}}
+{\footnotesize\ttfamily long double cosx (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates cosinus value of input number given in degrees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the numerical value of angle 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{251 \{}
+\DoxyCodeLine{252     \textcolor{keywordflow}{while}(x>=360)}
+\DoxyCodeLine{253         x-=360;}
+\DoxyCodeLine{254     \textcolor{keywordflow}{while}(x<=-360)}
+\DoxyCodeLine{255         x+=360;}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \textcolor{keywordtype}{long} test = (long)x;}
+\DoxyCodeLine{258     \textcolor{keywordflow}{if} (test == 0)}
+\DoxyCodeLine{259         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{260     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (test == 180)}
+\DoxyCodeLine{261         \textcolor{keywordflow}{return} -1;}
+\DoxyCodeLine{262     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (test == 90 || test == 270)}
+\DoxyCodeLine{263         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{keywordtype}{double} radians=x*\mbox{\hyperlink{our__math_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180;}
+\DoxyCodeLine{266     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} result,previous\_result,temp;}
+\DoxyCodeLine{267     result=temp=1; }
+\DoxyCodeLine{268     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} i = 1; i < \mbox{\hyperlink{our__math_8h_a61d0b35f17081a1a372d8b9cea7fd02e}{ACCURACY\_COS}}; i += 2)}
+\DoxyCodeLine{269     \{}
+\DoxyCodeLine{270         temp=temp*(-1)*radians*radians/(i*(i+1));}
+\DoxyCodeLine{271         previous\_result=result;}
+\DoxyCodeLine{272         result+=temp;}
+\DoxyCodeLine{273         \textcolor{keywordflow}{if}(fabs(result-previous\_result)<\mbox{\hyperlink{our__math_8h_aa0affb6b43d15f6dca352ae1d00a35bd}{GONIO\_EPS}})}
+\DoxyCodeLine{274             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{275     \}}
+\DoxyCodeLine{276     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{277 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a136ef5464b9cba94b331e0401be946ef}\label{our__math_8h_a136ef5464b9cba94b331e0401be946ef}} 
+\index{our\_math.h@{our\_math.h}!div\_@{div\_}}
+\index{div\_@{div\_}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{div\_()}{div\_()}}
+{\footnotesize\ttfamily long double div\+\_\+ (\begin{DoxyParamCaption}\item[{long double}]{x,  }\item[{long double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates division of given numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & number that is divided \\
+\hline
+{\em y} & number that divides \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+divison of given numbers x,y 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94 \{}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (y == 0)}
+\DoxyCodeLine{96         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Division by 0"});}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} x / y;}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a9e753ee3390aba5fed74f311a3540a67}\label{our__math_8h_a9e753ee3390aba5fed74f311a3540a67}} 
+\index{our\_math.h@{our\_math.h}!factorial@{factorial}}
+\index{factorial@{factorial}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{factorial()}{factorial()}}
+{\footnotesize\ttfamily long double factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates a factorial of input number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number to calculate factorial from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+factorial of the input number 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106 \{}
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (n < 0)}
+\DoxyCodeLine{108         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Factorial of negative number."});}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keywordflow}{if} (n == 0 || n == 1 )}
+\DoxyCodeLine{111         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{//if (n > 20)}}
+\DoxyCodeLine{114       \textcolor{comment}{//  throw std::runtime\_error("Too large number for factorial.");}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} x = (\textcolor{keywordtype}{long} double)n;}
+\DoxyCodeLine{117     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = n; i > 1; --i, x*= i);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{120 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_abd7fb5a538a5db0fa98553fe4f6064d7}\label{our__math_8h_abd7fb5a538a5db0fa98553fe4f6064d7}} 
+\index{our\_math.h@{our\_math.h}!mul@{mul}}
+\index{mul@{mul}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily long double mul (\begin{DoxyParamCaption}\item[{long double}]{x,  }\item[{long double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+claculates multiplication of given numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & first number for multiplication \\
+\hline
+{\em y} & second number for multiplication \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+multiplication of given numbers x,y 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{return} x * y;}
+\DoxyCodeLine{86 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a8654e4271319de98c4099cc70943c4ac}\label{our__math_8h_a8654e4271319de98c4099cc70943c4ac}} 
+\index{our\_math.h@{our\_math.h}!npow@{npow}}
+\index{npow@{npow}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{npow()}{npow()}}
+{\footnotesize\ttfamily long double npow (\begin{DoxyParamCaption}\item[{long double}]{x,  }\item[{long unsigned}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates the power of input number, the number can be powerd only to a natural number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & number to be powered \\
+\hline
+{\em n} & the exponent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number powered by the exponent 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129 \{}
+\DoxyCodeLine{130     \textcolor{keywordflow}{if} (n == 0)}
+\DoxyCodeLine{131         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{132     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} hold = x;}
+\DoxyCodeLine{133     \textcolor{keywordflow}{if} (x >= 1 - \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}} \&\& x <= 1 + \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{134         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{135     \textcolor{keywordflow}{while} (--n) x *= hold;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{138 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a5d18b3f46c834dee86520a5c64a69ae1}\label{our__math_8h_a5d18b3f46c834dee86520a5c64a69ae1}} 
+\index{our\_math.h@{our\_math.h}!nroot@{nroot}}
+\index{nroot@{nroot}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{nroot()}{nroot()}}
+{\footnotesize\ttfamily long double nroot (\begin{DoxyParamCaption}\item[{long double}]{x,  }\item[{long unsigned}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates the nth-\/root of input number, the number can be rooted only to a natural number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & number to be rooted \\
+\hline
+{\em n} & the exponent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the nth-\/root of a number 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148 \{}
+\DoxyCodeLine{149     \textcolor{keywordflow}{if} (n == 0)}
+\DoxyCodeLine{150         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{151     \textcolor{keywordflow}{if} (n == 1)}
+\DoxyCodeLine{152         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{153     \textcolor{keywordflow}{if} (x >= 1 - \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}} \&\& x <= 1 + \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{154         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{keywordflow}{if} (x < 0 \&\& !(n\&1))}
+\DoxyCodeLine{157     \{}
+\DoxyCodeLine{158         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Cannot root this."});}
+\DoxyCodeLine{159         \textcolor{keywordflow}{return} -1;}
+\DoxyCodeLine{160     \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keywordflow}{if} (x >= -\mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}} \&\& x <= \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{163         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{comment}{//aproximation of the result}}
+\DoxyCodeLine{166     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} delta = x;}
+\DoxyCodeLine{167     \textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} i = 1;}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keywordflow}{while} ((delta /= 10) > 1 \&\& ++i);}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} guess = 1;}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (i / n)}
+\DoxyCodeLine{173     \{}
+\DoxyCodeLine{174         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} j = 0; j < i/n; j++)}
+\DoxyCodeLine{175             guess *= 10;}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177         guess *= i \% n + 1;}
+\DoxyCodeLine{178     \}}
+\DoxyCodeLine{179     \textcolor{comment}{//end of approximation}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     delta = 0;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{184     \{}
+\DoxyCodeLine{185         guess += delta;}
+\DoxyCodeLine{186         delta = (((x/\mbox{\hyperlink{our__math_8h_a8654e4271319de98c4099cc70943c4ac}{npow}}(guess, (n-1)))-guess)/n);}
+\DoxyCodeLine{187     \}}
+\DoxyCodeLine{188     \textcolor{keywordflow}{while}(delta > \mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}} || delta < -\mbox{\hyperlink{our__math_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}});}
+\DoxyCodeLine{189     \textcolor{keywordflow}{return} guess+delta;}
+\DoxyCodeLine{190 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_ac4f3a73dafdd578d338030c348790c53}\label{our__math_8h_ac4f3a73dafdd578d338030c348790c53}} 
+\index{our\_math.h@{our\_math.h}!sinx@{sinx}}
+\index{sinx@{sinx}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{sinx()}{sinx()}}
+{\footnotesize\ttfamily long double sinx (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates sinus value of input number given in degrees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the numerical value of angle 
+\end{DoxyReturn}
+
+
+Definition at line 205 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{206 \{}
+\DoxyCodeLine{207     \textcolor{keywordflow}{while}(x>=360)}
+\DoxyCodeLine{208         x-=360;}
+\DoxyCodeLine{209     \textcolor{keywordflow}{while}(x<=-360)}
+\DoxyCodeLine{210         x+=360;}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \textcolor{comment}{//values for 90, 180, 270, 360 degrees}}
+\DoxyCodeLine{213     \textcolor{keywordtype}{long} test = (long)x;}
+\DoxyCodeLine{214     \textcolor{keywordflow}{if} (test == 90)}
+\DoxyCodeLine{215         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{216     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (test == 270)}
+\DoxyCodeLine{217         \textcolor{keywordflow}{return} -1;}
+\DoxyCodeLine{218     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (test == 0 || test == 180)}
+\DoxyCodeLine{219         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{keywordtype}{double} radians=x*\mbox{\hyperlink{our__math_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180;}
+\DoxyCodeLine{222     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} result,previous\_result,temp;}
+\DoxyCodeLine{223     result=temp=radians;}
+\DoxyCodeLine{224     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} i=2;i<\mbox{\hyperlink{our__math_8h_ad2b646c50523592a1a55bdbfd0dc0504}{ACCURACY\_SIN}};i+=2)}
+\DoxyCodeLine{225     \{}
+\DoxyCodeLine{226         temp=temp*(-1)*radians*radians/(i*(i+1));}
+\DoxyCodeLine{227         previous\_result=result;}
+\DoxyCodeLine{228         result+=temp;}
+\DoxyCodeLine{229         \textcolor{keywordflow}{if}(fabs(result-previous\_result)<\mbox{\hyperlink{our__math_8h_aa0affb6b43d15f6dca352ae1d00a35bd}{GONIO\_EPS}})}
+\DoxyCodeLine{230             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{231     \}}
+\DoxyCodeLine{232     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{233 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a5fbfcd7ee129a9b4aadea00b11a1a4f1}\label{our__math_8h_a5fbfcd7ee129a9b4aadea00b11a1a4f1}} 
+\index{our\_math.h@{our\_math.h}!sub@{sub}}
+\index{sub@{sub}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily long double sub (\begin{DoxyParamCaption}\item[{long double}]{x,  }\item[{long double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates subtraction of given numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & number being subtracted from \\
+\hline
+{\em y} & number that is subtracted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+subtraction of given numbers x,y 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} x - y;}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_a1694b7f6c823dd78bc66dceada977220}\label{our__math_8h_a1694b7f6c823dd78bc66dceada977220}} 
+\index{our\_math.h@{our\_math.h}!tanx@{tanx}}
+\index{tanx@{tanx}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{tanx()}{tanx()}}
+{\footnotesize\ttfamily long double tanx (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculates tangens value of input number given in degrees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the numerical value of angle 
+\end{DoxyReturn}
+
+
+Definition at line 294 of file our\+\_\+math.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{295 \{}
+\DoxyCodeLine{296    \textcolor{keywordflow}{if}(!(fmod(x,90)) \&\& (fmod(x,180)))}
+\DoxyCodeLine{297         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{298    \textcolor{keywordflow}{return} \mbox{\hyperlink{our__math_8h_ac4f3a73dafdd578d338030c348790c53}{sinx}}(x)/\mbox{\hyperlink{our__math_8h_a929568b885981031f43b82df997ff6a9}{cosx}}(x);}
+\DoxyCodeLine{299 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{our__math_8h_ab176128ff3d88739eb03ae8937e7b059}\label{our__math_8h_ab176128ff3d88739eb03ae8937e7b059}} 
+\index{our\_math.h@{our\_math.h}!xpow@{xpow}}
+\index{xpow@{xpow}!our\_math.h@{our\_math.h}}
+\subsubsection{\texorpdfstring{xpow()}{xpow()}}
+{\footnotesize\ttfamily long double xpow (\begin{DoxyParamCaption}\item[{long double}]{base,  }\item[{long double}]{exponent }\end{DoxyParamCaption})}
+
+
+
+calculates calculates power of a floating point number powered by floating point number (also works as nroot) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base} & the number to be powered \\
+\hline
+{\em exponent} & the exponent on which the number is powerd \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of power the base to it\textquotesingle{}s exponent 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file our\+\_\+math.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if} (base < EPS \&\& base > -\mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{if} (exponent < EPS \&\& exponent > -\mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{37         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (exponent >= 1 - \mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}} \&\& exponent <= 1 + \mbox{\hyperlink{logic_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}})}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} base;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{comment}{//switching the values when exponent is negative}}
+\DoxyCodeLine{43     \textcolor{keywordflow}{if} (exponent < 0)}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         base = 1 / base;}
+\DoxyCodeLine{46         exponent = -exponent;}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{//separating the number to it's natural part and decimal part}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{long} natural = (long)exponent;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} rest = exponent - natural;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} tmp = base;}
+\DoxyCodeLine{53     }
+\DoxyCodeLine{54     \textcolor{comment}{//calculating the npower of natural part}}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if} (natural)}
+\DoxyCodeLine{56         \textcolor{keywordflow}{while}(--natural)}
+\DoxyCodeLine{57             base *= tmp;}
+\DoxyCodeLine{58     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{59         base = 1;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{//calculating the power of deciaml part, if the decimal part is large enough}}
+\DoxyCodeLine{63     \textcolor{keywordflow}{if} (rest > \mbox{\hyperlink{our__math_8h_a800f239a0583d7facf279b3b02046486}{XPOW\_EPS}} - 0.00001)}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65         \textcolor{comment}{// number\string^0.xxxx.. can be caulculated as number\string^(top/bot) == pow(nroot(number, bot), top), where top/bot = 0.xxxx.., }}
+\DoxyCodeLine{66         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} top = 1;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} bot = 2;}
+\DoxyCodeLine{68         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} delta = rest - 0.5;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{comment}{// approximating the fraction, f.e. 0.65 = 13/20}}
+\DoxyCodeLine{71         \textcolor{keywordflow}{while} (delta > \mbox{\hyperlink{our__math_8h_a800f239a0583d7facf279b3b02046486}{XPOW\_EPS}} - 0.00001 || delta < -\mbox{\hyperlink{our__math_8h_a800f239a0583d7facf279b3b02046486}{XPOW\_EPS}} + 0.00001)}
+\DoxyCodeLine{72         \{}
+\DoxyCodeLine{73             \textcolor{keywordflow}{if} (delta > 0)}
+\DoxyCodeLine{74                 top += 1;}
+\DoxyCodeLine{75             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{76                 bot += 1;}
+\DoxyCodeLine{77             }
+\DoxyCodeLine{78             delta = rest - (top / bot);}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         \textcolor{comment}{//calculatig the nroot}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{keywordflow}{if} (tmp < 0 \&\& !((\textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned})bot \& 1))}
+\DoxyCodeLine{83         \{}
+\DoxyCodeLine{84             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Cannot calculate this."});}
+\DoxyCodeLine{85             \textcolor{keywordflow}{return} -1;}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} n\_res = tmp = \mbox{\hyperlink{our__math_8cpp_a5d18b3f46c834dee86520a5c64a69ae1}{nroot}}(tmp, bot);}
+\DoxyCodeLine{89         \textcolor{comment}{//calculating the power of the rooted number}}
+\DoxyCodeLine{90         \textcolor{keywordflow}{while} (--top)}
+\DoxyCodeLine{91             n\_res *= tmp;}
+\DoxyCodeLine{92         }
+\DoxyCodeLine{93         \textcolor{comment}{//multiplying the natural part by the decial part }}
+\DoxyCodeLine{94         \textcolor{keywordflow}{return} base * n\_res;}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{97         \textcolor{keywordflow}{return} base;}
+\DoxyCodeLine{98         }
+\DoxyCodeLine{99     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{100 \}}
+
+\end{DoxyCode}

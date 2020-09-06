@@ -1,0 +1,89 @@
+\hypertarget{class_factorial__tests}{}\section{Factorial\+\_\+tests Class Reference}
+\label{class_factorial__tests}\index{Factorial\_tests@{Factorial\_tests}}
+
+
+class that tests the factorial calculation  
+
+
+
+
+{\ttfamily \#include $<$tests.\+h$>$}
+
+Inheritance diagram for Factorial\+\_\+tests\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_factorial__tests}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_factorial__tests_aacc538b1427a2ad89e8d25cd0d5b717c}{fact\+\_\+test}} (long unsigned num, long unsigned expected\+\_\+result, bool fail\+\_\+expected)
+\begin{DoxyCompactList}\small\item\em function that compares calculation of factorial with expected result \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that tests the factorial calculation 
+
+Definition at line 128 of file tests.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_factorial__tests_aacc538b1427a2ad89e8d25cd0d5b717c}\label{class_factorial__tests_aacc538b1427a2ad89e8d25cd0d5b717c}} 
+\index{Factorial\_tests@{Factorial\_tests}!fact\_test@{fact\_test}}
+\index{fact\_test@{fact\_test}!Factorial\_tests@{Factorial\_tests}}
+\subsubsection{\texorpdfstring{fact\_test()}{fact\_test()}}
+{\footnotesize\ttfamily bool Factorial\+\_\+tests\+::fact\+\_\+test (\begin{DoxyParamCaption}\item[{long unsigned}]{num,  }\item[{long unsigned}]{expected\+\_\+result,  }\item[{bool}]{fail\+\_\+expected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+function that compares calculation of factorial with expected result 
+
+\begin{DoxyPrecond}{Precondition}
+expected result has to be accurate to 5 decimal digits 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em num} & number from which factorial is calculated \\
+\hline
+{\em expected\+\_\+result} & number, that is expected to be correct result of calculation \\
+\hline
+{\em fail\+\_\+expected} & boolean, set to true if fail of calc is expected (too large number), else set to to false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success -\/ expected\+\_\+result matches the result of calculator or calculation fails while fail\+\_\+expected is set to true, otherwise false is returned 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file test\+\_\+mock\+\_\+stub.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83 \{}
+\DoxyCodeLine{84     \textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} fact\_result;}
+\DoxyCodeLine{85     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         fact\_result =  \mbox{\hyperlink{our__math_8h_a9e753ee3390aba5fed74f311a3540a67}{factorial}}(num);}
+\DoxyCodeLine{88         \textcolor{keywordflow}{if} (fact\_result == expected\_result)}
+\DoxyCodeLine{89             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{90         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{91         \{}
+\DoxyCodeLine{92             fprintf(stderr, \textcolor{stringliteral}{"\%lu\(\backslash\)n"}, fact\_result);}
+\DoxyCodeLine{93             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{97     \{}
+\DoxyCodeLine{98         \textcolor{keywordflow}{return} fail\_expected;}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{tests_8h}{tests.\+h}}\item 
+source/\mbox{\hyperlink{test__mock__stub_8cpp}{test\+\_\+mock\+\_\+stub.\+cpp}}\end{DoxyCompactItemize}

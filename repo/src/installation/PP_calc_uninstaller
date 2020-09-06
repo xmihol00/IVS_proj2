@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "Uninstalling the calculator..."
+
+sudo dpkg -r PP_calc
+
+if [ $? -eq 0 ]; then
+    echo "Uninstallation was successful."
+    exit 0
+else
+    echo "Uninstallation was unsuccessful."
+    exit 1
+fi
